@@ -7,38 +7,56 @@
 
 
     <Button
+        android:visibility="gone"
         android:id="@+id/btnSingleTweet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onSingleTweet"
-        android:text="SingleTweet" />
+        android:text="Single Tweet" />
 
     <Button
+        android:visibility="gone"
         android:id="@+id/btnListTweedWithId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onListTweetId"
-        android:text="ListTweetId" />
+        android:text="List Tweet Id" />
 
     <Button
+
         android:id="@+id/btnTimeLineTweet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onTimeLineTweet"
-        android:text="onTimeLineTweet" />
+        android:text="Time Line Tweet" />
 
     <Button
         android:id="@+id/btnMapNearBy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onMapNearBy"
-        android:text="onMapNearBy" />
+        android:text="Map Nearby Police Station" />
+
+    <Button
+        android:id="@+id/btnMapTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onMapTest"
+        android:text="Map Test" />
+
+    <Button
+        android:id="@+id/btnNearBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onNearByPolice"
+        android:text="Near Police" />
+
 
     <Button
         android:id="@+id/btnTraffic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onTraffic"
-        android:text="onTraffic" />
+        android:text="Map Traffic" />
 
 </LinearLayout>

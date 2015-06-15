@@ -1,6 +1,7 @@
 package in.lastlocal.mumbaitraffic;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,6 +10,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 
+import in.lastlocal.map.MapTest;
+import in.lastlocal.map.MapsActivity;
 import in.lastlocal.twitter.SingleTweet;
 import in.lastlocal.twitter.TimelineActivity;
 import in.lastlocal.twitter.TweetListActivity;
@@ -37,7 +40,6 @@ public class MainActivity extends ActionBarActivity {
         startActivity(new Intent(this, SingleTweet.class));
     }
 
-
     public void onListTweetId(View v) {
         startActivity(new Intent(this, TweetListActivity.class));
     }
@@ -47,11 +49,26 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void onMapNearBy(View v) {
+        startActivity(new Intent(this, MapsActivity.class));
+    }
 
+    public void onNearByPolice(View v)
+    {
+        Uri gmmIntentUri = Uri.parse("geo:0,0?z=15&q=near+by+police+station");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void onMapTest(View v) {
+        startActivity(new Intent(this, MapTest.class));
     }
 
     public void onTraffic(View v) {
-
+        Uri gmmIntentUri = Uri.parse("geo:0,0?z=15&q=traffic+on+map");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
     }
 
 

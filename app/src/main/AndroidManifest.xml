@@ -2,6 +2,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="in.lastlocal.mumbaitraffic" >
 
+    <permission
+        android:name="in.lastlocal.mumbaitraffic.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="in.lastlocal.mumbaitraffic.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,13 +38,30 @@
             android:name="io.fabric.ApiKey"
             android:value="4e875f0a79739e5f769c986890fbc73b09472d63" />
 
-        <activity android:name="in.lastlocal.twitter.SingleTweet"/>
-        <activity android:name="in.lastlocal.twitter.TweetListActivity"/>
+        <activity android:name="in.lastlocal.twitter.SingleTweet" />
+        <activity android:name="in.lastlocal.twitter.TweetListActivity" />
+        <activity android:name="in.lastlocal.twitter.TimelineActivity" />
+        <activity
+            android:name="in.lastlocal.map.MapTest"
+            android:label="@string/title_activity_map_test" >
+        </activity>
 
-        <activity android:name="in.lastlocal.twitter.TimelineActivity"/>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name="in.lastlocal.map.MapsActivity"
+            android:label="@string/title_activity_maps" >
+        </activity>
+
+
+
 
     </application>
 
-
-    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
