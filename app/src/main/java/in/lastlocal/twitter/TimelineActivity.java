@@ -7,6 +7,9 @@ package in.lastlocal.twitter;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.twitter.sdk.android.core.Result;
@@ -25,22 +28,30 @@ import in.lastlocal.constant.AppConstant;
 import in.lastlocal.mumbaitraffic.R;
 import io.fabric.sdk.android.Fabric;
 
-public class TimelineActivity extends ListActivity {
+public class TimelineActivity extends AppCompatActivity {
 
     final String CONSUMER_KEY = AppConstant.CONSUMER_KEY;
     final String CONSUMER_SECRET_KEY = AppConstant.CONSUMER_SECRET_KEY;
 
     TweetTimelineListAdapter adapter;
+    Toolbar mToolbar;
+    ListView mListViewTweet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
 
+        initialize();
         authenticate();
         timeLineTweet();
 
         //swipeToRefresh();
+    }
+
+    public void initialize() {
+        mToolbar = (Toolbar) findViewById(R.id.inc_tool_bar);
+        setSupportActionBar(mToolbar);
     }
 
     /**
@@ -59,7 +70,8 @@ public class TimelineActivity extends ListActivity {
                 .build();
         if (userTimeline != null) {
             adapter = new TweetTimelineListAdapter(this, userTimeline);
-            setListAdapter(adapter);
+            ListView listViewTweet = (ListView) findViewById(R.id.lv_list);
+            listViewTweet.setAdapter(adapter);
         }
     }
 
@@ -75,8 +87,8 @@ public class TimelineActivity extends ListActivity {
 
             @Override
             public void onRefresh() {
-                swipeLayout.setRefreshing(true);
-                swipeLayout.setRefreshing(false);
+                //swipeLayout.setRefreshing(true);
+                //  swipeLayout.setRefreshing(false);
                 adapter.refresh(new Callback() {
 
                     @Override
@@ -93,6 +105,6 @@ public class TimelineActivity extends ListActivity {
             }
         });
 
-        setListAdapter(adapter);
+        mListViewTweet.setAdapter(adapter);
     }
 }

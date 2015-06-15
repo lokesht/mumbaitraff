@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#197484</color>
+    <color name="colorPrimaryDark">#0288D1</color>
+    <color name="colorPrimaryLight">#B3E5FC</color>
+    <color name="colorAccent">#FF9800</color>
+    <color name="colorHighlight">#B6B6B6</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#727272</color>
+    <color name="colorDivider">#B6B6B6</color>
+
+
+
+
+    <color name="drawer_bg">#dddddd</color>
+    <color name="orange">#ff5500</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#FF0000</color>
+    <color name="black">#000000</color>
+    <color name="gray">#dddddd</color>
+    <color name="dark_gray">#aaaaaa</color>
+    <color name="blue">#0066cc</color>
+    <color name="blueback">#99ffff</color>
+    <color name="list_menu_drawer_devider">#36344b</color>
+    <color name="list_divider">#cccccc</color>
+    <color name="bg_app">#ffffff</color>
+    <color name="title_item">#807e7e</color>
+    <color name="children_title_item">#999999</color>
+    <color name="selected_item">#f1f1f1</color>
+    <color name="selected_item_title">#ff5500</color>
+    <color name="bg_splash">#007ACC</color>
+    <color name="title_dialog">#000000</color>
+    <color name="buffed_bg">#00aef0</color>
+    <color name="content">#807e7e</color>
+    <color name="menu_drawer_pressed">#2977AB</color>
+    <color name="bg_actionbar">#3395D6</color>
+    <color name="btn_normal">#3395D6</color>
+    <color name="btn_pressed">#2977AB</color>
+    <color name="violet">#3395D6</color>
+    
+    <color name="color_light">#3395D6</color>
+    <color name="color_dark">#2977AB</color>
+    
+    <color name="bg_tab">#3F9DD9</color>
+    <color name="bg_tab_indicator">#55A8DD</color>
+    <color name="bg_tab_selected">#55A8DD</color>
+    <color name="bg_tab_pressed">#55A8DD</color>
+    
+
+    <color name="bg_home">#ffffff</color>
+    <color name="companyname_color">#ff0000</color>
+    <color name="copyright_color">#ff0000</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="item_selected_overlay">#88673AB7</color>
+
+    <color name="green">#ff21762c</color>
+    <color name="chocolate">#ff3b010f</color>
+
+
+
+
+</resources>

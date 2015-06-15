@@ -1,39 +1,40 @@
 package in.lastlocal.mumbaitraffic;
 
+import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.Toast;
 
 
-import in.lastlocal.map.MapTest;
 import in.lastlocal.map.MapsActivity;
+import in.lastlocal.map.WebViewActivity;
 import in.lastlocal.twitter.SingleTweet;
 import in.lastlocal.twitter.TimelineActivity;
 import in.lastlocal.twitter.TweetListActivity;
-import io.fabric.sdk.android.Fabric;
-
-import com.twitter.sdk.android.core.TwitterAuthConfig;
-import com.twitter.sdk.android.core.TwitterCore;
-import com.twitter.sdk.android.core.TwitterException;
-import com.twitter.sdk.android.core.models.Tweet;
-import com.twitter.sdk.android.tweetui.LoadCallback;
-import com.twitter.sdk.android.tweetui.TweetUi;
-import com.twitter.sdk.android.tweetui.TweetUtils;
-import com.twitter.sdk.android.tweetui.TweetView;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
+    Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        initialise();
+    }
+
+    public void initialise() {
+        mToolbar = (Toolbar) findViewById(R.id.inc_tool_bar);
+        setSupportActionBar(mToolbar);
     }
 
     public void onSingleTweet(View v) {
@@ -48,20 +49,18 @@ public class MainActivity extends ActionBarActivity {
         startActivity(new Intent(this, TimelineActivity.class));
     }
 
-    public void onMapNearBy(View v) {
+    public void onMapInside(View v) {
         startActivity(new Intent(this, MapsActivity.class));
     }
 
-    public void onNearByPolice(View v)
-    {
+    public void onNearByPolice(View v) {
         Uri gmmIntentUri = Uri.parse("geo:0,0?z=15&q=near+by+police+station");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
-        startActivity(mapIntent);
-    }
 
-    public void onMapTest(View v) {
-        startActivity(new Intent(this, MapTest.class));
+        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(mapIntent);
+        }
     }
 
     public void onTraffic(View v) {
@@ -69,6 +68,35 @@ public class MainActivity extends ActionBarActivity {
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
+    }
+
+    public void onWebView(View v)
+    {
+        startActivity(new Intent(this, WebViewActivity.class));
+    }
+
+    public  void maps(View view) {
+
+        try {
+
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://maps.google.com/maps?q=" + "mumbai"));
+            startActivity(intent);
+
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public  void navigation(View view) {
+
+        try {
+
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=" + "mumbai"));
+            startActivity(intent);
+
+        } catch (ActivityNotFoundException e) {
+            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+        }
     }
 
 

@@ -1,62 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+    <include
+        android:id="@+id/inc_tool_bar"
+        layout="@layout/app_bar" />
 
-    <Button
-        android:visibility="gone"
-        android:id="@+id/btnSingleTweet"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="onSingleTweet"
-        android:text="Single Tweet" />
+        android:orientation="vertical"
+        android:visibility="gone">
 
-    <Button
-        android:visibility="gone"
-        android:id="@+id/btnListTweedWithId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onListTweetId"
-        android:text="List Tweet Id" />
+        <Button
+            android:id="@+id/btnSingleTweet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onSingleTweet"
+            android:text="Single Tweet"
+            android:visibility="gone" />
 
-    <Button
+        <Button
+            android:id="@+id/btnListTweedWithId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onListTweetId"
+            android:text="List Tweet Id"
+            android:visibility="gone" />
 
-        android:id="@+id/btnTimeLineTweet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onTimeLineTweet"
-        android:text="Time Line Tweet" />
+        <Button
+            android:id="@+id/btnMapTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onMapInside"
+            android:text="Map Inside" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btnMapNearBy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onMapNearBy"
-        android:text="Map Nearby Police Station" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
 
-    <Button
-        android:id="@+id/btnMapTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onMapTest"
-        android:text="Map Test" />
+        <Button
+            android:id="@+id/btnTimeLineTweet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onTimeLineTweet"
+            android:text="Time Line Tweet" />
 
-    <Button
-        android:id="@+id/btnNearBy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onNearByPolice"
-        android:text="Near Police" />
+        <Button
+            android:id="@+id/btnNearBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onNearByPolice"
+            android:text="Near Police" />
 
+        <Button
+            android:id="@+id/btnTraffic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onTraffic"
+            android:text="Map Traffic" />
 
-    <Button
-        android:id="@+id/btnTraffic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onTraffic"
-        android:text="Map Traffic" />
+        <Button
+            android:id="@+id/btnWebView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onWebView"
+            android:text="Map WebView" />
+
+        <Button
+            android:id="@+id/btnMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="maps"
+            android:text="Map" />
+
+        <Button
+            android:id="@+id/btnNav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="navigation"
+            android:text="Navigation" />
+    </LinearLayout>
+
 
 </LinearLayout>

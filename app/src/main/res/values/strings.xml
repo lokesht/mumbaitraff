@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">MumbiaPoliceTrafficApp</string>
+    <string name="app_name">Mumbai Police Traffic</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_map_test">MapTest</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_splash">Mumbai Traffic</string>
+    <string name="title_activity_web_view">WebViewActivity</string>
 </resources>
