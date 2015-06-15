@@ -1,18 +1,11 @@
-package in.lastlocal.mumbaitraffic;
+package in.lastlocal.twitter;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.LinearLayout;
-
-
-import in.lastlocal.twitter.SingleTweet;
-import in.lastlocal.twitter.TimelineActivity;
-import in.lastlocal.twitter.TweetListActivity;
-import io.fabric.sdk.android.Fabric;
 
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterCore;
@@ -23,38 +16,55 @@ import com.twitter.sdk.android.tweetui.TweetUi;
 import com.twitter.sdk.android.tweetui.TweetUtils;
 import com.twitter.sdk.android.tweetui.TweetView;
 
+import in.lastlocal.constant.AppConstant;
+import in.lastlocal.mumbaitraffic.R;
+import io.fabric.sdk.android.Fabric;
 
-public class MainActivity extends ActionBarActivity {
+/**
+ * Created by Lokesh on 14-06-2015.
+ */
+public class SingleTweet extends ActionBarActivity {
+
+    final String CONSUMER_KEY = AppConstant.CONSUMER_KEY;
+    final String CONSUMER_SECRET_KEY =AppConstant.CONSUMER_SECRET_KEY;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-
-    public void onSingleTweet(View v) {
-        startActivity(new Intent(this, SingleTweet.class));
-    }
-
-
-    public void onListTweetId(View v) {
-        startActivity(new Intent(this, TweetListActivity.class));
-    }
-
-    public void onTimeLineTweet(View v) {
-        startActivity(new Intent(this, TimelineActivity.class));
-    }
-
-    public void onMapNearBy(View v) {
+        // setContentView(R.layout.activity_single_tweet);
+authenticate();
 
     }
 
-    public void onTraffic(View v) {
+    public void authenticate()
+    {
+        TwitterAuthConfig authConfig =
+                new TwitterAuthConfig(CONSUMER_KEY, CONSUMER_SECRET_KEY);
+        //Fabric.with(this, new Twitter(authConfig));
 
+        Fabric.with(this, new TwitterCore(authConfig), new TweetUi());
     }
 
 
+    public void singleTweet()
+    {
+        final LinearLayout myLayout
+                = (LinearLayout) findViewById(R.id.bike_tweet);
+
+        final long tweetId = 510908133917487104L;
+        TweetUtils.loadTweet(tweetId, new LoadCallback<Tweet>() {
+            @Override
+            public void success(Tweet tweet) {
+                myLayout.addView(new TweetView(SingleTweet.this, tweet));
+            }
+
+            @Override
+            public void failure(TwitterException exception) {
+                // Toast.makeText(...).show();
+            }
+        });
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -71,10 +81,11 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-
+            startActivity(new Intent(this,TweetListActivity.class));
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 }
+

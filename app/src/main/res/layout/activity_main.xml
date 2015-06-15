@@ -1,13 +1,44 @@
-<FrameLayout
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:twittersdk="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
-    <com.twitter.sdk.android.tweetui.TweetView
-        android:id="@+id/bike_tweet"
-        android:layout_width="match_parent"
+
+    <Button
+        android:id="@+id/btnSingleTweet"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        twittersdk:tw__tweet_id="510908133917487104"/>
+        android:onClick="onSingleTweet"
+        android:text="SingleTweet" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/btnListTweedWithId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onListTweetId"
+        android:text="ListTweetId" />
+
+    <Button
+        android:id="@+id/btnTimeLineTweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onTimeLineTweet"
+        android:text="onTimeLineTweet" />
+
+    <Button
+        android:id="@+id/btnMapNearBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onMapNearBy"
+        android:text="onMapNearBy" />
+
+    <Button
+        android:id="@+id/btnTraffic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onTraffic"
+        android:text="onTraffic" />
+
+</LinearLayout>

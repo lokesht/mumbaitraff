@@ -1,4 +1,4 @@
-package in.lastlocal.mumbaitraffic;
+package in.lastlocal.twitter;
 
 /**
  * Created by USER on 13-Jun-15.
@@ -14,12 +14,15 @@ import com.twitter.sdk.android.tweetui.TweetViewFetchAdapter;
 import java.util.Arrays;
 import java.util.List;
 
+import in.lastlocal.mumbaitraffic.R;
+
 public class TweetListActivity extends ListActivity {
 
     List<Long> tweetIds = Arrays.asList(503435417459249153L,
             510908133917487104L,
             473514864153870337L,
             477788140900347904L);
+
     final TweetViewFetchAdapter adapter =
             new TweetViewFetchAdapter<CompactTweetView>(
                     TweetListActivity.this);
