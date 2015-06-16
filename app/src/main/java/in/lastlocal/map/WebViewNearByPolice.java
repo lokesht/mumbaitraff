@@ -16,6 +16,7 @@ public class WebViewNearByPolice extends ActionBarActivity {
     WebView myWebView;
     String mapPath = "https://maps.google.com/?q=near by police station&ll=19.0823319,72.8671099&t=m&z=11&layer=t";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
