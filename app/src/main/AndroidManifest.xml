@@ -25,7 +25,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,6 +38,7 @@
             android:name="io.fabric.ApiKey"
             android:value="4e875f0a79739e5f769c986890fbc73b09472d63" />
 
+        <activity android:name=".MainActivity" />
         <activity android:name="in.lastlocal.twitter.SingleTweet" />
         <activity android:name="in.lastlocal.twitter.TweetListActivity" />
         <activity android:name="in.lastlocal.twitter.TimelineActivity" />
@@ -54,12 +55,12 @@
             android:label="@string/title_activity_maps" >
         </activity>
         <activity
-            android:name=".SplashActivity"
-            android:label="@string/title_activity_splash" >
-        </activity>
-        <activity
             android:name="in.lastlocal.map.WebViewActivity"
             android:label="@string/title_activity_web_view" >
+        </activity>
+        <activity
+            android:name="in.lastlocal.map.WebViewNearByPolice"
+            android:label="@string/title_activity_web_view_near_by_police" >
         </activity>
     </application>
 

@@ -28,14 +28,13 @@ import in.lastlocal.constant.AppConstant;
 import in.lastlocal.mumbaitraffic.R;
 import io.fabric.sdk.android.Fabric;
 
-public class TimelineActivity extends AppCompatActivity {
-
+public class TimelineActivity extends AppCompatActivity
+{
     final String CONSUMER_KEY = AppConstant.CONSUMER_KEY;
     final String CONSUMER_SECRET_KEY = AppConstant.CONSUMER_SECRET_KEY;
 
     TweetTimelineListAdapter adapter;
     Toolbar mToolbar;
-    ListView mListViewTweet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +45,9 @@ public class TimelineActivity extends AppCompatActivity {
         authenticate();
         timeLineTweet();
 
-        //swipeToRefresh();
+        swipeToRefresh();
+
+        //searchTimeLine();
     }
 
     public void initialize() {
@@ -76,8 +77,9 @@ public class TimelineActivity extends AppCompatActivity {
     }
 
     private void swipeToRefresh() {
+
         // inside onCreate
-        final SwipeRefreshLayout swipeLayout = (SwipeRefreshLayout) findViewById(R.id.tweet_layout);
+        final SwipeRefreshLayout swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_tweet_layout);
 
         //final SearchTimeline userTimeline = new SearchTimeline.Builder().query("#twitter").build();
         // final UserTimeline userTimeline = new UserTimeline.Builder().screenName("smart_mumbaikar").build();
@@ -105,6 +107,33 @@ public class TimelineActivity extends AppCompatActivity {
             }
         });
 
-        mListViewTweet.setAdapter(adapter);
+
     }
+//
+//    public void searchTimeLine()
+//    {
+//        // inside onCreate
+//        final SwipeRefreshLayout swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_tweet_layout);
+//        final SearchTimeline timeline = new SearchTimeline.Builder().query("#twitter").build();
+//        final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter(this, timeline);
+//        setListAdapter(adapter);
+//
+//        swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                swipeLayout.setRefreshing(true);
+//                adapter.refresh(new Callback() {
+//                    @Override
+//                    public void success(Result result) {
+//                        swipeLayout.setRefreshing(false);
+//                    }
+//
+//                    @Override
+//                    public void failure(TwitterException exception) {
+//                        // Toast or some other action
+//                    }
+//                });
+//            }
+//        });
+//    }
 }

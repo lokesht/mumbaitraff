@@ -23,7 +23,7 @@
         <View
             android:layout_width="@dimen/map_color_width"
             android:layout_height="@dimen/map_color_height"
-            android:background="@color/chocolate" />
+            android:background="@color/brown" />
 
         <View
             android:layout_width="@dimen/map_color_width"

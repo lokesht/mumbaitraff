@@ -7,4 +7,10 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_splash">Mumbai Traffic</string>
     <string name="title_activity_web_view">WebViewActivity</string>
+
+    <string name="login_english">English</string>
+    <string name="login_marathi">मराठी</string>
+
+    <string name="brand_hash_tag">#saftyfirst</string>
+    <string name="title_activity_web_view_near_by_police">WebViewNearByPolice</string>
 </resources>

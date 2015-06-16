@@ -1,35 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <include
         android:id="@+id/inc_tool_bar"
         layout="@layout/app_bar" />
 
     <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/tweet_layout"
+        android:id="@+id/swipe_tweet_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ListView
-            android:id="@+id/lv_list"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:divider="#e1e8ed"
-            android:dividerHeight="1dp"
-            android:drawSelectorOnTop="false" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@id/android:empty"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="No Tweets"
-            android:visibility="gone" />
+
+            <ListView
+                android:id="@+id/lv_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:divider="#e1e8ed"
+                android:dividerHeight="1dp"
+                android:drawSelectorOnTop="false" />
+        </LinearLayout>
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>
+
+
+<!--<LinearLayout-->
+<!--android:orientation="vertical"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent">-->
+
+<!--<TextView android:id="@id/android:empty"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:gravity="center_horizontal|center_vertical"-->
+    <!--android:text="No Tweets"/>-->
+
+<!--<ListView android:id="@id/android:list"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:divider="#e1e8ed"-->
+    <!--android:dividerHeight="1dp"-->
+    <!--android:drawSelectorOnTop="false"/>-->
+<!--</LinearLayout>-->

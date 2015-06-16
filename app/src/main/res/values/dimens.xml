@@ -8,5 +8,26 @@
 
     <dimen name="map_default_padding">8dp</dimen>
 
+    <dimen name="default_padding">8dp</dimen>
+    <dimen name="default_margin">8dp</dimen>
+    <dimen name="default_divider_height">8dp</dimen>
+    <dimen name="default_divider_width">2dp</dimen>
+    <dimen name="default_gridview_divider">8dp</dimen>
+    <dimen name="default_padding_between_buttons">4dp</dimen>
+    <dimen name="default_text_header_size">20sp</dimen>
+
+
+    <!-- http://www.google.com/design/spec/style/typography.html#typography-styles-->
+    <dimen name="ts_button">14sp</dimen>
+    <dimen name="ts_caption">14sp</dimen>
+    <dimen name="ts_body1">14sp</dimen>
+    <dimen name="ts_body2_bold">14sp</dimen>
+    <dimen name="ts_subhead">16sp</dimen>
+    <dimen name="ts_title_bold">20sp</dimen>
+
+    <dimen name="ts_headline">24sp</dimen>
+    <dimen name="ts_display1_bold">34sp</dimen>
+    <dimen name="ts_display2">45sp</dimen>
+    <dimen name="ts_display3">56sp</dimen>
 
 </resources>

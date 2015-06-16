@@ -1,6 +1,5 @@
 package in.lastlocal.mumbaitraffic;
 
-import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
@@ -12,9 +11,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-
 import in.lastlocal.map.MapsActivity;
 import in.lastlocal.map.WebViewActivity;
+import in.lastlocal.map.WebViewNearByPolice;
 import in.lastlocal.twitter.SingleTweet;
 import in.lastlocal.twitter.TimelineActivity;
 import in.lastlocal.twitter.TweetListActivity;
@@ -22,7 +21,13 @@ import in.lastlocal.twitter.TweetListActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    Toolbar mToolbar;
+    private Toolbar mToolbar;
+    private final String TAG = "MainActivity";
+
+    public static final String NEAR_BY_POLICE = "NEAR_BY_PLOICE";
+    public static final String TRAFFIC = "TRAFFIC";
+    public static final String EXTRA_ITEM = "Extra";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,21 +42,32 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
     }
 
-    public void onSingleTweet(View v) {
-        startActivity(new Intent(this, SingleTweet.class));
-    }
-
-    public void onListTweetId(View v) {
-        startActivity(new Intent(this, TweetListActivity.class));
-    }
-
+    /** */
     public void onTimeLineTweet(View v) {
         startActivity(new Intent(this, TimelineActivity.class));
+    }
+
+    /** */
+    public void onWebViewTraffic(View v) {
+        Intent in = new Intent(this, WebViewActivity.class);
+        startActivity(in);
+    }
+
+    /** */
+    public void onWebViewNearByPolice(View v) {
+        Intent in = new Intent(this, WebViewNearByPolice.class);
+        startActivity(in);
+    }
+
+    /** */
+    public void onEmergency(View v) {
+
     }
 
     public void onMapInside(View v) {
         startActivity(new Intent(this, MapsActivity.class));
     }
+
 
     public void onNearByPolice(View v) {
         Uri gmmIntentUri = Uri.parse("geo:0,0?z=15&q=near+by+police+station");
@@ -70,12 +86,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(mapIntent);
     }
 
-    public void onWebView(View v)
-    {
-        startActivity(new Intent(this, WebViewActivity.class));
+    public void onSingleTweet(View v) {
+        startActivity(new Intent(this, SingleTweet.class));
     }
 
-    public  void maps(View view) {
+    public void onListTweetId(View v) {
+        startActivity(new Intent(this, TweetListActivity.class));
+    }
+
+
+    public void maps(View view) {
 
         try {
 
@@ -87,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public  void navigation(View view) {
+    public void navigation(View view) {
 
         try {
 

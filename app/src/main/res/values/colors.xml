@@ -55,8 +55,9 @@
 
     <color name="item_selected_overlay">#88673AB7</color>
 
-    <color name="green">#ff21762c</color>
-    <color name="chocolate">#ff3b010f</color>
+    <color name="green">#4CAF50</color>
+    <color name="brown">#795548</color>
+    <color name="yellow">#FFEB3B</color>
 
 
 
