@@ -10,4 +10,7 @@ public class AppConstant {
 
     /** */
     public static boolean isMarathi = false;
+
+    public static String LOCALE_HINDI = "hi";
+    public static String LOCALE_ENGLISH = "en";
 }

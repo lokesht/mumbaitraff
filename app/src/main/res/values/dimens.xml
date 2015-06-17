@@ -30,4 +30,6 @@
     <dimen name="ts_display2">45sp</dimen>
     <dimen name="ts_display3">56sp</dimen>
 
+    <dimen name="traffic_circle_width">120dip</dimen>
+
 </resources>

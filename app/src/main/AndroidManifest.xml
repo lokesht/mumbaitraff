@@ -62,6 +62,11 @@
             android:name="in.lastlocal.map.WebViewNearByPolice"
             android:label="@string/title_activity_web_view_near_by_police" >
         </activity>
+        <activity
+            android:name="in.lastlocal.information.MainInformation"
+            android:label="@string/title_activity_main_information" >
+        </activity>
+
     </application>
 
 </manifest>

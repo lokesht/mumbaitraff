@@ -14,7 +14,7 @@ import in.lastlocal.mumbaitraffic.R;
 public class WebViewNearByPolice extends ActionBarActivity {
 
     WebView myWebView;
-    String mapPath = "https://maps.google.com/?q=near by police station&ll=19.0823319,72.8671099&t=m&z=11&layer=t";
+    String mapPath = "https://maps.google.com/?q=near by police station&ll=19.0823319,72.8671099&t=m&z=12&layer=t";
 
 
     @Override

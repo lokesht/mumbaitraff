@@ -13,4 +13,45 @@
 
     <string name="brand_hash_tag">#saftyfirst</string>
     <string name="title_activity_web_view_near_by_police">WebViewNearByPolice</string>
+    <string name="live_traffic">Live Traffic</string>
+    <string name="title_activity_main_information">MainInformation</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="FAQ">FAQ</string>
+    <string name="btn_near_police_station">Near Police Stations</string>
+    <string name="language">lang</string>
+
+    <string-array name="arr_faq_question">
+        <item>Q) Who issues the Motor Driving License in Mumbai?</item>
+        <item>Q) Who collects the Road Tax in Mumbai?</item>
+        <item>Q) What documents should a driver carry when driving?</item>
+        <item>Q) Who is authorized to collect the traffic fine on the spot?</item>
+        <item>Q) How do I pay my traffic fine?</item>
+        <item>Q) What is the rule for tinted glasses?</item>
+        <item>Q) What is the rule regarding seat belts? Is it binding using \r\n seat belts while driving in interior areas or by lanes?</item>
+    </string-array>
+
+    <string-array name="arr_faq_ans">
+        <item>As per the provision of Motor Vehicles Act, the Regional Transport Office is empowered to issue the Motor Driving License after following the procedures set in the Act. Here Regional Transport Office in Mumbai means, Regional Transport Offices at Tardeo, Wadala and Andheri and their addresses are as follows
+              \r\n •	Regional Transport Office - Central Bodyguard Lane, Keshavrao Khade Marg, Tardeo, Mumbai
+              \r\n •	Regional Transport Office (East), Anik Wadala Road, Near Imax Theater , Wadala, Mumbai.
+              \r\n •	Regional Transport Office West, Swami - Road, Andheri West, Mumbai.</item>
+        <item> •    The Road - Tax is collected by the Municipal Corporation of Mumbai, in the Regional Transport Office when a vehicle is tested and approved of its registration.</item>
+        <item> •	Driving license
+               \r\n•	Registration Certificate
+               \r\n•	Taxation Certificate
+               \r\n•	PUC Certificate
+               \r\n•	Insurance Certificate
+               \r\n•	Fitness Certificate and Permit (in case of transport vehicles)</item>
+        <item>Any Traffic branch officer of and above the rank of Assist Sub-Inspector of Police duly authorized with a receipt book.</item>
+        <item>You can go to the respective Traffic Chowky up to 3 days show your L-Tem Pay the fine get a proper receipt. After 3 days you can go to fine collection counter at Traffic H.Q. at Sir Pochkhanwala Road, Worli, Mumbai.</item>
+        <item>The glass of windscreen and rear window of every motor vehicle shall be maintained in such a way that visual transmission of light is not less than 70%% and side windows shall be maintained in such a way that visual transmission of light is not less than 50% and shall confirm to Indian Standards.</item>
+        <item>The driver and the person seated in the front seat must wear the seat belts while vehicle is in motion ( U/S 138 CMVR r/w 177 MVA.
+              It has been made compulsory to the manufacturers from the year 1995 to provide the seat belts to the vehicles.
+              It is binding on occupants to wear the seat belts whenever vehicle is in motion.</item>
+
+    </string-array>
+    <string name="title_activity_blank">BlankActivity</string>
+    <string name="information">Information</string>
 </resources>

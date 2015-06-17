@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import in.lastlocal.information.MainInformation;
 import in.lastlocal.map.MapsActivity;
 import in.lastlocal.map.WebViewActivity;
 import in.lastlocal.map.WebViewNearByPolice;
@@ -28,23 +29,17 @@ public class MainActivity extends AppCompatActivity {
     public static final String TRAFFIC = "TRAFFIC";
     public static final String EXTRA_ITEM = "Extra";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initialise();
+        //initialise();
     }
 
     public void initialise() {
         mToolbar = (Toolbar) findViewById(R.id.inc_tool_bar);
         setSupportActionBar(mToolbar);
-    }
-
-    /** */
-    public void onTimeLineTweet(View v) {
-        startActivity(new Intent(this, TimelineActivity.class));
     }
 
     /** */
@@ -54,13 +49,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /** */
-    public void onWebViewNearByPolice(View v) {
-        Intent in = new Intent(this, WebViewNearByPolice.class);
+    public void onTimeLineTweet(View v) {
+        startActivity(new Intent(this, TimelineActivity.class));
+    }
+
+    public void onInformation(View v)
+    {
+        Intent in = new Intent(this, MainInformation.class);
         startActivity(in);
     }
 
     /** */
     public void onEmergency(View v) {
+
+    }
+
+    public void onEmergencySetting(View v)
+    {
 
     }
 
