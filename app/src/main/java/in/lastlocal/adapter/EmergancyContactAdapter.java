@@ -19,18 +19,18 @@ import in.lastlocal.customview.AnimatedExpandableListView.AnimatedExpandableList
 import in.lastlocal.mumbaitraffic.R;
 
 /**
- * Adapter for our list of {@link Holder.GroupItem}s.
+ * Adapter for our list of {@link GroupItem}s.
  */
-public class ExampleAdapter extends AnimatedExpandableListAdapter {
+public class EmergancyContactAdapter extends AnimatedExpandableListAdapter {
     private LayoutInflater inflater;
 
-    private List<Holder.GroupItem> items;
+    private List<GroupItem> items;
 
-    public ExampleAdapter(Context context) {
+    public EmergancyContactAdapter(Context context) {
         inflater = LayoutInflater.from(context);
     }
 
-    public void setData(List<Holder.GroupItem> items) {
+    public void setData(List<GroupItem> items) {
         this.items = items;
     }
 
@@ -46,11 +46,11 @@ public class ExampleAdapter extends AnimatedExpandableListAdapter {
 
     @Override
     public View getRealChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        Holder.ChildHolder holder;
+        ChildHolder holder;
         Holder.ChildItem item = getChild(groupPosition, childPosition);
         if (convertView == null) {
             holder = new ChildHolder();
-            convertView = inflater.inflate(R.layout.item_list_faq, parent, false);
+            convertView = inflater.inflate(R.layout.item_list_contact, parent, false);
             holder.title = (TextView) convertView.findViewById(R.id.textTitle);
             holder.hint = (TextView) convertView.findViewById(R.id.textHint);
             convertView.setTag(holder);

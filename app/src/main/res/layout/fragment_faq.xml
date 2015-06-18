@@ -6,6 +6,8 @@
 
     <in.lastlocal.customview.AnimatedExpandableListView
         android:id="@+id/listView"
+
+        android:indicatorLeft="100sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

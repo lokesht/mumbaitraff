@@ -11,71 +11,82 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
-import in.lastlocal.framework.OnFragmentInteractionListener;
+import in.lastlocal.constant.AppConstant;
 import in.lastlocal.information.fragment.FAQFragment;
-import in.lastlocal.information.fragment.MainInformationFragment;
+import in.lastlocal.information.fragment.FAQFragmentMarathi;
 import in.lastlocal.map.WebViewNearByPolice;
 import in.lastlocal.mumbaitraffic.R;
 
-public class MainInformation extends AppCompatActivity  implements OnFragmentInteractionListener {
+public class MainInformation extends AppCompatActivity implements View.OnClickListener{
 
     Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main_information);
-
         initialise();
-        if(savedInstanceState ==null)
-        {
-            replaceFragment(new MainInformationFragment(),savedInstanceState);
-        }
     }
 
-    private void initialise()
-    {
-        mToolbar = (Toolbar)findViewById(R.id.inc_tool_bar);
+    private void initialise() {
+        mToolbar = (Toolbar) findViewById(R.id.inc_tool_bar);
         setSupportActionBar(mToolbar);
+
+        Button btn = (Button)findViewById(R.id.btnWebNearByPoliceStation);
+        btn.setOnClickListener(this);
+
+        Button btFAq = (Button)findViewById(R.id.btnFAQ);
+        btFAq.setOnClickListener(this);
+
+        Button btn_emergency = (Button)findViewById(R.id.btn_emergency_contact);
+        btn_emergency.setOnClickListener(this);
+
+        Button bt_offence = (Button)findViewById(R.id.btn_offence_penalties);
+        bt_offence.setOnClickListener(this);
+
+        Button bt_sign = (Button)findViewById(R.id.btn_sign);
+        bt_sign.setOnClickListener(this);
     }
+
+
     @Override
-    public void onFragmentInteraction(View v) {
-        switch (v.getId())
-        {
+    public void onClick(View v) {
+        Intent in;
+
+        switch (v.getId()) {
             case R.id.btnWebNearByPoliceStation:
-                Intent in = new Intent(this, WebViewNearByPolice.class);
+                 in = new Intent(this, WebViewNearByPolice.class);
                 startActivity(in);
                 break;
 
             case R.id.btnFAQ:
-                replaceFragment(FAQFragment.newInstance(),null);
+                 in = new Intent(this, FAQActivity.class);
+                startActivity(in);
+                break;
+
+            case R.id.btn_emergency_contact:
+                in = new Intent(this, EmergencyContactActivity.class);
+                startActivity(in);
+                break;
+
+            case R.id.btn_offence_penalties:
+                in = new Intent(this, FAQActivity.class);
+                startActivity(in);
+                break;
+
+            case R.id.btn_sign:
+                in = new Intent(this, FAQActivity.class);
+                startActivity(in);
+                break;
+
+            case R.id.btn_licencing:
+                in = new Intent(this, FAQActivity.class);
+                startActivity(in);
                 break;
         }
-    }
-
-    //To replace fragments
-    public void replaceFragment(Fragment fragment, Bundle savedInstancState) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        if (savedInstancState != null)
-            fragment.setArguments(savedInstancState);
-
-        if (savedInstancState == null) {
-            FragmentTransaction transaction = fragmentManager.beginTransaction();
-            transaction.addToBackStack(null);
-
-            transaction.replace(R.id.fragment_container, fragment);
-            transaction.commit();
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
-        int count = getSupportFragmentManager().getBackStackEntryCount();
-        if (count == 1) {
-            finish();
-        }
-        super.onBackPressed();
     }
 
     @Override

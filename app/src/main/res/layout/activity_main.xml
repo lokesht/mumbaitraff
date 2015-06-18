@@ -3,12 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/default_padding"
     android:background="@drawable/back_ground"
-    android:orientation="vertical">
-
-
-
+    android:orientation="vertical"
+    android:padding="@dimen/default_padding">
 
     <LinearLayout
         android:id="@+id/ll_center"
@@ -18,9 +15,9 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:orientation="horizontal">
 
             <ImageView
@@ -37,7 +34,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/home_top_middle" />
+                    android:src="@drawable/home_top_center" />
 
                 <FrameLayout
                     android:layout_width="wrap_content"
@@ -148,7 +145,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/home_bottom_center_pipe" />
+                        android:src="@drawable/home_top_center" />
                 </LinearLayout>
 
 
@@ -158,17 +155,16 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_gravity="bottom|right"
-
                     android:src="@drawable/home_bottom_right" />
 
             </LinearLayout>
 
             <ImageView
-                android:layout_marginTop="@dimen/default_padding"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="4dp"
+                android:layout_marginTop="@dimen/default_padding"
 
                 android:src="@drawable/home_bottom_center_danda" />
         </LinearLayout>
@@ -180,38 +176,46 @@
             android:gravity="center">
 
             <LinearLayout
-                android:background="@color/red"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@color/red">
 
                 <ImageButton
-                    android:layout_gravity="center_vertical"
-                    android:background="@mipmap/home_setting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@mipmap/emergency"
                     android:text="Setting" />
 
                 <Button
-                    android:textColor="@color/white"
-                    android:background="@color/red"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Emergency" />
+                    android:background="@color/red"
+                    android:text="Emergency"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp" />
 
-            <ImageButton
-               android:layout_gravity="center_vertical"
-                android:background="@mipmap/home_setting"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Setting" />
+                android:background="@color/red">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@mipmap/home_setting"
+                    android:text="Setting" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
     <ImageView
-        android:visibility="gone"
         android:id="@+id/iv_main_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -219,7 +223,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/default_padding"
         android:background="@drawable/main_bottom"
-        android:paddingBottom="@dimen/default_padding" />
+        android:paddingBottom="@dimen/default_padding"
+        android:visibility="gone" />
 
 
     <LinearLayout

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_ground"
+    android:orientation="vertical"
+    android:padding="@dimen/default_padding">
+
+    <LinearLayout
+        android:id="@+id/ll_center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/default_padding"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/home_top_f"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/default_padding">
+
+                <at.markushi.ui.CircleButton
+                    android:layout_width="@dimen/traffic_circle_width"
+                    android:layout_height="@dimen/traffic_circle_width"
+                    android:layout_gravity="center"
+                    android:onClick="onWebViewTraffic"
+                    app:cb_color="@color/red"
+                    app:cb_pressedRingWidth="8dip" />
+
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/live_traffic"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/ts_button"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <at.markushi.ui.CircleButton
+                android:layout_width="@dimen/traffic_circle_width"
+                android:layout_height="@dimen/traffic_circle_width"
+                android:layout_gravity="center"
+                android:onClick="onTimeLineTweet"
+                app:cb_color="@color/orange"
+                app:cb_pressedRingWidth="8dip" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/label_traffic_feed"
+                android:textAllCaps="true"
+                android:textSize="@dimen/ts_button"
+                android:textStyle="bold"
+                />
+        </FrameLayout>
+
+
+        <LinearLayout
+
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/home_bottom_f"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/default_padding">
+
+                <at.markushi.ui.CircleButton
+                    android:layout_width="@dimen/traffic_circle_width"
+                    android:layout_height="@dimen/traffic_circle_width"
+                    android:layout_gravity="center"
+                    android:onClick="onInformation"
+                    app:cb_color="@color/green"
+                    app:cb_pressedRingWidth="8dip" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/information"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/ts_button"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/home_bottom_center_danda" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/red">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@mipmap/emergency"
+                android:text="Setting" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/red"
+                android:text="Emergency"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="20dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/red">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@mipmap/home_setting"
+                android:text="Setting" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_main_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/default_padding"
+        android:background="@drawable/main_bottom"
+        android:paddingBottom="@dimen/default_padding"
+        android:visibility="gone" />
+</RelativeLayout>
