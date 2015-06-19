@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,7 +13,6 @@ import android.widget.Toast;
 import in.lastlocal.information.MainInformation;
 import in.lastlocal.map.MapsActivity;
 import in.lastlocal.map.WebViewActivity;
-import in.lastlocal.map.WebViewNearByPolice;
 import in.lastlocal.twitter.SingleTweet;
 import in.lastlocal.twitter.TimelineActivity;
 import in.lastlocal.twitter.TweetListActivity;
@@ -22,7 +20,7 @@ import in.lastlocal.twitter.TweetListActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Toolbar mToolbar;
+
     private final String TAG = "MainActivity";
 
     public static final String NEAR_BY_POLICE = "NEAR_BY_PLOICE";
@@ -38,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initialise() {
-        mToolbar = (Toolbar) findViewById(R.id.inc_tool_bar);
-        setSupportActionBar(mToolbar);
+
     }
 
     /** */
