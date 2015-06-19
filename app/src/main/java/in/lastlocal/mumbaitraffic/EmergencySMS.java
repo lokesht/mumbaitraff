@@ -154,7 +154,7 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
         addIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, "Send SMS");
         addIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE,
                 Intent.ShortcutIconResource.fromContext(getApplicationContext(),
-                        R.drawable.home_logo));
+                        R.drawable.splash_logo));
 
         addIntent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
         getApplicationContext().sendBroadcast(addIntent);

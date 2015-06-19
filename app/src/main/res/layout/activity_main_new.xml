@@ -135,7 +135,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:background="@mipmap/emergency"
+                android:background="@mipmap/home_setting"
                 android:text="Setting" />
 
             <Button

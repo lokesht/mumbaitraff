@@ -69,5 +69,12 @@
     <string name="ok">OK</string>
     <string name="cancel">CANCEL</string>
     <string name="btn_enter_your_name">Enter Your Name</string>
+    <string name="emergency_contact_numbers">Emergency Contact</string>
+    <string name="offence_and_penalties">Offence and Penalties</string>
+    <string name="signs">signs</string>
+    <string name="label_traffic_feed">Traffic Feed</string>
+
+    <!-- temp-->
+
 
 </resources>

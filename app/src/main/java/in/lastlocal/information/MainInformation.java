@@ -2,20 +2,13 @@ package in.lastlocal.information;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import in.lastlocal.constant.AppConstant;
-import in.lastlocal.information.fragment.FAQFragment;
-import in.lastlocal.information.fragment.FAQFragmentMarathi;
 import in.lastlocal.map.WebViewNearByPolice;
 import in.lastlocal.mumbaitraffic.R;
 
@@ -68,8 +61,8 @@ public class MainInformation extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.btn_emergency_contact:
-                in = new Intent(this, EmergencyContactActivity.class);
-                startActivity(in);
+                //in = new Intent(this, EmergencyContactActivity.class);
+                //startActivity(in);
                 break;
 
             case R.id.btn_offence_penalties:
