@@ -1,10 +1,6 @@
 <resources>
     <string name="app_name">Mumbai Police Traffic</string>
 
-    <string name="live_traffic">Live\nTraffic</string>
-    <string name="information">Info</string>
-    <string name="label_traffic_feed">Traffic\nFeed</string>
-
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_map_test">MapTest</string>
@@ -17,14 +13,14 @@
 
     <string name="brand_hash_tag">#saftyfirst</string>
     <string name="title_activity_web_view_near_by_police">WebViewNearByPolice</string>
-
+    <string name="live_traffic">Live Traffic</string>
     <string name="title_activity_main_information">MainInformation</string>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="FAQ">FAQ</string>
     <string name="btn_near_police_station">Near Police Stations</string>
-    <string name="language">अ</string>
+    <string name="language">lang</string>
 
     <string-array name="arr_faq_question">
         <item>Q) Who issues the Motor Driving License in Mumbai?</item>
@@ -57,27 +53,21 @@
 
     </string-array>
     <string name="title_activity_blank">BlankActivity</string>
+    <string name="information">Information</string>
+    <string name="title_activity_emergency_sms">EmergencySMS</string>
+    <string name="msg_emergency_message">I m in need Send my location to my contact</string>
+    <string name="emergecy_btn_send_message">Send Message</string>
+    <string name="emergency_btn_reset">Reset</string>
+    <string name="btn_emergency_contact1">Contact</string>
+    <string name="btn_emergency_contact2">Contact</string>
+    <string name="btn_emergency_contact3">Contact</string>
 
-    <string name="title_activity_emergency_contact">EmergencyContact</string>
-    <string name="emergency_contact_numbers">Emergency Contact No</string>
-    <string name="offence_and_penalties">Offence and Penalties</string>
-    <string name="signs">Signs</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
 
-
-    <string-array name="arr_contact_header">
-        <item>Essential and Important Telephone Numbers</item>
-        <item> CRIME BRANCH (CB)</item>
-        <item> CRIME BRANCH (DETECTION) (DCB)</item>
-        <item> CRIME BRANCH ECONOMIC OFFENCES WING-(EOW)</item>
-    </string-array>
-
-    <string-array name="arr_contact_number">
-        <item>022- 22692515,022-22620111</item>
-        <item> 022- 22692515,022-22620111</item>
-        <item> 022- 22692515,022-22620111</item>
-        <item> 022- 22692515,022-22620111</item>
-    </string-array>
-
-
+    <string name="appwidget_text">Send Message</string>
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
+    <string name="btn_enter_your_name">Enter Your Name</string>
 
 </resources>
