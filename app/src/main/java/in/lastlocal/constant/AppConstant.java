@@ -15,4 +15,6 @@ public class AppConstant {
     public static String LOCALE_ENGLISH = "en";
 
     public static int ANIMATE_X = 0;
+
+    public static String CONTACT_PREFERENCE = "my.com.contact.pref";
 }
