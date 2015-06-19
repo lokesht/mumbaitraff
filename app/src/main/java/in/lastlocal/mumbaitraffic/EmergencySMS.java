@@ -19,8 +19,8 @@ import android.widget.Toast;
 
 import java.util.Map;
 
-import in.lastlocal.DailogFragment.DialogEmergencyName;
 import in.lastlocal.constant.AppConstant;
+import in.lastlocal.dailogfragment.DialogEmergencyName;
 import in.lastlocal.widget_sos.SendSmsActivity;
 
 

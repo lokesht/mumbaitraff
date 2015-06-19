@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="in.lastlocal.mumbaitraffic.EmergencySMS">
+
+    <EditText
+        android:id="@+id/et_emergency_msg_lat_long"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:editable="false"
+        android:padding="@dimen/activity_vertical_margin"
+        android:text="@string/msg_emergency_message" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDivider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_emergency_msg_lat_long"
+        android:orientation="vertical">
+
+        <Button
+            android:onClick="onRequestName"
+            android:id="@+id/btn_request_name_entry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_enter_your_name" />
+
+        <Button
+            android:id="@+id/btn_con1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onContactSelect1"
+            android:text="@string/btn_emergency_contact1" />
+
+        <Button
+            android:id="@+id/btn_con2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onContactSelect1"
+            android:text="@string/btn_emergency_contact2" />
+
+        <Button
+            android:id="@+id/btn_con3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onContactSelect1"
+            android:text="@string/btn_emergency_contact3" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDivider" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+
+
+        <Button
+            android:onClick="onSendMessage"
+            android:id="@+id/btn_send_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/emergecy_btn_send_message" />
+
+        <Button
+            android:onClick="onReset"
+            android:id="@+id/btn_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/emergency_btn_reset" />
+
+        <Button
+            android:onClick="onCreateShortCut"
+            android:id="@+id/btn_create_widget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Shortcut" />
+    </LinearLayout>
+
+</RelativeLayout>
