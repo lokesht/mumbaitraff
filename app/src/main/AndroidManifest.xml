@@ -42,6 +42,9 @@
             android:name="io.fabric.ApiKey"
             android:value="4e875f0a79739e5f769c986890fbc73b09472d63" />
 
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
         <activity android:name=".MainActivity" />
         <activity android:name="in.lastlocal.twitter.SingleTweet" />
         <activity android:name="in.lastlocal.twitter.TweetListActivity" />

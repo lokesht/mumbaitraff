@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
-import android.telephony.SmsManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -50,7 +49,7 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
         Button btn = (Button) findViewById(R.id.btn_con1);
         Button btn2 = (Button) findViewById(R.id.btn_con2);
         Button btn3 = (Button) findViewById(R.id.btn_con3);
-        Button btnName = (Button)findViewById(R.id.btn_request_name_entry);
+        Button btnName = (Button) findViewById(R.id.btn_request_name_entry);
 
         int i = 0;
         Map<String, ?> keys = sharedpreferences.getAll();
@@ -160,8 +159,7 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
         getApplicationContext().sendBroadcast(addIntent);
     }
 
-    public void onRequestName(View v)
-    {
+    public void onRequestName(View v) {
         // Create an instance of the dialog fragment and show it
         DialogFragment dialog = new DialogEmergencyName();
         dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
@@ -196,43 +194,59 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
         if (con1.length() == 0 && con2.length() == 0 && con3.length() == 0) {
             Toast.makeText(this, "No contact saved", Toast.LENGTH_SHORT).show();
             return;
-        }
-
-        if (con1.length() > 10) {
-            t1 = con1.split("#");
-            con1 = t1[0];
-            conName1 = t1[1];
-
-            if (con1.length() > 9) {
-                send(con1, conName1 + " message ");
-            }
-        }
-
-        if (con2.length() > 10) {
-            t1 = con2.split("#");
-            con2 = t1[0];
-            conName2 = t1[1];
-            if (con2.length() > 9) {
-                send(con2, conName2 + " message ");
-            }
-        }
-
-        if (con3.length() > 10) {
-            t1 = con3.split("#");
-            con3 = t1[0];
-            conName3 = t1[1];
-            if (con3.length() > 9) {
-                send(con3, conName3 + " message ");
-            }
+        } else {
+            Intent in = new Intent(this, SendSmsActivity.class);
+            startActivity(in);
         }
     }
-
-    private void send(String contact, String msg) {
-        SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage(contact, null, msg, null, null);
-
-        Toast.makeText(this, msg + " messgae Send", Toast.LENGTH_SHORT).show();
-    }
+//    public void onSendMessage(View v) {
+//
+//        String con1, conName1, con2, conName2, con3, conName3;
+//        String[] t1;
+//        con1 = sharedpreferences.getString("2", "");
+//        con2 = sharedpreferences.getString("3", "");
+//        con3 = sharedpreferences.getString("4", "");
+//
+//        if (con1.length() == 0 && con2.length() == 0 && con3.length() == 0) {
+//            Toast.makeText(this, "No contact saved", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
+//
+//        if (con1.length() > 10) {
+//            t1 = con1.split("#");
+//            con1 = t1[0];
+//            conName1 = t1[1];
+//
+//            if (con1.length() > 9) {
+//                send(con1, conName1 + " message ");
+//            }
+//        }
+//
+//        if (con2.length() > 10) {
+//            t1 = con2.split("#");
+//            con2 = t1[0];
+//            conName2 = t1[1];
+//            if (con2.length() > 9) {
+//                send(con2, conName2 + " message ");
+//            }
+//        }
+//
+//        if (con3.length() > 10) {
+//            t1 = con3.split("#");
+//            con3 = t1[0];
+//            conName3 = t1[1];
+//            if (con3.length() > 9) {
+//                send(con3, conName3 + " message ");
+//            }
+//        }
+//    }
+//
+//    private void send(String contact, String msg) {
+//        SmsManager smsManager = SmsManager.getDefault();
+//        smsManager.sendTextMessage(contact, null, msg, null, null);
+//
+//        Toast.makeText(this, msg + " messgae Send", Toast.LENGTH_SHORT).show();
+//    }
 
     // The dialog fragment receives a reference to this Activity through the
     // Fragment.onAttach() callback, which it uses to call the following methods
@@ -246,7 +260,7 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
 
             Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
 
-            Button btn = (Button)findViewById(R.id.btn_request_name_entry);
+            Button btn = (Button) findViewById(R.id.btn_request_name_entry);
             btn.setText(s);
         }
     }
