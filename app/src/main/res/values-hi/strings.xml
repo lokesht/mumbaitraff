@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Mumbai Police Traffic</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">सेटिंग्ज</string>
+    <string name="title_activity_map_test">MapTest</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_splash">Mumbai Traffic</string>
+    <string name="title_activity_web_view">WebViewActivity</string>
+
+    <string name="title_activity_blank">BlankActivity</string>
+    <string name="information">Information</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="FAQ">FAQ</string>
+    <string name="btn_near_police_station">Near Police Stations</string>
+    <string name="language">A</string>
+
+    <string-array name="arr_faq_question">
+        <item>Q) मराठी मराठी  मराठी मराठी मराठी मराठी  मराठी मराठी मराठी मराठी  मराठी मराठी</item>
+        <item>Q) मराठी  मराठी मराठी  मराठी मराठी </item>
+        <item>Q) मराठी  मराठी  मराठी मराठी  मराठी मराठी </item>
+        <item>Q) मराठी  मराठी  मराठी मराठी  मराठी मराठी </item>
+        <item>Q) मराठी  मराठी  मराठी मराठी  मराठी मराठी </item>
+        <item>Q) मराठी  मराठी  मराठी मराठी  मराठी मराठी </item>
+        <item>Q) मराठी  मराठी  मराठी मराठी  मराठी मराठी </item>
+    </string-array>
+
+    <string-array name="arr_faq_ans">
+        <item>मराठी मराठी  मराठी मराठी मराठी मराठी</item>
+        <item>मराठी मराठी मराठी  मराठी मराठी मराठी मराठी</item>
+        <item>मराठी मराठी मराठी  मराठी मराठी मराठी मराठी</item>
+        <item>मराठी मराठी मराठी  मराठी मराठी मराठी मराठी</item>
+        <item>मराठी मराठी मराठी  मराठी मराठी मराठी मराठी</item>
+        <item>मराठी मराठी मराठी  मराठी मराठी मराठी मराठी</item>
+        <item>मराठी मराठी मराठी  मराठी मराठी मराठी मराठी</item>
+
+    </string-array>
+
+
+    <string-array name="arr_contact_header">
+        <item>आवश्यक व महत्वाचे दूरध्वनी क्रमां</item>
+        <item> गुन्हे शाखेच्या</item>
+        <item> गुन्हे शाखेच्या ( ओळख ) (DCB)</item>
+        <item> गुन्हे शाखेच्या आर्थिक गुन्हे WING- ( EOW )</item>
+    </string-array>
+
+    <string-array name="arr_contact_number">
+        <item>02222692515</item>
+        <item>+919773319913</item>
+        <item>9773319913</item>
+        <item>022-22692515,022-22620111</item>
+    </string-array>
+</resources>
