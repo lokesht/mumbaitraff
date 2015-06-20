@@ -16,7 +16,7 @@
     <color name="drawer_bg">#dddddd</color>
     <color name="orange">#ff5500</color>
     <color name="white">#ffffff</color>
-    <color name="red">#FF0000</color>
+
     <color name="black">#000000</color>
     <color name="gray">#dddddd</color>
     <color name="dark_gray">#aaaaaa</color>
@@ -55,9 +55,19 @@
 
     <color name="item_selected_overlay">#88673AB7</color>
 
-    <color name="green">#4CAF50</color>
+    <!--<color name="app_green">43ad00</color>-->
+    <!--<color name="app_yellow">ff9100</color>-->
+    <!--<color name="app_red">d50000</color>-->
+
+    <color name="green">#43ad00</color>
+    <color name="yellow">#ff9100</color>
+    <color name="red">#d50000</color>
+    <!--<color name="red">#FF0000</color>-->
+
+
+    <!--<color name="green">#4CAF50</color>-->
     <color name="brown">#795548</color>
-    <color name="yellow">#FFEB3B</color>
+    <!--<color name="yellow">#FFEB3B</color>-->
 
 
 

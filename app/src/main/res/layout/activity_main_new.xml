@@ -16,9 +16,9 @@
 
 
         <LinearLayout
-            android:layout_marginTop="@dimen/default_padding"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_padding"
             android:background="@drawable/home_top_f"
             android:orientation="vertical">
 
@@ -38,10 +38,10 @@
                     app:cb_pressedRingWidth="8dip" />
 
                 <TextView
-                    android:gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:gravity="center"
                     android:text="@string/live_traffic"
                     android:textAllCaps="true"
                     android:textSize="@dimen/ts_button"
@@ -62,19 +62,18 @@
                 android:layout_height="@dimen/traffic_circle_width"
                 android:layout_gravity="center"
                 android:onClick="onTimeLineTweet"
-                app:cb_color="@color/orange"
+                app:cb_color="@color/yellow"
                 app:cb_pressedRingWidth="8dip" />
 
             <TextView
-                android:gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:gravity="center"
                 android:text="@string/label_traffic_feed"
                 android:textAllCaps="true"
                 android:textSize="@dimen/ts_button"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
         </FrameLayout>
 
 
@@ -113,9 +112,10 @@
         </LinearLayout>
 
         <ImageView
+            android:layout_marginTop="@dimen/default_padding"
             android:layout_width="50dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
             android:src="@drawable/home_bottom_center_danda" />
     </LinearLayout>
 
@@ -126,43 +126,32 @@
         android:layout_alignParentBottom="true"
         android:gravity="center">
 
-        <LinearLayout
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/red">
+            android:background="@drawable/emergency_selecter"
+            android:drawableLeft="@mipmap/emergency"
+            android:paddingLeft="@dimen/default_padding"
+            android:paddingRight="@dimen/default_padding"
+            android:text="Emergency"
+            android:textColor="@color/white" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:background="@mipmap/home_setting"
-                android:text="Setting" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/red"
-                android:text="Emergency"
-                android:textColor="@color/white" />
-
-        </LinearLayout>
 
         <View
-            android:layout_width="1dp"
-            android:layout_height="20dp" />
+            android:layout_width="4dp"
+            android:layout_height="1dp" />
 
-        <LinearLayout
+        <ImageButton
+            android:onClick="onEmergencySetting"
+            android:paddingLeft="@dimen/default_padding"
+            android:paddingRight="@dimen/default_padding"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/red">
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/emergency_selecter"
+            android:src="@mipmap/home_setting" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:background="@mipmap/home_setting"
-                android:text="Setting" />
-        </LinearLayout>
+
     </LinearLayout>
 
     <ImageView

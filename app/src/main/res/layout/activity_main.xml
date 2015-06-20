@@ -180,17 +180,14 @@
                 android:layout_height="wrap_content"
                 android:background="@color/red">
 
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@mipmap/home_setting"
-                    android:text="Setting" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/red"
+                    android:drawableLeft="@mipmap/emergency"
+                    android:paddingLeft="@dimen/default_padding"
+                    android:paddingRight="@dimen/default_padding"
                     android:text="Emergency"
                     android:textColor="@color/white" />
 

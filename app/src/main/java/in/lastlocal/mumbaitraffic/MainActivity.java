@@ -20,7 +20,6 @@ import in.lastlocal.twitter.TweetListActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-
     private final String TAG = "MainActivity";
 
     public static final String NEAR_BY_POLICE = "NEAR_BY_PLOICE";
@@ -50,20 +49,19 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, TimelineActivity.class));
     }
 
-    public void onInformation(View v)
-    {
+    public void onInformation(View v) {
         Intent in = new Intent(this, MainInformation.class);
         startActivity(in);
     }
 
     /** */
     public void onEmergency(View v) {
-
+       // Intent in = new Intent()
     }
 
-    public void onEmergencySetting(View v)
-    {
-
+    public void onEmergencySetting(View v) {
+        Intent in = new Intent(this, EmergencySMS.class);
+        startActivity(in);
     }
 
     public void onMapInside(View v) {
