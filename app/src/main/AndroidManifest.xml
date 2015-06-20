@@ -68,6 +68,7 @@
             android:label="@string/title_activity_main_information"></activity>
 
         <activity
+            android:noHistory="true"
             android:name="in.lastlocal.widget_sos.SendSmsActivity"
             android:exported="true"
             android:label="@string/title_activity_emergency_sms"></activity>
