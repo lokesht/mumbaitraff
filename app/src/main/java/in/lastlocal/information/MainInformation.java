@@ -31,8 +31,6 @@ public class MainInformation extends AppCompatActivity implements View.OnClickLi
 
         setContentView(R.layout.activity_main_information);
         initialise();
-
-
     }
 
     private void initialise() {

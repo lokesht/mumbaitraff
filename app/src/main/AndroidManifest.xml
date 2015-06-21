@@ -105,9 +105,11 @@
             android:noHistory="true"></activity>
 
         <activity
+            android:launchMode="singleTask"
+            android:theme="@style/Fragment.Theme"
             android:exported="true"
             android:name=".EmergencySMS"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="Emergency"></activity>
 
 
         <receiver android:name="in.lastlocal.widget_sos.NewAppWidget">

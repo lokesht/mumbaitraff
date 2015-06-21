@@ -64,7 +64,8 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
                 btnName.setText(name);
             } else {
                 int buttonId = Integer.parseInt(strKey);
-                String print = entry.getValue().toString().replace("#", " ");
+                //String arr[] =
+                String print = entry.getValue().toString().replace("#", "\n");
 
                 switch (buttonId) {
                     case 2:
@@ -132,11 +133,10 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
                             break;
                     }
 
-                    editor.putString(id + "", contact + "#" + contactName);
+                    editor.putString(id + "",  contactName+ "#" +  contact);
                     editor.apply();
 
-                    btnClicked.setText(contactName + " " + contact);
-                    //Toast.makeText(this, contactName + contact, Toast.LENGTH_SHORT).show();
+                    btnClicked.setText(contactName + "\n" + contact);
                 }
                 break;
         }
@@ -157,13 +157,14 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
 
         addIntent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
         getApplicationContext().sendBroadcast(addIntent);
+
+        Toast.makeText(getBaseContext(),"Shortcut Created",Toast.LENGTH_SHORT).show();
     }
 
     public void onRequestName(View v) {
         // Create an instance of the dialog fragment and show it
         DialogFragment dialog = new DialogEmergencyName();
         dialog.show(getSupportFragmentManager(), "NoticeDialogFragment");
-
     }
 
     public void onReset(View v) {
@@ -180,7 +181,7 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
         Button btn3 = (Button) findViewById(R.id.btn_con3);
         btn3.setText(R.string.btn_emergency_contact3);
 
-        Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Reset Successful", Toast.LENGTH_SHORT).show();
     }
 
     public void onSendMessage(View v) {
@@ -194,17 +195,11 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
         if (con1.length() == 0 && con2.length() == 0 && con3.length() == 0) {
 
             Toast.makeText(this, "No contact saved", Toast.LENGTH_SHORT).show();
-            intentToLoc();
-            //return;
+            return;
         } else {
             Intent in = new Intent(this, SendSmsActivity.class);
             startActivity(in);
         }
-    }
-
-    public void intentToLoc() {
-        Intent in = new Intent(this, EmergencySMS.class);
-        startActivity(in);
     }
 
     // The dialog fragment receives a reference to this Activity through the
@@ -227,7 +222,7 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_blank, menu);
+        //getMenuInflater().inflate(R.menu.menu_blank, menu);
         return true;
     }
 

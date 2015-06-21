@@ -127,13 +127,14 @@
         android:gravity="center">
 
         <Button
+            android:onClick="onEmergency"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/emergency_selecter"
             android:drawableLeft="@mipmap/emergency"
             android:paddingLeft="@dimen/default_padding"
             android:paddingRight="@dimen/default_padding"
-            android:text="Emergency"
+            android:text="@string/msg_emergency_alter"
             android:textColor="@color/white" />
 
 

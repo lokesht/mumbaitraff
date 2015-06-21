@@ -156,13 +156,13 @@ public class SendSmsActivity extends Activity implements
 
         if (con1.length() == 0 && con2.length() == 0 && con3.length() == 0) {
             Toast.makeText(this, "No contact saved", Toast.LENGTH_SHORT).show();
-            return;
+            intentToLoc();
         }
 
         if (con1.length() > 10) {
             t1 = con1.split("#");
-            con1 = t1[0];
-            conName1 = t1[1];
+            con1 = t1[1];
+            conName1 = t1[0];
 
             if (con1.length() > 9) {
                 send(con1, conName1 + " message ");
@@ -187,15 +187,14 @@ public class SendSmsActivity extends Activity implements
             }
         }
 
-
         intentToLoc();
     }
 
     private void send(String contact, String msg) {
         SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage(contact, null, msg +"I am at approx http://maps.google.com/?q="+lat+","+ lon, null, null);
+        smsManager.sendTextMessage(contact, null, msg +"Help! I am in emergency. My location is http://maps.google.com/?q="+lat+","+ lon, null, null);
 
-        Toast.makeText(this, msg + "I am at approx http://maps.google.com/?q="+lat +","+ lon, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, msg + "Help! I am in emergency. My location is http://maps.google.com/?q="+lat +","+ lon, Toast.LENGTH_SHORT).show();
     }
 
     public void intentToLoc() {

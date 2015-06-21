@@ -1,7 +1,9 @@
 package in.lastlocal.mumbaitraffic;
 
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,12 +12,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import in.lastlocal.constant.AppConstant;
 import in.lastlocal.information.MainInformation;
 import in.lastlocal.map.MapsActivity;
 import in.lastlocal.map.WebViewActivity;
 import in.lastlocal.twitter.SingleTweet;
 import in.lastlocal.twitter.TimelineActivity;
 import in.lastlocal.twitter.TweetListActivity;
+import in.lastlocal.widget_sos.SendSmsActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -54,9 +58,27 @@ public class MainActivity extends AppCompatActivity {
         startActivity(in);
     }
 
-    /** */
+    /** Send Immideate message to relative*/
     public void onEmergency(View v) {
-       // Intent in = new Intent()
+        SharedPreferences sharedpreferences;
+        /** */
+        sharedpreferences = getSharedPreferences(AppConstant.CONTACT_PREFERENCE, Context.MODE_PRIVATE);
+        if (sharedpreferences != null) {
+            String con1, conName1, con2, conName2, con3, conName3;
+            con1 = sharedpreferences.getString("2", "");
+            con2 = sharedpreferences.getString("3", "");
+            con3 = sharedpreferences.getString("4", "");
+
+            if (con1.length() == 0 && con2.length() == 0 && con3.length() == 0) {
+                Toast.makeText(this, "No contact saved \n Configure Page", Toast.LENGTH_SHORT).show();
+                Intent in = new Intent(this, EmergencySMS.class);
+                startActivity(in);
+            } else {
+                Intent in = new Intent(this, SendSmsActivity.class);
+                startActivity(in);
+            }
+        }
+
     }
 
     public void onEmergencySetting(View v) {

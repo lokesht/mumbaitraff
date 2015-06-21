@@ -55,12 +55,12 @@
     <string name="title_activity_blank">BlankActivity</string>
     <string name="information">Information</string>
     <string name="title_activity_emergency_sms">EmergencySMS</string>
-    <string name="msg_emergency_message">I m in need Send my location to my contact</string>
+    <string name="msg_emergency_message">Help! I am in emergency. My location is</string>
     <string name="emergecy_btn_send_message">Send Message</string>
-    <string name="emergency_btn_reset">Reset</string>
-    <string name="btn_emergency_contact1">Contact</string>
-    <string name="btn_emergency_contact2">Contact</string>
-    <string name="btn_emergency_contact3">Contact</string>
+    <string name="emergency_btn_reset">Reset Contact</string>
+    <string name="btn_emergency_contact1">Emergency Contact 1</string>
+    <string name="btn_emergency_contact2">Emergency Contact 2</string>
+    <string name="btn_emergency_contact3">Emergency Contact 3</string>
 
     <string name="configure">Configure</string>
     <string name="add_widget">Add widget</string>
@@ -81,6 +81,7 @@
     <string name="no_location_detected">
         No location detected. Make sure location is enabled on the device.
     </string>
+    <string name="msg_emergency_alter">Send Emergency Alert</string>
     <string-array name="arr_contact_header">
         <item>ABC</item>
         <item>ABC</item>

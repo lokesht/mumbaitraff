@@ -14,43 +14,22 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:orientation="vertical"
+        <ListView
+            android:id="@+id/lv_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <ListView
-                android:id="@+id/lv_list"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:divider="#e1e8ed"
-                android:dividerHeight="1dp"
-                android:drawSelectorOnTop="false" />
-        </LinearLayout>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:divider="#e1e8ed"
+            android:dividerHeight="1dp"
+            android:drawSelectorOnTop="false" />
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>
 
 
-<!--<LinearLayout-->
-<!--android:orientation="vertical"-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="match_parent">-->
+    <!--<LinearLayout--><!--android:orientation="vertical"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent">-->
 
-<!--<TextView android:id="@id/android:empty"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:gravity="center_horizontal|center_vertical"-->
-    <!--android:text="No Tweets"/>-->
+    <!--<TextView android:id="@id/android:empty"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:gravity="center_horizontal|center_vertical"--><!--android:text="No Tweets"/>-->
 
-<!--<ListView android:id="@id/android:list"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="0dp"-->
-    <!--android:layout_weight="1"-->
-    <!--android:divider="#e1e8ed"-->
-    <!--android:dividerHeight="1dp"-->
-    <!--android:drawSelectorOnTop="false"/>-->
-<!--</LinearLayout>-->
+    <!--<ListView android:id="@id/android:list"--><!--android:layout_width="match_parent"--><!--android:layout_height="0dp"--><!--android:layout_weight="1"--><!--android:divider="#e1e8ed"--><!--android:dividerHeight="1dp"--><!--android:drawSelectorOnTop="false"/>--><!--</LinearLayout>-->

@@ -93,7 +93,7 @@ public class InfomationMAinPageGridAdapter extends ArrayAdapter<ItemGridInformat
             margin = status + actionBarHeight;
             // int margin = context.getResources().getInteger(R.integer.margin);
 
-            Toast.makeText(context, margin + " " + status + " " + actionBarHeight, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, margin + " " + status + " " + actionBarHeight, Toast.LENGTH_SHORT).show();
 
             row.setLayoutParams(new GridView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (metrics.heightPixels - margin) / 3));
             row.setTag(holder);
