@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
+
 
     <WebView
         android:id="@+id/mapview"
@@ -13,8 +14,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right|center"
+        android:gravity="center"
         android:orientation="vertical"
         android:padding="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:textAllCaps="true"
+            android:textStyle="italic|bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="slow" />
 
         <View
             android:layout_width="@dimen/map_color_width"
@@ -38,5 +48,13 @@
             android:layout_height="@dimen/map_color_height"
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:background="@color/green" />
+
+        <TextView
+            android:textAllCaps="true"
+            android:textStyle="italic|bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fast" />
     </LinearLayout>
 </FrameLayout>
