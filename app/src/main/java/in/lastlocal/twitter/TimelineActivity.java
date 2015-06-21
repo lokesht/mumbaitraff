@@ -5,46 +5,35 @@ package in.lastlocal.twitter;
  */
 
 import android.app.Dialog;
-import android.app.ListActivity;
 import android.app.ProgressDialog;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.widget.ImageView;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterCore;
 import com.twitter.sdk.android.core.TwitterException;
-import com.twitter.sdk.android.tweetui.SearchTimeline;
 import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
 import com.twitter.sdk.android.tweetui.TweetUi;
-import com.twitter.sdk.android.tweetui.TwitterListTimeline;
 import com.twitter.sdk.android.tweetui.UserTimeline;
 
-import com.twitter.sdk.android.core.Callback;
-
-import java.io.BufferedInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.URL;
-import java.net.URLConnection;
-
 import in.lastlocal.constant.AppConstant;
-
 import in.lastlocal.mumbaitraffic.R;
 import io.fabric.sdk.android.Fabric;
+import tr.xip.errorview.ErrorView;
 
-public class TimelineActivity extends AppCompatActivity
-{
+public class TimelineActivity extends AppCompatActivity {
     final String CONSUMER_KEY = AppConstant.CONSUMER_KEY;
     final String CONSUMER_SECRET_KEY = AppConstant.CONSUMER_SECRET_KEY;
 
@@ -53,8 +42,11 @@ public class TimelineActivity extends AppCompatActivity
     ListView listViewTweet;
     Toolbar mToolbar;
 
+    ErrorView mErrorView;
+
     // Progress Dialog
     private ProgressDialog pDialog;
+
     // Progress dialog type (0 - for Horizontal progress bar)
     public static final int progress_bar_type = 0;
 
@@ -64,20 +56,30 @@ public class TimelineActivity extends AppCompatActivity
         setContentView(R.layout.activity_timeline);
 
         initialize();
-
-        authenticate();
-
-        new DownloadLoadTweet().execute("");
-
-        // timeLineTweet();
-
-        //swipeToRefresh();
-        //searchTimeLine();
     }
 
     public void initialize() {
         mToolbar = (Toolbar) findViewById(R.id.inc_tool_bar);
         setSupportActionBar(mToolbar);
+
+        mErrorView = (ErrorView) findViewById(R.id.error_view);
+        mErrorView.setOnRetryListener(new ErrorView.RetryListener() {
+            @Override
+            public void onRetry() {
+                loadTweet();
+            }
+        });
+
+        loadTweet();
+    }
+
+    private void loadTweet() {
+        if (isConnectionAvailable()) {
+            mErrorView.setVisibility(View.GONE);
+            new DownloadLoadTweet().execute("");
+        } else {
+            mErrorView.setVisibility(View.VISIBLE);
+        }
     }
 
     /**
@@ -90,7 +92,11 @@ public class TimelineActivity extends AppCompatActivity
         Fabric.with(this, new TwitterCore(authConfig), new TweetUi());
     }
 
-    private void timeLineTweet(UserTimeline userTimeline) {
+    private void timeLineTweet() {
+
+        final UserTimeline userTimeline = new UserTimeline.Builder()
+                .screenName("smart_mumbaikar")
+                .build();
 
         if (userTimeline != null) {
             swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_tweet_layout);
@@ -124,16 +130,114 @@ public class TimelineActivity extends AppCompatActivity
         }
     }
 
-    //private void swipeToRefresh() {
+    private boolean isConnectionAvailable() {
+        ConnectivityManager cm =
+                (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
 
-        //final SearchTimeline userTimeline = new SearchTimeline.Builder().query("#twitter").build();
-        // final UserTimeline userTimeline = new UserTimeline.Builder().screenName("smart_mumbaikar").build();
-        // final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter(this, userTimeline);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+        return isConnected;
+    }
+
+    /**
+     * Background Async Task to download file
+     */
+    class DownloadLoadTweet extends AsyncTask<String, String, String> {
+
+        /**
+         * Before starting background thread
+         * Show Progress Bar Dialog
+         */
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            showDialog(progress_bar_type);
+        }
+
+        /**
+         * Downloading file in background thread
+         */
+        @Override
+        protected String doInBackground(String... f_url) {
+
+            String err = "F";
+            int count;
+            try {
+
+                /** Some Error Ocured*/
+                authenticate();
+                timeLineTweet();
+
+                try {
+                    Thread.sleep(5000);
+                } catch (Exception e) {
+                    err = "T";
+                    e.printStackTrace();
+                }
+
+            } catch (Exception e) {
+                err = "T";
+                Log.e("Error: ", e.getMessage());
+            }
+            return err;
+        }
+
+        /**
+         * Updating progress bar
+         */
+        protected void onProgressUpdate(String... progress) {
+            // setting progress percentage
+            pDialog.setProgress(Integer.parseInt(progress[0]));
+        }
+
+        /**
+         * After completing background task
+         * Dismiss the progress dialog
+         * *
+         */
+        @Override
+        protected void onPostExecute(String err) {
+            // dismiss the dialog after the file was downloaded
+            dismissDialog(progress_bar_type);
+            if(err.equalsIgnoreCase("T"))
+            {
+                mErrorView.setVisibility(View.VISIBLE);
+            }
+        }
+
+    }
+
+    /**
+     * Showing Dialog
+     */
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        switch (id) {
+            case progress_bar_type: // we set this to 0
+                pDialog = new ProgressDialog(this);
+                pDialog.setMessage("Loading wait...");
+                pDialog.setIndeterminate(true);
+
+                pDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                pDialog.setCancelable(true);
+                pDialog.show();
+                return pDialog;
+            default:
+                return null;
+        }
+    }
+}
 
 
+//private void swipeToRefresh() {
+
+//final SearchTimeline userTimeline = new SearchTimeline.Builder().query("#twitter").build();
+// final UserTimeline userTimeline = new UserTimeline.Builder().screenName("smart_mumbaikar").build();
+// final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter(this, userTimeline);
 
 
-    //}
+//}
 //
 //    public void searchTimeLine()
 //    {
@@ -162,76 +266,3 @@ public class TimelineActivity extends AppCompatActivity
 //        });
 //    }
 
-    /**
-     * Background Async Task to download file
-     * */
-    class DownloadLoadTweet extends AsyncTask<String, String, String> {
-
-        /**
-         * Before starting background thread
-         * Show Progress Bar Dialog
-         * */
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            showDialog(progress_bar_type);
-        }
-
-        /**
-         * Downloading file in background thread
-         * */
-        @Override
-        protected String doInBackground(String... f_url) {
-            int count;
-            try {
-
-                UserTimeline userTimeline = new UserTimeline.Builder()
-                        .screenName("smart_mumbaikar")
-                        .build();
-                timeLineTweet(userTimeline);
-            } catch (Exception e) {
-                Log.e("Error: ", e.getMessage());
-            }
-
-            return null;
-        }
-
-        /**
-         * Updating progress bar
-         * */
-        protected void onProgressUpdate(String... progress) {
-            // setting progress percentage
-            pDialog.setProgress(Integer.parseInt(progress[0]));
-        }
-
-        /**
-         * After completing background task
-         * Dismiss the progress dialog
-         * **/
-        @Override
-        protected void onPostExecute(String file_url) {
-            // dismiss the dialog after the file was downloaded
-            dismissDialog(progress_bar_type);
-        }
-
-    }
-    /**
-     * Showing Dialog
-     * */
-    @Override
-    protected Dialog onCreateDialog(int id) {
-        switch (id) {
-            case progress_bar_type: // we set this to 0
-                pDialog = new ProgressDialog(this);
-                pDialog.setMessage("Downloading file. Please wait...");
-                pDialog.setIndeterminate(true);
-                pDialog.setMax(100);
-                pDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-                pDialog.setCancelable(true);
-                pDialog.show();
-                return pDialog;
-            default:
-                return null;
-        }
-    }
-}

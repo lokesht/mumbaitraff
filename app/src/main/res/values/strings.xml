@@ -82,6 +82,11 @@
         No location detected. Make sure location is enabled on the device.
     </string>
     <string name="msg_emergency_alter">Send Emergency Alert</string>
+
+    <string name="error_title_damn">Damn</string>
+    <string name="error_subtitle_failed_one_more_time">Failed one more time</string>
+    <string name="info_retrying">Retrying</string>
+
     <string-array name="arr_contact_header">
         <item>ABC</item>
         <item>ABC</item>
