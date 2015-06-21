@@ -20,7 +20,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="FAQ">FAQ</string>
     <string name="btn_near_police_station">Near Police Stations</string>
-    <string name="language">lang</string>
+    <string name="language">अ</string>
 
     <string-array name="arr_faq_question">
         <item>Q) Who issues the Motor Driving License in Mumbai?</item>
@@ -81,6 +81,25 @@
     <string name="no_location_detected">
         No location detected. Make sure location is enabled on the device.
     </string>
+    <string-array name="arr_contact_header">
+        <item>ABC</item>
+        <item>ABC</item>
+        <item>ABC)</item>
+        <item> ABC)</item>
+    </string-array>
 
+    <string-array name="arr_contact_number">
+        <item>02222692515</item>
+        <item>+919773319913</item>
+        <item>9773319913</item>
+        <item>022-22692515,022-22620111</item>
+    </string-array>
+
+    <string-array name="sign_meaning">
+        <item> सरळ प्रतिबंधित किंवा प्रवेश</item>
+        <item> एक मार्ग चिन्हे - वाहने</item>
+        <item> एका दिशेने प्रतिबंधित</item>
+        <item> दोन्ही दिशेने प्रतिबंधित वाहने</item>
+    </string-array>
 
 </resources>

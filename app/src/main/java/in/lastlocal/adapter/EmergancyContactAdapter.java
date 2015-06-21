@@ -22,8 +22,8 @@ import in.lastlocal.mumbaitraffic.R;
  * Adapter for our list of {@link GroupItem}s.
  */
 public class EmergancyContactAdapter extends AnimatedExpandableListAdapter {
-    private LayoutInflater inflater;
 
+    private LayoutInflater inflater;
     private List<GroupItem> items;
 
     public EmergancyContactAdapter(Context context) {

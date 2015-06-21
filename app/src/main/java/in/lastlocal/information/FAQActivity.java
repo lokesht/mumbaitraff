@@ -1,7 +1,5 @@
 package in.lastlocal.information;
 
-import android.app.Activity;
-
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -9,13 +7,7 @@ import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.desarrollodroide.libraryfragmenttransactionextended.FragmentTransactionExtended;
 
@@ -23,6 +15,7 @@ import in.lastlocal.constant.AppConstant;
 import in.lastlocal.framework.OnFragmentInteractionListener;
 import in.lastlocal.information.fragment.FAQFragment;
 import in.lastlocal.information.fragment.FAQFragmentMarathi;
+import in.lastlocal.information.fragment.SignFragmentMarathi;
 import in.lastlocal.mumbaitraffic.R;
 
 /**
@@ -47,13 +40,6 @@ public class FAQActivity extends AppCompatActivity implements OnFragmentInteract
             addFragment(mFirstFragment);
         }
     }
-
-//    private void initialise() {
-//        mToolbar = (Toolbar) findViewById(R.id.inc_tool_bar);
-//        setSupportActionBar(mToolbar);
-
-    //setAc
-//    }
 
     public void addFragment(Fragment mFirstFragment) {
         FragmentManager fm = getFragmentManager();

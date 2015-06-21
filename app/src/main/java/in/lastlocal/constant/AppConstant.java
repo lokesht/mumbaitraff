@@ -17,4 +17,6 @@ public class AppConstant {
     public static int ANIMATE_X = 0;
 
     public static String CONTACT_PREFERENCE = "my.com.contact.pref";
+
+    public static Boolean DEBUG = false;
 }

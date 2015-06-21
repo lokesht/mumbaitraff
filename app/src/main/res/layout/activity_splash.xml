@@ -42,7 +42,8 @@
         android:padding="@dimen/activity_vertical_margin">
 
         <TextView
-
+            android:clickable="true"
+            android:background="@drawable/text_selecter"
             android:id="@+id/tv_marathi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,12 +54,15 @@
 
 
         <View
+            android:padding="@dimen/default_padding"
             android:layout_gravity="center_vertical"
             android:layout_width="1dp"
             android:layout_height="20dp"
             android:background="@color/gray" />
 
         <TextView
+            android:clickable="true"
+            android:background="@drawable/text_selecter"
             android:id="@+id/tv_english"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

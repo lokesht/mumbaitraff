@@ -2,14 +2,10 @@ package in.lastlocal.information.fragment;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.Bundle;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,39 +13,30 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 import in.lastlocal.adapter.EmergancyContactAdapter;
-import in.lastlocal.adapter.ExampleAdapter;
+import in.lastlocal.adapter.Holder;
+
 import in.lastlocal.constant.AppConstant;
 import in.lastlocal.customview.AnimatedExpandableListView;
 import in.lastlocal.framework.OnFragmentInteractionListener;
-
-
-import in.lastlocal.adapter.Holder.*;
 import in.lastlocal.mumbaitraffic.DBHelper;
 import in.lastlocal.mumbaitraffic.R;
 
 /**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link FAQFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Created by USER on 21-Jun-15.
  */
-public class EmergencyContactFragmentMarathi extends Fragment {
+public class OffencesFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
-
+    private Context context;
     private AnimatedExpandableListView listView;
     private EmergancyContactAdapter adapter;
 
-    private Context context;
     private Locale mLocale;
 
     /**
@@ -59,30 +46,41 @@ public class EmergencyContactFragmentMarathi extends Fragment {
      * @return A new instance of fragment FAQFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static EmergencyContactFragmentMarathi newInstance() {
-        EmergencyContactFragmentMarathi fragment = new EmergencyContactFragmentMarathi();
+    public static OffencesFragment newInstance() {
+        OffencesFragment fragment = new OffencesFragment();
         return fragment;
+    }
+
+    public OffencesFragment() {
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+
+        if (getArguments() != null) {
+
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        // Required empty public constructor
         context = getActivity();
 
-        /** before generating view changing config*/
-        mLocale = new Locale(AppConstant.LOCALE_HINDI);
+        mLocale = new Locale(AppConstant.LOCALE_ENGLISH);
         Locale.setDefault(mLocale);
+
+        //mLocale = new Locale(AppConstant.LOCALE_ENGLISH);
+        //Locale.setDefault(mLocale);
 
         Configuration config = new Configuration();
         config.locale = mLocale;
         context.getResources().updateConfiguration(config, context.getResources().getDisplayMetrics());
+
 
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_faq, container, false);
@@ -94,6 +92,7 @@ public class EmergencyContactFragmentMarathi extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        context = getActivity();
     }
 
     @Override
@@ -101,7 +100,6 @@ public class EmergencyContactFragmentMarathi extends Fragment {
         menu.clear();
         inflater.inflate(R.menu.menu_faq_information, menu);
         super.onCreateOptionsMenu(menu, inflater);
-
     }
 
     @Override
@@ -116,67 +114,42 @@ public class EmergencyContactFragmentMarathi extends Fragment {
     }
 
     private void onSetUP(View v) {
-        List<GroupItem> items = new ArrayList<GroupItem>();
+        List<Holder.GroupItem> items = new ArrayList<Holder.GroupItem>();
 
         // Populate our list with groups and it's children
 
-//         String[] arrGroupItem = getResources().getStringArray(R.array.arr_contact_header);
-//        String[] arrChildItem = getResources().getStringArray(R.array.arr_contact_number);
-
-
-//        for (int i = 1; i < arrGroupItem.length; i++) {
-//            GroupItem item = new GroupItem();
-//
-//            item.title = arrGroupItem[i];
-//
-//            // for(int j = 0; j < i; j++) {
-//            ChildItem child = new ChildItem();
-//            child.title = arrChildItem[0];
-//            child.hint = "Too awesome";
-//
-//            item.items.add(child);
-//            // }
-//
-//            items.add(item);
-//        }
-
-
-        String selGroup = "SELECT Branch_Id, Branch FROM EmergencyNoMA GROUP BY Branch_Id";
-        String selChild = "SELECT Name, Numbers FROM EmergencyNoMA where Branch_Id = ";
+        String selGroup = "SELECT OffencType ,Offence FROM OffenceAndPenaltiesEN  GROUP BY OffencType,Offence ";
+        String selChild = "SELECT NatureOfOffence,LegelProvision, Penalty  FROM OffenceAndPenaltiesEN where OffencType = ";
 
         DBHelper db = new DBHelper(context);
-        Cursor c=  db.executeStatement(selGroup);
-        if(c!=null && c.getCount()>0)
-        {
+        Cursor c = db.executeStatement(selGroup);
+        if (c != null && c.getCount() > 0) {
             c.moveToFirst();
-            do{
-                GroupItem item = new GroupItem();
+            do {
+                Holder.GroupItem item = new Holder.GroupItem();
                 item.title = c.getString(1);
 
+                String selC = selChild + c.getString(0);
 
-                String selC = selChild+c.getString(0);
-
-                Cursor curChild =  db.executeStatement(selC);
-                if(curChild!=null && curChild.getCount()>0)
-                {
+                Cursor curChild = db.executeStatement(selC);
+                if (curChild != null && curChild.getCount() > 0) {
                     curChild.moveToNext();
-                    do{
-                        ChildItem child = new ChildItem();
-                        child.title = curChild.getString(0)+" "+curChild.getString(1);
+                    do {
+                        Holder.ChildItem child = new Holder.ChildItem();
+                        child.title = curChild.getString(0) + " " + curChild.getString(1)+" "+curChild.getString(2);
                         child.hint = "Too awesome";
 
                         item.items.add(child);
-                    }while (curChild.moveToNext());
+                    } while (curChild.moveToNext());
                 }
 
                 items.add(item);
-            }while(c.moveToNext());
-            if(!c.isClosed())
+            } while (c.moveToNext());
+            if (!c.isClosed())
                 c.close();
 
             db.close();
-        }else
-        {
+        } else {
 
         }
 

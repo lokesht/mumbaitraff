@@ -13,14 +13,17 @@ import com.desarrollodroide.libraryfragmenttransactionextended.FragmentTransacti
 
 import in.lastlocal.constant.AppConstant;
 import in.lastlocal.framework.OnFragmentInteractionListener;
-import in.lastlocal.information.fragment.EmergencyContactFragment;
-import in.lastlocal.information.fragment.EmergencyContactFragmentMarathi;
+import in.lastlocal.information.fragment.OffencesFragment;
+import in.lastlocal.information.fragment.OffencesFragmentMarathi;
 import in.lastlocal.mumbaitraffic.R;
 
-public class EmergencyContactActivity extends AppCompatActivity implements OnFragmentInteractionListener {
+/**
+ * Created by USER on 21-Jun-15.
+ */
+public class OffencesActivity extends AppCompatActivity implements OnFragmentInteractionListener {
 
     private int optionSelected = AppConstant.ANIMATE_X;
-    private EmergencyContactFragment mFirstFragment;
+    private OffencesFragment mFirstFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,7 @@ public class EmergencyContactActivity extends AppCompatActivity implements OnFra
 
         // initialise();
         if (savedInstanceState == null) {
-            mFirstFragment = EmergencyContactFragment.newInstance();
+            mFirstFragment = OffencesFragment.newInstance();
             addFragment(mFirstFragment);
         }
     }
@@ -90,7 +93,7 @@ public class EmergencyContactActivity extends AppCompatActivity implements OnFra
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-            FragmentTransactionExtended fragmentTransactionExtended = new FragmentTransactionExtended(this, fragmentTransaction, mFirstFragment, new EmergencyContactFragmentMarathi(), R.id.fl_fragment_cantainer);
+            FragmentTransactionExtended fragmentTransactionExtended = new FragmentTransactionExtended(this, fragmentTransaction, mFirstFragment, new OffencesFragmentMarathi(), R.id.fl_fragment_cantainer);
             fragmentTransactionExtended.addTransition(optionSelected);
             fragmentTransactionExtended.commit();
         } else {
@@ -106,5 +109,4 @@ public class EmergencyContactActivity extends AppCompatActivity implements OnFra
         }
         super.onBackPressed();
     }
-
 }

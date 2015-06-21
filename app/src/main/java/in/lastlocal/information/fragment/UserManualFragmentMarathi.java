@@ -11,30 +11,27 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ExpandableListView;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import in.lastlocal.adapter.ExampleAdapter;
-import in.lastlocal.adapter.Holder;
+import in.lastlocal.adapter.SignListViewAdapter;
+import in.lastlocal.adapter.UserManulListViewAdapter;
 import in.lastlocal.constant.AppConstant;
-import in.lastlocal.customview.AnimatedExpandableListView;
 import in.lastlocal.framework.OnFragmentInteractionListener;
+import in.lastlocal.model.ItemSign;
 import in.lastlocal.mumbaitraffic.R;
 
 /**
  * Created by USER on 21-Jun-15.
  */
-public class FAQFragmentMarathi extends Fragment {
+public class UserManualFragmentMarathi  extends Fragment {
 
     private OnFragmentInteractionListener mListener;
-
-    private AnimatedExpandableListView listView;
-    private ExampleAdapter adapter;
-
     private Context context;
+
     private Locale mLocale;
 
     /**
@@ -49,17 +46,24 @@ public class FAQFragmentMarathi extends Fragment {
         return fragment;
     }
 
+    public UserManualFragmentMarathi() {
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+
+        if (getArguments() != null) {
+
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        context = getActivity();
+             context = getActivity();
 
         /** before generating view changing config*/
         mLocale = new Locale(AppConstant.LOCALE_HINDI);
@@ -70,7 +74,7 @@ public class FAQFragmentMarathi extends Fragment {
         context.getResources().updateConfiguration(config, context.getResources().getDisplayMetrics());
 
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_faq, container, false);
+        View v = inflater.inflate(R.layout.fragment_sign, container, false);
         onSetUP(v);
 
         return v;
@@ -79,6 +83,7 @@ public class FAQFragmentMarathi extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
     }
 
     @Override
@@ -86,7 +91,6 @@ public class FAQFragmentMarathi extends Fragment {
         menu.clear();
         inflater.inflate(R.menu.menu_faq_information, menu);
         super.onCreateOptionsMenu(menu, inflater);
-
     }
 
     @Override
@@ -101,53 +105,27 @@ public class FAQFragmentMarathi extends Fragment {
     }
 
     private void onSetUP(View v) {
-        List<Holder.GroupItem> items = new ArrayList<Holder.GroupItem>();
 
-        // Populate our list with groups and it's children
+        List<ItemSign> itemSigns = new ArrayList<ItemSign>();
 
-        String[] arrGroupItem = getResources().getStringArray(R.array.arr_faq_question);
-        String[] arrChildItem = getResources().getStringArray(R.array.arr_faq_ans);
+        String[] arrSign = getResources().getStringArray(R.array.sign_meaning);
+        ItemSign item = new ItemSign(R.drawable.ic_cast_dark, arrSign[0]);
+        ItemSign item2 = new ItemSign(R.drawable.ic_cast_dark,arrSign[1]);
 
-        for (int i = 1; i < arrGroupItem.length; i++) {
-            Holder.GroupItem item = new Holder.GroupItem();
+        itemSigns.add(item);
+        itemSigns.add(item2);
+        itemSigns.add(item);
+        itemSigns.add(item2);
+        itemSigns.add(item);
+        itemSigns.add(item2);
+        itemSigns.add(item);
+        itemSigns.add(item2);
+        itemSigns.add(item);
+        itemSigns.add(item2);
 
-            item.title = arrGroupItem[i];
-
-            // for(int j = 0; j < i; j++) {
-            Holder.ChildItem child = new Holder.ChildItem();
-            child.title = arrChildItem[0];
-            child.hint = "Too awesome";
-
-            item.items.add(child);
-            // }
-
-            items.add(item);
-        }
-
-        adapter = new ExampleAdapter(getActivity());
-        adapter.setData(items);
-
-        listView = (AnimatedExpandableListView) v.findViewById(R.id.listView);
-        listView.setAdapter(adapter);
-
-        // In order to show animations, we need to use a custom click handler
-        // for our ExpandableListView.
-        listView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
-
-            @Override
-            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
-                // We call collapseGroupWithAnimation(int) and
-                // expandGroupWithAnimation(int) to animate group
-                // expansion/collapse.
-                if (listView.isGroupExpanded(groupPosition)) {
-                    listView.collapseGroupWithAnimation(groupPosition);
-                } else {
-                    listView.expandGroupWithAnimation(groupPosition);
-                }
-                return true;
-            }
-
-        });
+        ListView lv =(ListView)v.findViewById(R.id.listView);
+        UserManulListViewAdapter adapter = new UserManulListViewAdapter(getActivity(),itemSigns);
+        lv.setAdapter(adapter);
     }
 
     public void onButtonPressed(View v) {

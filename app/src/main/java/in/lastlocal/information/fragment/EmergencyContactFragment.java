@@ -6,6 +6,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.database.Cursor;
 import android.os.Bundle;
 
 import android.util.Log;
@@ -32,6 +33,7 @@ import in.lastlocal.framework.OnFragmentInteractionListener;
 
 
 import in.lastlocal.adapter.Holder.*;
+import in.lastlocal.mumbaitraffic.DBHelper;
 import in.lastlocal.mumbaitraffic.R;
 
 /**
@@ -46,7 +48,7 @@ public class EmergencyContactFragment extends Fragment {
 
     private int optionSelected = 0;
 
-    private OnFragmentInteractionListener mListener;
+   private OnFragmentInteractionListener mListener;
 
     private AnimatedExpandableListView listView;
     private EmergancyContactAdapter adapter;
@@ -84,11 +86,11 @@ public class EmergencyContactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // Required empty public constructor
-        mLocale = new Locale(AppConstant.LOCALE_HINDI);
-        Locale.setDefault(mLocale);
-
         context = getActivity();
+
+        // Required empty public constructor
+        mLocale = new Locale(AppConstant.LOCALE_ENGLISH);
+        Locale.setDefault(mLocale);
 
         //mLocale = new Locale(AppConstant.LOCALE_ENGLISH);
         //Locale.setDefault(mLocale);
@@ -107,15 +109,6 @@ public class EmergencyContactFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-//        context = getActivity();
-//
-//        //mLocale = new Locale(AppConstant.LOCALE_ENGLISH);
-//        //Locale.setDefault(mLocale);
-//
-//        Configuration config = new Configuration();
-//        config.locale = mLocale;
-//        context.getResources().updateConfiguration(config, context.getResources().getDisplayMetrics());
     }
 
     @Override
@@ -123,7 +116,6 @@ public class EmergencyContactFragment extends Fragment {
         menu.clear();
         inflater.inflate(R.menu.menu_faq_information, menu);
         super.onCreateOptionsMenu(menu, inflater);
-
     }
 
     @Override
@@ -160,26 +152,6 @@ public class EmergencyContactFragment extends Fragment {
      //   }
     }
 
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-
-        FragmentManager fragmentManager = getActivity().getFragmentManager();
-        int count = fragmentManager.getBackStackEntryCount();
-
-        FragmentManager.BackStackEntry latestEntry = (FragmentManager.BackStackEntry) fragmentManager.getBackStackEntryAt(count - 1);
-        String str = latestEntry.getName();
-        Fragment fragment = fragmentManager.findFragmentByTag(str);
-        if (fragment == null) {
-            return;
-        }
-
-        FragmentTransaction fragTransaction = fragmentManager.beginTransaction();
-        fragTransaction.detach(fragment);
-        fragTransaction.attach(fragment);
-        fragTransaction.commit();
-
-        super.onConfigurationChanged(newConfig);
-    }
 
     //    @Override
 //    public void onPrepareOptionsMenu(Menu menu) {
@@ -196,25 +168,63 @@ public class EmergencyContactFragment extends Fragment {
 
         // Populate our list with groups and it's children
 
-        String[] arrGroupItem = getResources().getStringArray(R.array.arr_contact_header);
-        String[] arrChildItem = getResources().getStringArray(R.array.arr_contact_number);
+//        String[] arrGroupItem = getResources().getStringArray(R.array.arr_contact_header);
+//        String[] arrChildItem = getResources().getStringArray(R.array.arr_contact_number);
+//
+//        for (int i = 1; i < arrGroupItem.length; i++) {
+//            GroupItem item = new GroupItem();
+//
+//            item.title = arrGroupItem[i];
+//
+//            // for(int j = 0; j < i; j++) {
+//            ChildItem child = new ChildItem();
+//            child.title = arrChildItem[0];
+//            child.hint = "Too awesome";
+//
+//            item.items.add(child);
+//            // }
+//
+//            items.add(item);
+//        }
 
-        for (int i = 1; i < arrGroupItem.length; i++) {
-            GroupItem item = new GroupItem();
+        String selGroup = "SELECT Branch_Id, Branch FROM EmergencyNoEN GROUP BY Branch_Id";
+        String selChild = "SELECT Name, Numbers FROM EmergencyNoEN where Branch_Id = "+"";
 
-            item.title = arrGroupItem[i];
+        DBHelper db = new DBHelper(context);
+        Cursor c=  db.executeStatement(selGroup);
+        if(c!=null && c.getCount()>0)
+        {
+            c.moveToFirst();
+            do{
+                GroupItem item = new GroupItem();
+                item.title = c.getString(1);
 
-            // for(int j = 0; j < i; j++) {
-            ChildItem child = new ChildItem();
-            child.title = arrChildItem[0];
-            child.hint = "Too awesome";
 
-            item.items.add(child);
-            // }
+                String selC = selChild+c.getString(0);
 
-            items.add(item);
+                Cursor curChild =  db.executeStatement(selC);
+                if(curChild!=null && curChild.getCount()>0)
+                {
+                    curChild.moveToNext();
+                    do{
+                        ChildItem child = new ChildItem();
+                        child.title = curChild.getString(0)+" "+curChild.getString(1);
+                        child.hint = "Too awesome";
+
+                        item.items.add(child);
+                    }while (curChild.moveToNext());
+                }
+
+                items.add(item);
+            }while(c.moveToNext());
+            if(!c.isClosed())
+                c.close();
+
+            db.close();
+        }else
+        {
+
         }
-
         adapter = new EmergancyContactAdapter(getActivity());
         adapter.setData(items);
 
@@ -263,6 +273,4 @@ public class EmergencyContactFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
-
-
 }

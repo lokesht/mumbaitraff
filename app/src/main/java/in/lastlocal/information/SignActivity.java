@@ -5,55 +5,38 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.desarrollodroide.libraryfragmenttransactionextended.FragmentTransactionExtended;
 
 import in.lastlocal.constant.AppConstant;
 import in.lastlocal.framework.OnFragmentInteractionListener;
-import in.lastlocal.information.fragment.EmergencyContactFragment;
-import in.lastlocal.information.fragment.EmergencyContactFragmentMarathi;
+import in.lastlocal.information.fragment.SignFragmentMarathi;
+import in.lastlocal.information.fragment.SignFragment;
 import in.lastlocal.mumbaitraffic.R;
 
-public class EmergencyContactActivity extends AppCompatActivity implements OnFragmentInteractionListener {
+/**
+ * Created by USER on 21-Jun-15.
+ */
+public class SignActivity extends AppCompatActivity implements OnFragmentInteractionListener {
 
-    private int optionSelected = AppConstant.ANIMATE_X;
-    private EmergencyContactFragment mFirstFragment;
+    Toolbar mToolbar;
+    private int optionSelected =  AppConstant.ANIMATE_X;;
+
+    private SignFragment mFirstFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_faq);
 
         // initialise();
         if (savedInstanceState == null) {
-            mFirstFragment = EmergencyContactFragment.newInstance();
+            mFirstFragment = new SignFragment();
             addFragment(mFirstFragment);
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_emergency_contact, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     public void addFragment(Fragment mFirstFragment) {
@@ -90,7 +73,7 @@ public class EmergencyContactActivity extends AppCompatActivity implements OnFra
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-            FragmentTransactionExtended fragmentTransactionExtended = new FragmentTransactionExtended(this, fragmentTransaction, mFirstFragment, new EmergencyContactFragmentMarathi(), R.id.fl_fragment_cantainer);
+            FragmentTransactionExtended fragmentTransactionExtended = new FragmentTransactionExtended(this, fragmentTransaction, mFirstFragment, new SignFragmentMarathi(), R.id.fl_fragment_cantainer);
             fragmentTransactionExtended.addTransition(optionSelected);
             fragmentTransactionExtended.commit();
         } else {
@@ -106,5 +89,4 @@ public class EmergencyContactActivity extends AppCompatActivity implements OnFra
         }
         super.onBackPressed();
     }
-
 }

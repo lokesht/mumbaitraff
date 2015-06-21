@@ -1,13 +1,16 @@
 package in.lastlocal.mumbaitraffic;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import in.lastlocal.constant.AppConstant;
 
@@ -32,6 +35,36 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     public void initialise() {
+
+        new AsyncTask<Void, Integer, String>() {
+
+            protected void onPreExecute() {
+
+            }
+
+            ;
+
+            @Override
+            protected String doInBackground(Void... params) {
+
+                /** Copy full database from asset Folder to database Folder */
+                copyDatabaseFromAsset();
+
+                return "";
+            }
+
+            protected void onPostExecute(String result) {
+                if (AppConstant.DEBUG)
+                    Toast.makeText(SplashActivity.this, "success", Toast.LENGTH_SHORT).show();
+
+				/**/
+//                Intent in = new Intent(ActivitySplash.this, ActivityMain.class);
+//                startActivity(in);
+//                finish();
+            }
+
+        }.execute();
+
         mHandler = new Handler();
         mRunnable = new Runnable() {
             @Override
@@ -61,26 +94,6 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
     public void onClick(View v) {
         Intent in;
         switch (v.getId()) {
@@ -93,9 +106,29 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
                 AppConstant.isMarathi = true;
                 in = new Intent(this, MainActivity.class);
                 startActivity(in);
-
                 break;
-
         }
     }
+
+    /**
+     * Copy Database from asset Folder to data directory
+     */
+    public void copyDatabaseFromAsset() {
+
+		/* Insert Database */
+        DBHelper db = new DBHelper(this);
+        try {
+            boolean dbExist = db.isDataBaseAvailable();
+
+            if (!dbExist)
+                db.copyDataBaseFromAsset();
+
+        } catch (Exception e) {
+            //AppLogger.writeLog("state " + TAG + " -- " + e.toString());
+            Log.e("", e.toString());
+        }
+        //System.out.println(t.getTime(t));
+        // }
+    }
+
 }

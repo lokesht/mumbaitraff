@@ -68,6 +68,7 @@
     <!--<color name="green">#4CAF50</color>-->
     <color name="brown">#795548</color>
     <!--<color name="yellow">#FFEB3B</color>-->
+    <drawable name="semitransparent_white">#77ffffff</drawable>
 
 
 

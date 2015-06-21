@@ -7,7 +7,6 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -16,21 +15,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
-
-import com.desarrollodroide.libraryfragmenttransactionextended.FragmentTransactionExtended;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 import in.lastlocal.adapter.ExampleAdapter;
+import in.lastlocal.adapter.Holder.ChildItem;
+import in.lastlocal.adapter.Holder.GroupItem;
 import in.lastlocal.constant.AppConstant;
 import in.lastlocal.customview.AnimatedExpandableListView;
 import in.lastlocal.framework.OnFragmentInteractionListener;
-
-
-import in.lastlocal.adapter.Holder.*;
 import in.lastlocal.mumbaitraffic.R;
 
 /**
@@ -42,8 +37,6 @@ import in.lastlocal.mumbaitraffic.R;
  * create an instance of this fragment.
  */
 public class FAQFragment extends Fragment {
-
-    private int optionSelected = 0;
 
     private OnFragmentInteractionListener mListener;
 
@@ -84,13 +77,13 @@ public class FAQFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Required empty public constructor
-        mLocale = new Locale(AppConstant.LOCALE_HINDI);
+//        mLocale = new Locale(AppConstant.LOCALE_HINDI);
+//        Locale.setDefault(mLocale);
+
+        mLocale = new Locale(AppConstant.LOCALE_ENGLISH);
         Locale.setDefault(mLocale);
 
         context = getActivity();
-
-        //mLocale = new Locale(AppConstant.LOCALE_ENGLISH);
-        //Locale.setDefault(mLocale);
 
         Configuration config = new Configuration();
         config.locale = mLocale;

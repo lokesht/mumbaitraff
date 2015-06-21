@@ -19,8 +19,12 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import at.markushi.ui.CircleButton;
+import in.lastlocal.information.EmergencyContactActivity;
 import in.lastlocal.information.FAQActivity;
 import in.lastlocal.information.MainInformation;
+import in.lastlocal.information.OffencesActivity;
+import in.lastlocal.information.SignActivity;
+import in.lastlocal.information.UserManulActivity;
 import in.lastlocal.map.WebViewNearByPolice;
 import in.lastlocal.model.ItemGridInformation;
 import in.lastlocal.mumbaitraffic.R;
@@ -82,15 +86,14 @@ public class InfomationMAinPageGridAdapter extends ArrayAdapter<ItemGridInformat
             }
             TypedValue tv = new TypedValue();
             int actionBarHeight = 0;
-            if (context.getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true))
-            {
-                actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data,context.getResources().getDisplayMetrics());
+            if (context.getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
+                actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, context.getResources().getDisplayMetrics());
             }
 
-            margin = status+actionBarHeight;
-           // int margin = context.getResources().getInteger(R.integer.margin);
+            margin = status + actionBarHeight;
+            // int margin = context.getResources().getInteger(R.integer.margin);
 
-            Toast.makeText(context, margin+" "+status+" "+actionBarHeight , Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, margin + " " + status + " " + actionBarHeight, Toast.LENGTH_SHORT).show();
 
             row.setLayoutParams(new GridView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (metrics.heightPixels - margin) / 3));
             row.setTag(holder);
@@ -118,32 +121,32 @@ public class InfomationMAinPageGridAdapter extends ArrayAdapter<ItemGridInformat
                 Intent in;
                 switch (id) {
                     case 0:
-
+                        in = new Intent(context, EmergencyContactActivity.class);
+                        context.startActivity(in);
                         break;
                     case 1:
                         in = new Intent(context, WebViewNearByPolice.class);
                         context.startActivity(in);
                         break;
                     case 2:
-                        in = new Intent(context, FAQActivity.class);
+                        in = new Intent(context, UserManulActivity.class);
                         context.startActivity(in);
                         break;
                     case 3:
-
+                        in = new Intent(context, OffencesActivity.class);
+                        context.startActivity(in);
                         break;
                     case 4:
 
                         break;
                     case 5:
+                        in = new Intent(context, SignActivity.class);
+                        context.startActivity(in);
                         break;
                     case 6:
+                        in = new Intent(context, FAQActivity.class);
+                        context.startActivity(in);
                         break;
-                    case 7:
-                        break;
-                    case 8:
-                        break;
-
-
                 }
             }
         });

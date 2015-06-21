@@ -71,6 +71,34 @@
             android:label="@string/title_activity_main_information"></activity>
 
         <activity
+            android:theme="@style/Fragment.Theme"
+            android:name="in.lastlocal.information.EmergencyContactActivity">
+            android:label="@string/title_activity_main_information"
+        </activity>
+
+        <activity
+            android:theme="@style/Fragment.Theme"
+            android:name="in.lastlocal.information.UserManulActivity">
+            android:label="@string/title_activity_main_information"
+        </activity>
+
+        <activity
+            android:theme="@style/Fragment.Theme"
+            android:name="in.lastlocal.information.FAQActivity">
+            android:label="@string/title_activity_main_information"
+        </activity>
+
+        <activity
+            android:theme="@style/Fragment.Theme"
+            android:name="in.lastlocal.information.SignActivity">
+            android:label="@string/title_activity_main_information"
+        </activity>
+
+        <activity
+            android:theme="@style/Fragment.Theme"
+            android:name="in.lastlocal.information.OffencesActivity"
+            android:label="@string/title_activity_main_information"></activity>
+        <activity
             android:name="in.lastlocal.widget_sos.SendSmsActivity"
             android:exported="true"
             android:label="@string/title_activity_emergency_sms"
