@@ -16,7 +16,7 @@ public class WebViewActivity extends Activity {
     private boolean loadingFinished = true;
     private boolean redirect = false;
     private WebView webView;
-    private static  int i = 0;
+    private static int in = 0;
 
     String mapPath = "https://maps.google.com/?ll=19.0823319,72.8671099&t=m&z=12&layer=t";
     //String mapPath = "https://maps.google.com/";
@@ -59,8 +59,9 @@ public class WebViewActivity extends Activity {
 
             //Show loader on url load
             public void onLoadResource(WebView view, String url) {
-                if (progressDialog == null && i==0) {
+                if (progressDialog == null && in == 0) {
                     // in standard case YourActivity.this
+                    in++;
                     progressDialog = new ProgressDialog(WebViewActivity.this);
                     progressDialog.setMessage("Loading...");
                     progressDialog.show();
@@ -70,14 +71,14 @@ public class WebViewActivity extends Activity {
 
             public void onPageFinished(WebView view, String url) {
                 try {
-                    if(!redirect){
+                    if (!redirect) {
                         loadingFinished = true;
                     }
 
-                    if(loadingFinished && !redirect){
+                    if (loadingFinished && !redirect) {
                         progressDialog.dismiss();
                         progressDialog = null;
-                    } else{
+                    } else {
                         redirect = false;
                     }
                 } catch (Exception exception) {

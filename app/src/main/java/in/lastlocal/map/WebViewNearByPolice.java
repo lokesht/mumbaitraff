@@ -23,7 +23,7 @@ public class WebViewNearByPolice extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_web_view);
+        setContentView(R.layout.activity_web_view_near_by_police);
 
         webView = (WebView) findViewById(R.id.mapview);
         startWebView(mapPath);
@@ -58,12 +58,12 @@ public class WebViewNearByPolice extends ActionBarActivity {
             public void onLoadResource(WebView view, String url) {
                 if (progressDialog == null && i==0) {
                     // in standard case YourActivity.this
+                    i++;
                     progressDialog = new ProgressDialog(WebViewNearByPolice.this);
                     progressDialog.setMessage("Loading...");
                     progressDialog.show();
                 }
             }
-
 
             public void onPageFinished(WebView view, String url) {
                 try {
