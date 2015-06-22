@@ -27,6 +27,9 @@ public class WebViewNearByPolice extends ActionBarActivity {
 
         webView = (WebView) findViewById(R.id.mapview);
         startWebView(mapPath);
+
+        /** reset */
+        i = 0;
     }
 
     /** */
@@ -96,15 +99,4 @@ public class WebViewNearByPolice extends ActionBarActivity {
         webView.loadUrl(url);
     }
 
-    // Open previous opened link from history on webview when back button pressed
-    @Override
-    // Detect when the back button is pressed
-    public void onBackPressed() {
-        if(webView.canGoBack()) {
-            webView.goBack();
-        } else {
-            // Let the system handle the back button
-            super.onBackPressed();
-        }
-    }
 }

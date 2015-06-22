@@ -75,33 +75,64 @@
         </activity>
 
         <activity
-            android:theme="@style/Fragment.Theme"
-            android:name="in.lastlocal.information.EmergencyContactActivity">
-            android:label="@string/title_activity_main_information"
+            android:name="in.lastlocal.information.EmergencyContactActivity"
+            android:label="@string/title_activity_emergency_contact"
+            android:theme="@style/Fragment.Theme">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="in.lastlocal.information.MainInformation" />
         </activity>
 
         <activity
-            android:theme="@style/Fragment.Theme"
-            android:name="in.lastlocal.information.UserManulActivity">
-            android:label="@string/title_activity_main_information"
+            android:name="in.lastlocal.information.UserManulActivity"
+            android:label="@string/title_activity_user_manual"
+            android:theme="@style/Fragment.Theme">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="in.lastlocal.information.MainInformation" />
+
         </activity>
 
         <activity
-            android:theme="@style/Fragment.Theme"
-            android:name="in.lastlocal.information.FAQActivity">
-            android:label="@string/title_activity_main_information"
-        </activity>
-
-        <activity
-            android:theme="@style/Fragment.Theme"
-            android:name="in.lastlocal.information.SignActivity">
-            android:label="@string/title_activity_main_information"
-        </activity>
-
-        <activity
-            android:theme="@style/Fragment.Theme"
             android:name="in.lastlocal.information.OffencesActivity"
-            android:label="@string/title_activity_main_information"></activity>
+            android:label="@string/title_activity_offences"
+            android:theme="@style/Fragment.Theme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="in.lastlocal.information.MainInformation" />
+        </activity>
+
+        <activity
+            android:name="in.lastlocal.information.GuidenceActivity"
+            android:label="@string/title_activity_offences"
+            android:theme="@style/Fragment.Theme">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="in.lastlocal.information.MainInformation" />
+        </activity>
+
+        <activity
+            android:name="in.lastlocal.information.SignActivity"
+            android:label="@string/title_activity_signs"
+            android:theme="@style/Fragment.Theme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="in.lastlocal.information.MainInformation" />
+        </activity>
+
+
+        <activity
+            android:name="in.lastlocal.information.FAQActivity"
+            android:label="@string/title_activity_faq"
+            android:theme="@style/Fragment.Theme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="in.lastlocal.information.MainInformation" />
+        </activity>
+
         <activity
             android:name="in.lastlocal.widget_sos.SendSmsActivity"
             android:exported="true"
@@ -109,11 +140,11 @@
             android:noHistory="true"></activity>
 
         <activity
-            android:launchMode="singleTask"
-            android:theme="@style/Fragment.Theme"
-            android:exported="true"
             android:name=".EmergencySMS"
-            android:label="Emergency"></activity>
+            android:exported="true"
+            android:label="Emergency"
+            android:launchMode="singleTask"
+            android:theme="@style/Fragment.Theme"></activity>
 
 
         <receiver android:name="in.lastlocal.widget_sos.NewAppWidget">

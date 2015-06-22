@@ -46,8 +46,6 @@ import in.lastlocal.mumbaitraffic.R;
  */
 public class EmergencyContactFragment extends Fragment {
 
-    private int optionSelected = 0;
-
    private OnFragmentInteractionListener mListener;
 
     private AnimatedExpandableListView listView;
@@ -55,7 +53,6 @@ public class EmergencyContactFragment extends Fragment {
 
     private Context context;
     private Locale mLocale;
-
 
     /**
      * Use this factory method to create a new instance of
@@ -86,6 +83,8 @@ public class EmergencyContactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+       // getActivity().getActionBar().setHomeButtonEnabled(true);
+
         context = getActivity();
 
         // Required empty public constructor
@@ -114,6 +113,7 @@ public class EmergencyContactFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         menu.clear();
+
         inflater.inflate(R.menu.menu_faq_information, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -125,31 +125,11 @@ public class EmergencyContactFragment extends Fragment {
             case R.id.action_language:
                mListener.onFragmentInteraction(null);
                 break;
+            case R.id.homeAsUp:
+
+                break;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private void setLocale() {
-
-//        if (AppConstant.LOCALE_HINDI.equals(mLocale.toString())) {
-            mLocale = new Locale(AppConstant.LOCALE_ENGLISH);
-            Locale.setDefault(mLocale);
-            Configuration config = new Configuration();
-            config.locale = mLocale;
-            context.getResources().updateConfiguration(config, context.getResources().getDisplayMetrics());
-            //setContentView(R.layout.activity_main);
-        getActivity().setContentView(R.layout.fragment_faq);
-            Log.d("LocaleTest", "if block");
-//        }//if
-//        else if (AppConstant.LOCALE_ENGLISH.equals(mLocale.toString())) {
-//            mLocale = new Locale(AppConstant.LOCALE_HINDI);
-//            Locale.setDefault(mLocale);
-//            Configuration config = new Configuration();
-//            config.locale = mLocale;
-//            context.getResources().updateConfiguration(config, context.getResources().getDisplayMetrics());
-//            // MainActivity.this.setContentView(R.layout.activity_main);
-//            Log.d("LocaleTest", "else if block");
-     //   }
     }
 
 
@@ -166,27 +146,6 @@ public class EmergencyContactFragment extends Fragment {
     private void onSetUP(View v) {
         List<GroupItem> items = new ArrayList<GroupItem>();
 
-        // Populate our list with groups and it's children
-
-//        String[] arrGroupItem = getResources().getStringArray(R.array.arr_contact_header);
-//        String[] arrChildItem = getResources().getStringArray(R.array.arr_contact_number);
-//
-//        for (int i = 1; i < arrGroupItem.length; i++) {
-//            GroupItem item = new GroupItem();
-//
-//            item.title = arrGroupItem[i];
-//
-//            // for(int j = 0; j < i; j++) {
-//            ChildItem child = new ChildItem();
-//            child.title = arrChildItem[0];
-//            child.hint = "Too awesome";
-//
-//            item.items.add(child);
-//            // }
-//
-//            items.add(item);
-//        }
-
         String selGroup = "SELECT Branch_Id, Branch FROM EmergencyNoEN GROUP BY Branch_Id";
         String selChild = "SELECT Name, Numbers FROM EmergencyNoEN where Branch_Id = "+"";
 
@@ -199,7 +158,6 @@ public class EmergencyContactFragment extends Fragment {
                 GroupItem item = new GroupItem();
                 item.title = c.getString(1);
 
-
                 String selC = selChild+c.getString(0);
 
                 Cursor curChild =  db.executeStatement(selC);
@@ -208,8 +166,8 @@ public class EmergencyContactFragment extends Fragment {
                     curChild.moveToNext();
                     do{
                         ChildItem child = new ChildItem();
-                        child.title = curChild.getString(0)+" "+curChild.getString(1);
-                        child.hint = "Too awesome";
+                        child.title = curChild.getString(0).trim();//+" "+curChild.getString(1);
+                        child.phones = curChild.getString(1).trim();
 
                         item.items.add(child);
                     }while (curChild.moveToNext());
@@ -225,12 +183,13 @@ public class EmergencyContactFragment extends Fragment {
         {
 
         }
+
         adapter = new EmergancyContactAdapter(getActivity());
         adapter.setData(items);
 
         listView = (AnimatedExpandableListView) v.findViewById(R.id.listView);
         listView.setAdapter(adapter);
-
+        listView.setDescendantFocusability(ViewGroup.FOCUS_AFTER_DESCENDANTS);
         // In order to show animations, we need to use a custom click handler
         // for our ExpandableListView.
         listView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {

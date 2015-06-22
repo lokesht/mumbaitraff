@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import at.markushi.ui.CircleButton;
 import in.lastlocal.information.EmergencyContactActivity;
 import in.lastlocal.information.FAQActivity;
+import in.lastlocal.information.GuidenceActivity;
 import in.lastlocal.information.MainInformation;
 import in.lastlocal.information.OffencesActivity;
 import in.lastlocal.information.SignActivity;
@@ -137,7 +138,8 @@ public class InfomationMAinPageGridAdapter extends ArrayAdapter<ItemGridInformat
                         context.startActivity(in);
                         break;
                     case 4:
-
+                        in = new Intent(context, GuidenceActivity.class);
+                        context.startActivity(in);
                         break;
                     case 5:
                         in = new Intent(context, SignActivity.class);

@@ -51,4 +51,5 @@ dependencies {
     compile 'com.android.support:support-v4:22.2.0'
     compile 'com.desarrollodroide:fragmenttransactionextended:1'
     compile 'com.github.xiprox.errorview:library:2.+'
+    compile 'com.afollestad:material-dialogs:0.7.6.0'
 }

@@ -21,6 +21,7 @@ import java.util.Locale;
 import in.lastlocal.adapter.EmergancyContactAdapter;
 import in.lastlocal.adapter.Holder;
 
+import in.lastlocal.adapter.OffenceAdapter;
 import in.lastlocal.constant.AppConstant;
 import in.lastlocal.customview.AnimatedExpandableListView;
 import in.lastlocal.framework.OnFragmentInteractionListener;
@@ -35,7 +36,7 @@ public class OffencesFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
     private Context context;
     private AnimatedExpandableListView listView;
-    private EmergancyContactAdapter adapter;
+    private final ThreadLocal<OffenceAdapter> adapter = new ThreadLocal<>();
 
     private Locale mLocale;
 
@@ -136,8 +137,9 @@ public class OffencesFragment extends Fragment {
                     curChild.moveToNext();
                     do {
                         Holder.ChildItem child = new Holder.ChildItem();
-                        child.title = curChild.getString(0) + " " + curChild.getString(1)+" "+curChild.getString(2);
-                        child.hint = "Too awesome";
+                        child.title = curChild.getString(0);
+                        child.lebel1 = curChild.getString(1);
+                        child.lebel2 = curChild.getString(2)+" Rs.";
 
                         item.items.add(child);
                     } while (curChild.moveToNext());
@@ -153,11 +155,11 @@ public class OffencesFragment extends Fragment {
 
         }
 
-        adapter = new EmergancyContactAdapter(getActivity());
-        adapter.setData(items);
+        adapter.set(new OffenceAdapter(getActivity()));
+        adapter.get().setData(items);
 
         listView = (AnimatedExpandableListView) v.findViewById(R.id.listView);
-        listView.setAdapter(adapter);
+        listView.setAdapter(adapter.get());
 
         // In order to show animations, we need to use a custom click handler
         // for our ExpandableListView.

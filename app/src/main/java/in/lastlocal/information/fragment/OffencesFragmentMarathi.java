@@ -21,6 +21,7 @@ import java.util.Locale;
 import in.lastlocal.adapter.EmergancyContactAdapter;
 import in.lastlocal.adapter.Holder;
 
+import in.lastlocal.adapter.OffenceAdapter;
 import in.lastlocal.constant.AppConstant;
 import in.lastlocal.customview.AnimatedExpandableListView;
 import in.lastlocal.framework.OnFragmentInteractionListener;
@@ -35,7 +36,7 @@ public class OffencesFragmentMarathi extends Fragment {
     private OnFragmentInteractionListener mListener;
     private Context context;
     private AnimatedExpandableListView listView;
-    private EmergancyContactAdapter adapter;
+    private OffenceAdapter adapter;
 
     private Locale mLocale;
 
@@ -132,8 +133,9 @@ public class OffencesFragmentMarathi extends Fragment {
                     curChild.moveToNext();
                     do {
                         Holder.ChildItem child = new Holder.ChildItem();
-                        child.title = curChild.getString(0) + " " + curChild.getString(1);
-                        child.hint = "Too awesome";
+                        child.title = curChild.getString(0);
+                        child.lebel1 = curChild.getString(1);
+                        child.lebel2 = curChild.getString(2)+" Rs.";
 
                         item.items.add(child);
                     } while (curChild.moveToNext());
@@ -149,7 +151,7 @@ public class OffencesFragmentMarathi extends Fragment {
 
         }
 
-        adapter = new EmergancyContactAdapter(getActivity());
+        adapter = new OffenceAdapter(getActivity());
         adapter.setData(items);
 
         listView = (AnimatedExpandableListView) v.findViewById(R.id.listView);

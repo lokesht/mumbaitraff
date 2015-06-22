@@ -118,29 +118,6 @@ public class EmergencyContactFragmentMarathi extends Fragment {
     private void onSetUP(View v) {
         List<GroupItem> items = new ArrayList<GroupItem>();
 
-        // Populate our list with groups and it's children
-
-//         String[] arrGroupItem = getResources().getStringArray(R.array.arr_contact_header);
-//        String[] arrChildItem = getResources().getStringArray(R.array.arr_contact_number);
-
-
-//        for (int i = 1; i < arrGroupItem.length; i++) {
-//            GroupItem item = new GroupItem();
-//
-//            item.title = arrGroupItem[i];
-//
-//            // for(int j = 0; j < i; j++) {
-//            ChildItem child = new ChildItem();
-//            child.title = arrChildItem[0];
-//            child.hint = "Too awesome";
-//
-//            item.items.add(child);
-//            // }
-//
-//            items.add(item);
-//        }
-
-
         String selGroup = "SELECT Branch_Id, Branch FROM EmergencyNoMA GROUP BY Branch_Id";
         String selChild = "SELECT Name, Numbers FROM EmergencyNoMA where Branch_Id = ";
 
@@ -162,8 +139,8 @@ public class EmergencyContactFragmentMarathi extends Fragment {
                     curChild.moveToNext();
                     do{
                         ChildItem child = new ChildItem();
-                        child.title = curChild.getString(0)+" "+curChild.getString(1);
-                        child.hint = "Too awesome";
+                        child.title = curChild.getString(0).trim();//+" "+curChild.getString(1);
+                        child.phones = curChild.getString(1).trim();
 
                         item.items.add(child);
                     }while (curChild.moveToNext());
@@ -179,7 +156,6 @@ public class EmergencyContactFragmentMarathi extends Fragment {
         {
 
         }
-
         adapter = new EmergancyContactAdapter(getActivity());
         adapter.setData(items);
 

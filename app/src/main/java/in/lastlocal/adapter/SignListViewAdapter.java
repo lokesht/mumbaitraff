@@ -1,6 +1,9 @@
 package in.lastlocal.adapter;
 
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.InputStream;
 import java.util.List;
 
 import in.lastlocal.model.ItemSign;
@@ -59,7 +63,18 @@ public class SignListViewAdapter extends BaseAdapter {
         }
 
         vh.tv.setText(lsAllElement.get(position).getMsg());
-        vh.iv.setImageResource(lsAllElement.get(position).getId());
+        //vh.iv.setImageResource(lsAllElement.get(position).getId());
+
+        try {
+            AssetManager assetManager = context.getAssets();
+            InputStream istr;
+            istr = assetManager.open("signs/" + lsAllElement.get(position).getFilename());
+            Bitmap bitmap = BitmapFactory.decodeStream(istr);
+            vh.iv.setImageBitmap(bitmap);
+            istr.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return convertView;
     }

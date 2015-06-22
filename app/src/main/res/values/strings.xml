@@ -11,10 +11,17 @@
     <string name="login_english">English</string>
     <string name="login_marathi">मराठी</string>
 
-    <string name="brand_hash_tag">#saftyfirst</string>
+    <string name="brand_hash_tag">#safetyfirst</string>
     <string name="title_activity_web_view_near_by_police">WebViewNearByPolice</string>
     <string name="live_traffic">Live Traffic</string>
-    <string name="title_activity_main_information">MainInformation</string>
+
+    <string name="title_activity_main_information">Information</string>
+    <string name="title_activity_emergency_contact">Emergency Contacts</string>
+    <string name="title_activity_user_manual">User Manual</string>
+    <string name="title_activity_offences">Offence and Penalties</string>
+    <string name="title_activity_guidelines">Guidelines</string>
+    <string name="title_activity_signs">Signs</string>
+    <string name="title_activity_faq">FAQ</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -27,7 +27,7 @@ public class SignFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private Context context;
-
+    private String[] signs_english;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -92,20 +92,11 @@ public class SignFragment extends Fragment {
     private void onSetUP(View v) {
 
         List<ItemSign> itemSigns = new ArrayList<ItemSign>();
-        ItemSign item = new ItemSign(R.drawable.ic_cast_dark, "Straight Prohibitedor no entry");
-        ItemSign item2 = new ItemSign(R.drawable.ic_cast_dark, "One way signs-vehicles");
-
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-
+        signs_english = getResources().getStringArray(R.array.signs_english);
+        for(int i=1;i<signs_english.length+1;i++) {
+            ItemSign item = new ItemSign("image"+i+".png", signs_english[i-1]);
+            itemSigns.add(item);
+        }
         ListView lv =(ListView)v.findViewById(R.id.listView);
         SignListViewAdapter adapter = new SignListViewAdapter(getActivity(),itemSigns);
         lv.setAdapter(adapter);

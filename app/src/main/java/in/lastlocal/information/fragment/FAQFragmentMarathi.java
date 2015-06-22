@@ -116,8 +116,6 @@ public class FAQFragmentMarathi extends Fragment {
             // for(int j = 0; j < i; j++) {
             Holder.ChildItem child = new Holder.ChildItem();
             child.title = arrChildItem[0];
-            child.hint = "Too awesome";
-
             item.items.add(child);
             // }
 

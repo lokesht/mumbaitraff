@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="signs_english">
+        <item>Straight Prohibitedor no entry</item>
+        <item>One way signs-vehicles</item>
+        <item>prohibited in one direction</item>
+        <item>Vehicles prohibited in both direction</item>
+        <item>All vehicles prohibited</item>
+        <item>Trucks prohibited</item>
+        <item>Bullock carts &amp; hand carts direction</item>
+        <item>Bullock carts direction</item>
+        <item>Tongas direction</item>
+        <item>Hand carts direction</item>
+        <item>Cycles prohibited</item>
+        <item>Pedestrians prohibited</item>
+        <item>Right turn prohibited</item>
+        <item>Left turn prohibited</item>
+        <item>U- turn prohibited</item>
+        <item>Overtaking prohibited</item>
+        <item>Horns prohibited</item>
+        <item>No Parking</item>
+        <item>No stopping or standing</item>
+        <item>Speed limit</item>
+        <item>Width limit</item>
+        <item>Height limit</item>
+        <item>Length limit</item>
+        <item>Load limit</item>
+        <item>Axle load limit</item>
+        <item>Compulsory bus stop</item>
+        <item>Restriction ends sign</item>
+        <item>Compulsory cycle track</item>
+        <item>Compulsory sound horn</item>
+        <item>Compulsory keep left</item>
+        <item>Compulsory turn left</item>
+        <item>Compulsory turn right ahead</item>
+        <item>Compulsory ahead or turn right</item>
+        <item>Compulsory ahead or turn left</item>
+        <item>Compulsory ahead</item>
+        <item>Stop</item>
+        <item>Give way</item>
+        <item>Right hand curve</item>
+        <item>Left hand curve</item>
+        <item>Right hair pin bend</item>
+        <item>Left hair pin bend</item>
+        <item>Right reverse bend</item>
+        <item>Left reverse bend</item>
+        <item>Steep ascent</item>
+        <item>Steep descent</item>
+        <item>Narrow road ahead</item>
+        <item>Road wideness ahead</item>
+        <item>Narrow bridge</item>
+        <item>Slippery road</item>
+        <item>Loose gravel</item>
+        <item>Cycle crossing</item>
+        <item>Pedestrian crossing</item>
+        <item>School ahead</item>
+        <item>Men at work</item>
+        <item>Cattle</item>
+        <item>Falling rocks</item>
+        <item>Ferry</item>
+        <item>Cross road</item>
+        <item>Gap in Median</item>
+        <item>Side road right</item>
+        <item>Side road left</item>
+        <item>Y-Intersection</item>
+        <item>Y-Intersection</item>
+        <item>Y-Intersection</item>
+        <item>T-Intersection</item>
+        <item>Staggered Intersection</item>
+        <item>Staggered Intersection</item>
+        <item>Major road ahead</item>
+        <item>Major road ahead</item>
+        <item>Roundabout</item>
+        <item>Dangerous dip</item>
+        <item>Hump or rough road</item>
+        <item>Barrier ahead</item>
+        <item>Advanced direction sign</item>
+        <item>Re-assurance sign</item>
+        <item>Destination sign</item>
+        <item>Direction sign</item>
+        <item>Place identification sign</item>
+        <item>First aid post</item>
+        <item>Public telephone</item>
+        <item>Petrol pump</item>
+        <item>Hospital</item>
+        <item>Resting place</item>
+        <item>Eating place</item>
+        <item>First-aid post</item>
+        <item>No through road</item>
+        <item>No through side road</item>
+        <item>Park this Side</item>
+        <item>Parking both sides</item>
+        <item>Parking lot Scooters &amp; motorcycle</item>
+        <item>Parking lot Cycles</item>
+        <item>Parking lot Taxis</item>
+        <item>Parking lot Auto rickshaws</item>
+        <item>Parking lot Cycle rickshaws</item>
+        <item>Flood gauge</item>
+    </string-array>
+    <string-array name="signs_marathi">
+        <item>सरळ प्रतिबंधित किंवा प्रवेश</item>
+        <item>एक मार्ग चिन्हे - वाहने</item>
+        <item>एका दिशेने प्रतिबंधित</item>
+        <item>दोन्ही दिशेने प्रतिबंधित वाहने</item>
+        <item>सर्व वाहने प्रतिबंधित</item>
+        <item>ट्रक प्रतिबंधित</item>
+        <item>बैल गाड्या ,हात गाड्या दिशा</item>
+        <item>बैल गाड्या दिशा</item>
+        <item>Tongas दिशा</item>
+        <item>हात गाड्या दिशा</item>
+        <item>सायकल प्रतिबंधित</item>
+        <item>पादचारी प्रतिबंधित</item>
+        <item>उजवीकडे वळा प्रतिबंधित</item>
+        <item>डावे वळण प्रतिबंधित</item>
+        <item>यू-वळण प्रतिबंधित</item>
+        <item>प्रतिबंधित मागे</item>
+        <item>हॉर्न प्रतिबंधित</item>
+        <item>नाही पार्किंग</item>
+        <item>प्रतिक्रिया अपेक्षित नाही किंवा स्थायी नाही</item>
+        <item>गती मर्यादा</item>
+        <item>रूंदी मर्यादा</item>
+        <item>उंची मर्यादा</item>
+        <item>लांबी मर्यादा</item>
+        <item>लोड मर्यादा</item>
+        <item>अॅक्सल लोड मर्यादा</item>
+        <item>सक्तीचे बस स्टॉप</item>
+        <item>निर्बंध चिन्ह समाप्त</item>
+        <item>सक्तीचे सायकल ट्रॅक</item>
+        <item>सक्तीचे आवाज हॉर्न</item>
+        <item>डाव्या बाजूला सक्तीचे ठेवा</item>
+        <item>अनिवार्य वळण डाव्या</item>
+        <item>अनिवार्य वळण पुढे</item>
+        <item>पुढे सक्तीचे किंवा उजवीकडे वळा</item>
+        <item>पुढे सक्तीचे किंवा डावीकडे वळा</item>
+        <item>सक्तीचे पुढे</item>
+        <item>थांबवा</item>
+        <item> मार्ग द्या</item>
+        <item>उजव्या हाताने वक्र</item>
+        <item>डाव्या हाताने वक्र</item>
+        <item>उजव्या केस पिन बेंड</item>
+        <item>डावे केस पिन बेंड</item>
+        <item>उजव्या उलट बेंड</item>
+        <item>डावे उलट बेंड</item>
+        <item>जास्त उन्नती</item>
+        <item>जास्त उतरण</item>
+        <item>पुढे अरुंद रस्ता</item>
+        <item>पुढे रोड अधिक रुंद</item>
+        <item>अरुंद पूल</item>
+        <item>निसरडा रस्ता</item>
+        <item>सैल रेव</item>
+        <item>सायकल ओलांडणे</item>
+        <item>पादचारी ओलांडणे</item>
+        <item>पुढे शाळा</item>
+        <item>कामावर पुरुष</item>
+        <item>गुरेढोरे</item>
+        <item>वाढता खडक</item>
+        <item>फेरी</item>
+        <item>क्रॉस रोड</item>
+        <item>मध्यक अंतर</item>
+        <item>साइड रस्ता योग्य</item>
+        <item>साइड रस्ता डावीकडे</item>
+        <item>Y-छेदनबिंदू</item>
+        <item>Y-छेदनबिंदू</item>
+        <item>Y-छेदनबिंदू</item>
+        <item>T-छेदनबिंदू</item>
+        <item>सुनियोजित आखणी छेदनबिंदू</item>
+        <item>सुनियोजित आखणी छेदनबिंदू</item>
+        <item>पुढे मुख्य रस्ता</item>
+        <item>पुढे मुख्य रस्ता</item>
+        <item>आडवळणाचा</item>
+        <item>धोकादायक उतार</item>
+        <item>खूप वाकवणे किंवा उग्र रस्ता</item>
+        <item>पुढे अडथळा</item>
+        <item>प्रगत दिशा चिन्ह</item>
+        <item>पुन्हा - हमी चिन्ह</item>
+        <item>गंतव्य चिन्ह</item>
+        <item>दिशा चिन्ह</item>
+        <item>ठिकाण ओळख चिन्ह</item>
+        <item>प्रथमोपचार पोस्ट</item>
+        <item>सार्वजनिक टेलिफोन</item>
+        <item>पेट्रोल पंप</item>
+        <item>हॉस्पिटल</item>
+        <item>ही जागा निवडली</item>
+        <item>खाण्याच्या जागा</item>
+        <item>प्रथम - मदत पोस्ट</item>
+        <item>रस्ता माध्यमातून</item>
+        <item>बाजूला रस्ता माध्यमातून नाही</item>
+        <item>या बाजूला पार्क</item>
+        <item>दोन्ही बाजूंना पार्किंग</item>
+        <item>पार्किंग भरपूर स्कूटर आणि मोटारसायकल</item>
+        <item>पार्किंग भरपूर सायकल</item>
+        <item>टॅक्सी पार्किंग</item>
+        <item>पार्किंग ऑटो रिक्षा</item>
+        <item>पार्किंग सायकल रिक्षा</item>
+        <item>पूर गेज</item>
+    </string-array>
+</resources>

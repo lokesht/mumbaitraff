@@ -5,10 +5,15 @@ package in.lastlocal.adapter;
  */
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -25,9 +30,11 @@ public class EmergancyContactAdapter extends AnimatedExpandableListAdapter {
 
     private LayoutInflater inflater;
     private List<GroupItem> items;
+    Context context;
 
     public EmergancyContactAdapter(Context context) {
         inflater = LayoutInflater.from(context);
+        this.context = context;
     }
 
     public void setData(List<GroupItem> items) {
@@ -46,21 +53,67 @@ public class EmergancyContactAdapter extends AnimatedExpandableListAdapter {
 
     @Override
     public View getRealChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        ChildHolder holder;
-        Holder.ChildItem item = getChild(groupPosition, childPosition);
+        final ChildHolder holder;
+        final Holder.ChildItem item = getChild(groupPosition, childPosition);
         if (convertView == null) {
             holder = new ChildHolder();
-            convertView = inflater.inflate(R.layout.item_list_contact, parent, false);
+            convertView = inflater.inflate(R.layout.item_list_contact_emergency, parent, false);
             holder.title = (TextView) convertView.findViewById(R.id.textTitle);
-            holder.hint = (TextView) convertView.findViewById(R.id.textHint);
+
+            holder.tvNo1 = (TextView) convertView.findViewById(R.id.tv_no1);
+            holder.tvNo2 = (TextView) convertView.findViewById(R.id.tv_no2);
+            holder.tvNo3 = (TextView) convertView.findViewById(R.id.tv_no3);
             convertView.setTag(holder);
         } else {
             holder = (ChildHolder) convertView.getTag();
         }
-
         holder.title.setText(item.title);
-        holder.hint.setText(item.hint);
 
+
+        String[] array = item.phones.split(",");
+        for (int i = 0; i < array.length; i++) {
+            if (i == 0) {
+                holder.tvNo1.setText(array[i]);
+                holder.tvNo1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent call = new Intent(Intent.ACTION_DIAL);
+                        call.setData(Uri.parse("tel:" + holder.tvNo1.getText().toString().trim()));
+                        context.startActivity(call);
+                    }
+                });
+                holder.tvNo2.setText("");
+                holder.tvNo3.setText("");
+                holder.tvNo2.setClickable(false);
+                holder.tvNo3.setClickable(false);
+            }
+
+            if (i == 1) {
+                holder.tvNo2.setText(array[i]);
+                holder.tvNo2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent call = new Intent(Intent.ACTION_DIAL);
+                        call.setData(Uri.parse("tel:" + holder.tvNo2.getText().toString().trim()));
+                        context.startActivity(call);
+                    }
+                });
+                holder.tvNo3.setText("");
+                holder.tvNo3.setClickable(false);
+            }
+
+            if (i == 2) {
+                holder.tvNo3.setText(array[i]);
+                holder.tvNo3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent call = new Intent(Intent.ACTION_DIAL);
+                        call.setData(Uri.parse("tel:" + holder.tvNo3.getText().toString().trim()));
+                        context.startActivity(call);
+                    }
+                });
+            }
+        }
         return convertView;
     }
 

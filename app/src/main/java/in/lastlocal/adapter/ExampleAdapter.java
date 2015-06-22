@@ -52,15 +52,13 @@ public class ExampleAdapter extends AnimatedExpandableListAdapter {
             holder = new ChildHolder();
             convertView = inflater.inflate(R.layout.item_list_faq, parent, false);
             holder.title = (TextView) convertView.findViewById(R.id.textTitle);
-            holder.hint = (TextView) convertView.findViewById(R.id.textHint);
+
             convertView.setTag(holder);
         } else {
             holder = (ChildHolder) convertView.getTag();
         }
 
         holder.title.setText(item.title);
-        holder.hint.setText(item.hint);
-
         return convertView;
     }
 

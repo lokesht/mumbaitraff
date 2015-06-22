@@ -199,8 +199,6 @@ public class FAQFragment extends Fragment {
             // for(int j = 0; j < i; j++) {
             ChildItem child = new ChildItem();
             child.title = arrChildItem[0];
-            child.hint = "Too awesome";
-
             item.items.add(child);
             // }
 
