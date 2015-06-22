@@ -20,14 +20,14 @@ import in.lastlocal.mumbaitraffic.R;
 /**
  * Created by USER on 21-Jun-15.
  */
-public class UserManulListViewAdapter extends BaseAdapter {
+public class GuidelineListViewAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
     private Context context;
 
-    List<ItemSign> lsAllElement;
+    List<String> lsAllElement;
 
-    public UserManulListViewAdapter(Context context, List<ItemSign> lsAllElement) {
+    public GuidelineListViewAdapter(Context context, List<String> lsAllElement) {
         this.lsAllElement = lsAllElement;
         this.context = context;
     }
@@ -53,35 +53,21 @@ public class UserManulListViewAdapter extends BaseAdapter {
         if (convertView == null) {
             vh = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.item_fragment_user_manul, null);
-            vh.iv = (ImageView) convertView.findViewById(R.id.iv_image);
-            vh.tvTitle = (TextView) convertView.findViewById(R.id.tv_title);
-            vh.tvDesc = (TextView) convertView.findViewById(R.id.tv_desc);
+            convertView = inflater.inflate(R.layout.item_group_guidelines, null);
+
+            vh.tv = (TextView) convertView.findViewById(R.id.textTitle);
+
             convertView.setTag(vh);
         } else {
             vh = (ViewHolder) convertView.getTag();
         }
 
-        vh.tvTitle.setText(lsAllElement.get(position).getTitle());
-        vh.tvDesc.setText(lsAllElement.get(position).getDesc());
-        //vh.iv.setImageResource(lsAllElement.get(position).getId());
-        try {
+        vh.tv.setText(lsAllElement.get(position));
 
-            AssetManager assetManager = context.getAssets();
-            InputStream istr;
-            istr = assetManager.open("info/" + lsAllElement.get(position).getFilename());
-            Bitmap bitmap = BitmapFactory.decodeStream(istr);
-            vh.iv.setImageBitmap(bitmap);
-            istr.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         return convertView;
     }
 
     public static class ViewHolder {
-        TextView tvTitle;
-        ImageView iv;
-        public TextView tvDesc;
+        TextView tv;
     }
 }

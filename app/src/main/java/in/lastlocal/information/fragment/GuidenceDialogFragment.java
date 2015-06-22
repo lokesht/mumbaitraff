@@ -16,6 +16,7 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import android.support.v4.app.DialogFragment;
+import android.widget.Toast;
 
 import in.lastlocal.mumbaitraffic.R;
 
@@ -29,6 +30,18 @@ public class GuidenceDialogFragment extends DialogFragment {
         Bundle args = new Bundle();
         args.putBoolean("dark_theme", darkTheme);
         args.putInt("accent_color", accentColor);
+        dialog.setArguments(args);
+        return dialog;
+    }
+
+    public static GuidenceDialogFragment create(boolean darkTheme, int accentColor, boolean isEng, int position) {
+        GuidenceDialogFragment dialog = new GuidenceDialogFragment();
+        Bundle args = new Bundle();
+        args.putBoolean("dark_theme", darkTheme);
+        args.putInt("accent_color", accentColor);
+
+        args.putInt("position", position);
+        args.putBoolean("isEng",isEng);
         dialog.setArguments(args);
         return dialog;
     }
@@ -53,7 +66,16 @@ public class GuidenceDialogFragment extends DialogFragment {
         try {
             // Load from changelog.html in the assets folder
             StringBuilder buf = new StringBuilder();
-            InputStream json = getActivity().getAssets().open("lrn.html");
+
+            String strFileName = "html/lrn_";
+            boolean temp = getArguments().getBoolean("isEng");
+            int pos = getArguments().getInt("position");
+
+            strFileName =  temp ? strFileName+(pos+1):strFileName+"ma"+1;
+
+            Toast.makeText(getActivity(),strFileName,Toast.LENGTH_SHORT).show();
+
+            InputStream json = getActivity().getAssets().open(strFileName+".html");
             BufferedReader in = new BufferedReader(new InputStreamReader(json, "UTF-8"));
             String str;
             while ((str = in.readLine()) != null)

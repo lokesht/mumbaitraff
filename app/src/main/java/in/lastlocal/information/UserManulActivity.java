@@ -32,7 +32,6 @@ public class UserManulActivity  extends AppCompatActivity implements OnFragmentI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faq);
 
-        // initialise();
         if (savedInstanceState == null) {
             mFirstFragment = UserManualFragment.newInstance();
             addFragment(mFirstFragment);

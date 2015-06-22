@@ -31,7 +31,7 @@ public class UserManualFragment  extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private Context context;
-
+    private String[] user_manual_title,user_manual_desc;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -106,19 +106,12 @@ public class UserManualFragment  extends Fragment {
     private void onSetUP(View v) {
 
         List<ItemSign> itemSigns = new ArrayList<ItemSign>();
-        ItemSign item = new ItemSign(R.mipmap.i1, "Description 1");
-        ItemSign item2 = new ItemSign(R.mipmap.i2, "Description 2");
-
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
+        user_manual_title = getResources().getStringArray(R.array.user_manual_title);
+        user_manual_desc = getResources().getStringArray(R.array.user_manual_desc);
+        for(int i=1;i<user_manual_title.length+1;i++) {
+            ItemSign item = new ItemSign("image"+i+".png", user_manual_title[i-1],user_manual_desc[i-1]);
+            itemSigns.add(item);
+        }
 
         ListView lv =(ListView)v.findViewById(R.id.listView);
         UserManulListViewAdapter adapter = new UserManulListViewAdapter(getActivity(),itemSigns);

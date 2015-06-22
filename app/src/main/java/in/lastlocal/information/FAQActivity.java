@@ -22,8 +22,6 @@ import in.lastlocal.mumbaitraffic.R;
  * A placeholder fragment containing a simple view.
  */
 public class FAQActivity extends AppCompatActivity implements OnFragmentInteractionListener {
-
-    Toolbar mToolbar;
     private int optionSelected =  AppConstant.ANIMATE_X;;
 
     private FAQFragment mFirstFragment;

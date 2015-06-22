@@ -2,6 +2,8 @@ package in.lastlocal.information.fragment;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -11,27 +13,32 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
-import in.lastlocal.adapter.SignListViewAdapter;
-import in.lastlocal.adapter.UserManulListViewAdapter;
+import in.lastlocal.adapter.FAQAdapter;
+import in.lastlocal.adapter.GuidelineListViewAdapter;
+import in.lastlocal.adapter.Holder;
 import in.lastlocal.constant.AppConstant;
+import in.lastlocal.customview.AnimatedExpandableListView;
 import in.lastlocal.framework.OnFragmentInteractionListener;
-import in.lastlocal.model.ItemSign;
+import in.lastlocal.framework.OnMyListItemClickListener;
 import in.lastlocal.mumbaitraffic.R;
 
 /**
  * Created by USER on 21-Jun-15.
  */
-public class UserManualFragmentMarathi  extends Fragment {
+public class GuidelineFragmentMarathi extends Fragment {
 
-    private OnFragmentInteractionListener mListener;
+    private OnMyListItemClickListener mListener;
     private Context context;
-
     private Locale mLocale;
 
     /**
@@ -41,29 +48,22 @@ public class UserManualFragmentMarathi  extends Fragment {
      * @return A new instance of fragment FAQFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static SignFragmentMarathi newInstance() {
-        SignFragmentMarathi fragment = new SignFragmentMarathi();
+    public static GuidelineFragmentMarathi newInstance() {
+        GuidelineFragmentMarathi fragment = new GuidelineFragmentMarathi();
         return fragment;
-    }
-
-    public UserManualFragmentMarathi() {
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-
-        if (getArguments() != null) {
-
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-             context = getActivity();
+        context = getActivity();
 
         /** before generating view changing config*/
         mLocale = new Locale(AppConstant.LOCALE_HINDI);
@@ -83,7 +83,6 @@ public class UserManualFragmentMarathi  extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
     }
 
     @Override
@@ -104,17 +103,44 @@ public class UserManualFragmentMarathi  extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+
+        FragmentManager fragmentManager = getActivity().getFragmentManager();
+        int count = fragmentManager.getBackStackEntryCount();
+
+        FragmentManager.BackStackEntry latestEntry = (FragmentManager.BackStackEntry) fragmentManager.getBackStackEntryAt(count - 1);
+        String str = latestEntry.getName();
+        Fragment fragment = fragmentManager.findFragmentByTag(str);
+        if (fragment == null) {
+            return;
+        }
+
+        FragmentTransaction fragTransaction = fragmentManager.beginTransaction();
+        fragTransaction.detach(fragment);
+        fragTransaction.attach(fragment);
+        fragTransaction.commit();
+
+        super.onConfigurationChanged(newConfig);
+    }
+
     private void onSetUP(View v) {
+        ListView lv = (ListView) v.findViewById(R.id.listView);
+        String[] arrGroupItem = getResources().getStringArray(R.array.arr_guidence_head);
 
-        List<ItemSign> itemSigns = new ArrayList<ItemSign>();
-
-        String[] arrSign = getResources().getStringArray(R.array.sign_meaning);
-        ItemSign item = new ItemSign(R.mipmap.i3, "Not Available");
-        itemSigns.add(item);
-
-        ListView lv =(ListView)v.findViewById(R.id.listView);
-        UserManulListViewAdapter adapter = new UserManulListViewAdapter(getActivity(),itemSigns);
+        List<String> list = new ArrayList<String>();
+        list = Arrays.asList(arrGroupItem);
+        GuidelineListViewAdapter adapter = new GuidelineListViewAdapter(getActivity(), list);
         lv.setAdapter(adapter);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                mListener.onListItemClick(view, position, false);
+
+            }
+        });
     }
 
     public void onButtonPressed(View v) {
@@ -127,7 +153,7 @@ public class UserManualFragmentMarathi  extends Fragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            mListener = (OnFragmentInteractionListener) activity;
+            mListener = (OnMyListItemClickListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
                     + " must implement OnFragmentInteractionListener");

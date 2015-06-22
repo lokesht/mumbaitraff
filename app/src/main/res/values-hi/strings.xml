@@ -57,4 +57,18 @@
         <item> एका दिशेने प्रतिबंधित</item>
         <item> दोन्ही दिशेने प्रतिबंधित वाहने</item>
     </string-array>
+
+    <string-array name="arr_guidence_head">
+        <item>परवाना</item>
+        <item>वाहनचालक परवाना नुतनीकरण</item>
+        <item>आंतरराष्ट्रीय ड्रायव्हिंग परवाना</item>
+        <item>अपात्रता आणि निरस्तीकरण</item>
+        <item>वाहन परवाना वर विभागीय क्रिया</item>
+        <item>एक वाहन चालविण्यास नालायक</item>
+        <item>नवीन वाहन नोंदणी</item>
+        <item>नवीन नोंदणी मार्क नेमणूक</item>
+        <item>व्हीआयपी संख्या नोंदणी</item>
+        <item>मोटार वाहन मालकी हस्तांतरण</item>
+        <item>वाहतूक N.O.C</item>
+    </string-array>
 </resources>

@@ -2,14 +2,11 @@ package in.lastlocal.information.fragment;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.Bundle;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,16 +14,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
-
-import com.desarrollodroide.libraryfragmenttransactionextended.FragmentTransactionExtended;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 import in.lastlocal.adapter.EmergancyContactAdapter;
-import in.lastlocal.adapter.ExampleAdapter;
 import in.lastlocal.constant.AppConstant;
 import in.lastlocal.customview.AnimatedExpandableListView;
 import in.lastlocal.framework.OnFragmentInteractionListener;

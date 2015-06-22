@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="user_manual_title">
+        <item>Live Traffic</item>
+        <item>Traffic Feed</item>
+        <item>Emergency</item>
+        <item>Information</item>
+        <item>Emergency Contacts</item>
+        <item>Nearest Police station</item>
+        <item>Offences</item>
+        <item>Guidelines</item>
+    </string-array>
+    <string-array name="user_manual_desc">
+        <item>This function gives live traffic updates on a map. You can check traffic around your location or on the route you are travelling. This function allows you to navigate your vehicle to your destination and the different routes available to your destination along with the fastest option.</item>
+        <item>Get live Twitter feeds about current blocked or free moving areas and other traffic information from travellers across Mumbai.</item>
+        <item>Send a one-click Emergency Alert to 3 contacts with your current location with a pre-set or customisable text message. These contacts can be set and will be saved on your app and can be changed anytime. You can also create an Emergency widget/shortcut on your home screen by selecting the option in your settings. This widget will send a one-click Emergency alert to your contacts through one click.</item>
+        <item>This section gives you information about the following:</item>
+        <item>One-click call to all emergency contact points across Mumbai which include Police departments, crime branch, airline, tourist and railway inquiries, prisons, courts, crane services, electricity offices, hospitals, blood banks and ambulances.</item>
+        <item>Get information and directions to the police station nearest to your location.</item>
+        <item>Know all the driving, parking and licensing restrictions and offences, towing fines and the respective legal provisions and the penalty amount. </item>
+        <item>Interpret what all the traffic signs and road markings mean and also get a step-by-step guidance for acquiring licenses, registering your vehicle and getting an NOC.</item>
+    </string-array>
+</resources>

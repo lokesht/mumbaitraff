@@ -106,7 +106,7 @@
 
         <activity
             android:name="in.lastlocal.information.GuidenceActivity"
-            android:label="@string/title_activity_offences"
+            android:label="@string/title_activity_guidelines"
             android:theme="@style/Fragment.Theme">
 
             <meta-data
@@ -145,7 +145,6 @@
             android:label="Emergency"
             android:launchMode="singleTask"
             android:theme="@style/Fragment.Theme"></activity>
-
 
         <receiver android:name="in.lastlocal.widget_sos.NewAppWidget">
             <intent-filter>

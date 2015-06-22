@@ -21,12 +21,12 @@ import in.lastlocal.mumbaitraffic.R;
 /**
  * Adapter for our list of {@link Holder.GroupItem}s.
  */
-public class ExampleAdapter extends AnimatedExpandableListAdapter {
+public class FAQAdapter extends AnimatedExpandableListAdapter {
     private LayoutInflater inflater;
 
     private List<Holder.GroupItem> items;
 
-    public ExampleAdapter(Context context) {
+    public FAQAdapter(Context context) {
         inflater = LayoutInflater.from(context);
     }
 

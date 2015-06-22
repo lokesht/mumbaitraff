@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import in.lastlocal.adapter.ExampleAdapter;
+import in.lastlocal.adapter.FAQAdapter;
 import in.lastlocal.adapter.Holder;
 import in.lastlocal.constant.AppConstant;
 import in.lastlocal.customview.AnimatedExpandableListView;
@@ -32,7 +32,7 @@ public class FAQFragmentMarathi extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     private AnimatedExpandableListView listView;
-    private ExampleAdapter adapter;
+    private FAQAdapter adapter;
 
     private Context context;
     private Locale mLocale;
@@ -122,7 +122,7 @@ public class FAQFragmentMarathi extends Fragment {
             items.add(item);
         }
 
-        adapter = new ExampleAdapter(getActivity());
+        adapter = new FAQAdapter(getActivity());
         adapter.setData(items);
 
         listView = (AnimatedExpandableListView) v.findViewById(R.id.listView);

@@ -115,4 +115,17 @@
         <item> दोन्ही दिशेने प्रतिबंधित वाहने</item>
     </string-array>
 
+    <string-array name="arr_guidence_head">
+        <item>Learning License</item>
+        <item>Renewal of Driving License</item>
+        <item>International Driving Permit</item>
+        <item>Disqualification and Revocation </item>
+        <item>Departmental Action on Driving License</item>
+        <item>Unfitness to drive a Vehicle</item>
+        <item>Registration</item>
+        <item>Assignment of New Registration Mark </item>
+        <item>Registration of VIP Numbers</item>
+        <item>Transfer of Motor Vehicle Ownership</item>
+        <item>Traffic NOC</item>
+    </string-array>
 </resources>
