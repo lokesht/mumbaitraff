@@ -92,7 +92,7 @@ public class SendSmsActivity extends Activity implements
             lon = String.valueOf(mLastLocation.getLongitude());
 
             SharedPreferences.Editor edit = sharedpreferences.edit();
-            edit.putString(5+"",lat+"#"+ lon);
+            edit.putString(5 + "", lat + "#" + lon);
             edit.apply();
 
             onSendMessage(null);
@@ -110,7 +110,7 @@ public class SendSmsActivity extends Activity implements
 //        Location location = locationManager.getLastKnownLocation(bestProvider);
 
         String locationProvider = LocationManager.NETWORK_PROVIDER;
-       // Or use LocationManager.GPS_PROVIDER
+        // Or use LocationManager.GPS_PROVIDER
 
         Location location = locationManager.getLastKnownLocation(locationProvider);
 
@@ -120,7 +120,7 @@ public class SendSmsActivity extends Activity implements
 
         } catch (NullPointerException e) {
 
-            String ll=sharedpreferences.getString("5","18.9750#72.8258");
+            String ll = sharedpreferences.getString("5", "18.9750#72.8258");
 
             lat = ll.split("#")[0] + "";
             lon = ll.split("#")[1] + "";
@@ -148,8 +148,10 @@ public class SendSmsActivity extends Activity implements
 
     public void onSendMessage(View v) {
 
-        String con1, conName1, con2, conName2, con3, conName3;
+        String con1, conName1, con2, conName2, con3, conName3, msg;
         String[] t1;
+
+        msg = sharedpreferences.getString("0", "");
         con1 = sharedpreferences.getString("2", "");
         con2 = sharedpreferences.getString("3", "");
         con3 = sharedpreferences.getString("4", "");
@@ -165,7 +167,7 @@ public class SendSmsActivity extends Activity implements
             conName1 = t1[0];
 
             if (con1.length() > 9) {
-                send(con1, conName1 + " message ");
+                send(con1, msg);
             }
         }
 
@@ -174,7 +176,7 @@ public class SendSmsActivity extends Activity implements
             con2 = t1[0];
             conName2 = t1[1];
             if (con2.length() > 9) {
-                send(con2, conName2 + " message ");
+                send(con2, msg);
             }
         }
 
@@ -183,7 +185,7 @@ public class SendSmsActivity extends Activity implements
             con3 = t1[0];
             conName3 = t1[1];
             if (con3.length() > 9) {
-                send(con3, conName3 + " message ");
+                send(con3, msg);
             }
         }
 
@@ -192,9 +194,10 @@ public class SendSmsActivity extends Activity implements
 
     private void send(String contact, String msg) {
         SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage(contact, null, msg +"Help! I am in emergency. My location is http://maps.google.com/?q="+lat+","+ lon, null, null);
+        smsManager.sendTextMessage(contact, null, msg + " http://maps.google.com/?q=" + lat + "," + lon, null, null);
 
-        Toast.makeText(this, msg + "Help! I am in emergency. My location is http://maps.google.com/?q="+lat +","+ lon, Toast.LENGTH_SHORT).show();
+        if (AppConstant.DEBUG)
+            Toast.makeText(this, msg + "http://maps.google.com/?q=" + lat + "," + lon, Toast.LENGTH_SHORT).show();
     }
 
     public void intentToLoc() {

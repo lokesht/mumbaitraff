@@ -12,6 +12,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -122,7 +123,7 @@ public class SignFragmentMarathi extends Fragment {
             itemSigns.add(item);
         }
 
-        ListView lv =(ListView)v.findViewById(R.id.listView);
+        GridView lv =(GridView)v.findViewById(R.id.listView);
         SignListViewAdapter adapter = new SignListViewAdapter(getActivity(),itemSigns);
         lv.setAdapter(adapter);
     }

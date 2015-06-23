@@ -29,8 +29,7 @@
         android:textColor="@color/yellow"
         android:textSize="@dimen/ts_headline"
         android:textStyle="bold"
-        android:typeface="sans"
-        />
+        android:typeface="sans" />
 
     <LinearLayout
         android:id="@+id/ll_text_language"
@@ -42,31 +41,32 @@
         android:orientation="horizontal"
         android:padding="@dimen/activity_vertical_margin">
 
-        <TextView
-            android:clickable="true"
-
+        <Button
             android:id="@+id/tv_marathi"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clickable="true"
             android:padding="@dimen/default_padding"
             android:text="@string/login_marathi"
             android:textColor="@color/red"
-            android:textSize="@dimen/ts_headline" />
+            android:textSize="30sp" />
 
 
         <View
-            android:padding="@dimen/default_padding"
-            android:layout_gravity="center_vertical"
             android:layout_width="1dp"
             android:layout_height="20dp"
-            android:background="@color/gray" />
+            android:layout_gravity="center_vertical"
+            android:background="@color/gray"
+            android:padding="@dimen/default_padding" />
 
-        <TextView
-            android:clickable="true"
-
+        <Button
             android:id="@+id/tv_english"
+            style="?android:attr/borderlessButtonStyle"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clickable="true"
             android:padding="@dimen/default_padding"
             android:text="@string/login_english"
             android:textColor="@color/green"
@@ -75,12 +75,24 @@
     </LinearLayout>
 
     <ImageView
+
         android:id="@+id/iv_home_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_above="@+id/tv_company_name"
         android:background="@drawable/splash_bottom_brand"
         android:paddingBottom="@dimen/default_padding" />
+
+    <TextView
+        android:id="@+id/tv_company_name"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="@dimen/default_padding"
+        android:text="Developed by Last Local App Solution"
+        android:textColor="@color/white" />
 
 </RelativeLayout>

@@ -62,6 +62,7 @@ public class TimelineActivity extends AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.inc_tool_bar);
         setSupportActionBar(mToolbar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mErrorView = (ErrorView) findViewById(R.id.error_view);
         mErrorView.setOnRetryListener(new ErrorView.RetryListener() {
             @Override

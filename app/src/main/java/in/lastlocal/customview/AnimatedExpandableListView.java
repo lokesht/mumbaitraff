@@ -117,6 +117,11 @@ public class AnimatedExpandableListView extends ExpandableListView {
         super(context, attrs, defStyle);
     }
 
+    @Override
+    public void setIndicatorBounds(int left, int right) {
+        super.setIndicatorBounds(200, 200);
+    }
+
     /**
      * @see ExpandableListView#setAdapter(ExpandableListAdapter)
      */

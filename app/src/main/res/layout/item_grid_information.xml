@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="@dimen/default_padding"
-        android:text="Nearest Police\nStation"
+        android:minLines="2"
         android:textSize="@dimen/ts_button"
         android:textStyle="bold" />
 

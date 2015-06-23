@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -59,7 +60,6 @@ public class SignFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_sign, container, false);
-
         onSetUP(v);
 
         return v;
@@ -97,7 +97,7 @@ public class SignFragment extends Fragment {
             ItemSign item = new ItemSign("image"+i+".png", signs_english[i-1]);
             itemSigns.add(item);
         }
-        ListView lv =(ListView)v.findViewById(R.id.listView);
+        GridView lv =(GridView)v.findViewById(R.id.listView);
         SignListViewAdapter adapter = new SignListViewAdapter(getActivity(),itemSigns);
         lv.setAdapter(adapter);
     }

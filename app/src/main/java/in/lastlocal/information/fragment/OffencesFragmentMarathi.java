@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -157,6 +158,14 @@ public class OffencesFragmentMarathi extends Fragment {
         listView = (AnimatedExpandableListView) v.findViewById(R.id.listView);
         listView.setAdapter(adapter);
 
+        DisplayMetrics metrics = new DisplayMetrics();
+        ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            listView.setIndicatorBounds(metrics.widthPixels- 50, listView.getWidth());
+        } else {
+            listView.setIndicatorBoundsRelative(metrics.widthPixels- 50, listView.getWidth());
+        }
         // In order to show animations, we need to use a custom click handler
         // for our ExpandableListView.
         listView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {

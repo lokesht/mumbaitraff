@@ -3,10 +3,21 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
     <string name="title_activity_map_test">MapTest</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_splash">Mumbai Traffic</string>
     <string name="title_activity_web_view">WebViewActivity</string>
+    <string name="title_activity_main_information">Information</string>
+    <string name="title_activity_emergency_contact">Emergency Contacts</string>
+    <string name="title_activity_user_manual">User Manual</string>
+    <string name="title_activity_offences">Offence and Penalties</string>
+    <string name="title_activity_guidelines">Guidelines</string>
+    <string name="title_activity_signs">Signs</string>
+    <string name="title_activity_faq">FAQ</string>
+    <string name="title_activity_emergency">Emergency</string>
+
+    <string name="title_dialog_guidline">Guidelines</string>
 
     <string name="login_english">English</string>
     <string name="login_marathi">मराठी</string>
@@ -15,32 +26,103 @@
     <string name="title_activity_web_view_near_by_police">WebViewNearByPolice</string>
     <string name="live_traffic">Live Traffic</string>
 
-    <string name="title_activity_main_information">Information</string>
-    <string name="title_activity_emergency_contact">Emergency Contacts</string>
-    <string name="title_activity_user_manual">User Manual</string>
-    <string name="title_activity_offences">Offence and Penalties</string>
-    <string name="title_activity_guidelines">Guidelines</string>
-    <string name="title_activity_signs">Signs</string>
-    <string name="title_activity_faq">FAQ</string>
+    <string name="msg_emergency_help">"Help! I am in emergency. My location is"</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="FAQ">FAQ</string>
     <string name="btn_near_police_station">Near Police Stations</string>
+    <string name="btn_close">Close</string>
     <string name="language">अ</string>
 
     <string-array name="arr_faq_question">
-        <item>Q) Who issues the Motor Driving License in Mumbai?</item>
-        <item>Q) Who collects the Road Tax in Mumbai?</item>
-        <item>Q) What documents should a driver carry when driving?</item>
-        <item>Q) Who is authorized to collect the traffic fine on the spot?</item>
-        <item>Q) How do I pay my traffic fine?</item>
-        <item>Q) What is the rule for tinted glasses?</item>
-        <item>Q) What is the rule regarding seat belts? Is it binding using \r\n seat belts while driving in interior areas or by lanes?</item>
+        <item>Who issues the Motor Driving License in Mumbai?</item>
+        <item>Who collects the Road Tax in Mumbai?</item>
+        <item>What documents should a driver carry when driving?</item>
+        <item>Who is authorized to collect the traffic fine on the spot?</item>
+        <item>How do I pay my traffic fine?</item>
+        <item>What is the rule for tinted glasses?</item>
+        <item>What is the rule regarding seat belts? Is it binding using seat belts while driving in interior areas or by lanes?</item>
+        <item>What is the rule for use of mobile phone?</item>
+        <item>What is the meaning of the odd and even parking board? Does it relate to date or day of the month /week?</item>
+        <item>What are the duties of a driver when his vehicle is involved in an accident resulting in death/bodily injury/damage to property?</item>
+        <item>Under what conditions is the towing of a vehicle allowed?</item>
+        <item>What is the punishment for drunken driving/driving under the influence of any drug?</item>
+        <item>When can the authorities detain a vehicle?</item>
+        <item>What are the consequences for driving without a license?</item>
+        <item>Can I use mobile phone while driving?</item>
+        <item>Can I keep my mobile phone switch on while driving?</item>
+        <item>Can I use hands-free or any other accessories of mobile phone while driving?</item>
+        <item>Can other occupants of the motor vehicle use mobile phone?</item>
+        <item>After receiving call or sms on mobile phone, Can I park my vehicle and use mobile phone?</item>
+        <item>What is fine or penalty for using mobile phone, while driving?</item>
+        <item>Can I get refund on fine?</item>
+        <item>If I don\'t have money to pay fine, what is the procedure?</item>
+        <item>If I am a doctor; can I use my mobile phone in an emergency while driving?</item>
+        <item>Why must I wear a helmet?</item>
+        <item>Why do Governments make Helmet use compulsory?</item>
+        <item>How does a helmet work?</item>
+        <item>What comprises a good helmet?</item>
+        <item>Do Helmets impair hearing?</item>
+        <item>How should a helmet fit?</item>
+        <item>Do we have a safety standard for motorcycle helmet?</item>
+        <item>What do I keep in mind while buying a helmet?</item>
+        <item>What is Noise Pollution?</item>
+        <item>What are the ill-effects of noise pollution?</item>
+        <item>What are the restrictions and time limit of noise level?</item>
+        <item>What is meant by externment?</item>
+        <item>What is preventive detention?</item>
+        <item>What are the executive powers (of CP/DM &amp; other empowered officials) to prohibit certain acts for prevention of disorder?</item>
+        <item>What is the meaning of \'Eating House\'?</item>
+        <item>What is the meaning of the term ‘place of public entertainment’?</item>
+        <item>What is the meaning of the term ‘place of public Amusement?</item>
+        <item>What is meant by premises and performance license?</item>
+        <item>Do I need permission for using loud speakers?</item>
+        <item>Do I need license for public show of cinema?</item>
+        <item>Do I need license/ permission for dramatic/mimetic/musical performances?</item>
+        <item>Do I need to take permission for organizing a morcha/dharna/public meeting or rally?</item>
+        <item>Do I need a license for consumption / possession of Liquor?</item>
+        <item>What is Arrest?</item>
+        <item>What is meant by "Bailable / Non-bailable offences"?</item>
+        <item>What is meant by Prohibitory Orders?</item>
+        <item>What is the penalty for contravention / breach of prohibitory orders under section 37 B.P. Act 1951?</item>
+        <item>What is an F.I.R?</item>
+        <item>How do I lodge F.I.R.?</item>
+        <item>What is a cognizable case or What is cognizable offence?</item>
+        <item>What is the meaning of the term ‘taking cognizance’?</item>
+        <item>What is a Non cognizable offence?</item>
+        <item>How do I lodge a NC complaint?</item>
+        <item>What is meant by a ‘complaint’?</item>
+        <item>What is meant by public place?</item>
+        <item>What is a Passport?</item>
+        <item>Where is the passport application form available?</item>
+        <item>What are the fees for issuing a passport?</item>
+        <item>What is the procedure if the passport is lost?</item>
+        <item>How many days are required for police verification?</item>
+        <item>What are the documents required to apply for a passport?</item>
+        <item>What is the procedure if the applicant is minor?</item>
+        <item>What is procedure for change of name after marriage / divorce?</item>
+        <item>List of applicants entitled to Emigration Check Not Required stamp (E.C.N.R.)</item>
+        <item>What is a VISA?</item>
+        <item>How does one procure a new Arms License?</item>
+        <item>How much time it takes to get a new Arms License?</item>
+        <item>Which documents are needed for obtaining a new Arms License?</item>
+        <item>How an Arms license is renewed?</item>
+        <item>My license has expired three months back. What should I do?</item>
+        <item>My license has expired more than a year back, what should I do?</item>
+        <item>License holder was out of station and hence could not renew the license in time. What is the remedy?</item>
+        <item>How should I obtain a T.J.P. (Temporary Journey Permit)?</item>
+        <item>How do I get a license for property protection (Per-Pro Basis)?</item>
+        <item>My father/uncle/husband/ relative was a license holder. He expired and now the license or the weapon is in my possession. What should I do?</item>
+        <item>My father/relative is old. He wishes to give me his weapon. What is the procedure?</item>
+        <item>My All India Arms License was issued in another State. I want it to be registered/renewed in Maharashtra. What should I do?</item>
+        <item>I want to make my license issued for one city, valid in the whole of Maharashtra. What is the procedure?</item>
+        <item>I want to make my license valid in the whole of India. What should I do?</item>
+        <item>I want to sell my weapon. What is the procedure?</item>
     </string-array>
 
     <string-array name="arr_faq_ans">
-        <item>As per the provision of Motor Vehicles Act, the Regional Transport Office is empowered to issue the Motor Driving License after following the procedures set in the Act. Here Regional Transport Office in Mumbai means, Regional Transport Offices at Tardeo, Wadala and Andheri and their addresses are as follows
+         <item>As per the provision of Motor Vehicles Act, the Regional Transport Office is empowered to issue the Motor Driving License after following the procedures set in the Act. Here Regional Transport Office in Mumbai means, Regional Transport Offices at Tardeo, Wadala and Andheri and their addresses are as follows
               \r\n •	Regional Transport Office - Central Bodyguard Lane, Keshavrao Khade Marg, Tardeo, Mumbai
               \r\n •	Regional Transport Office (East), Anik Wadala Road, Near Imax Theater , Wadala, Mumbai.
               \r\n •	Regional Transport Office West, Swami - Road, Andheri West, Mumbai.</item>
@@ -57,12 +139,88 @@
         <item>The driver and the person seated in the front seat must wear the seat belts while vehicle is in motion ( U/S 138 CMVR r/w 177 MVA.
               It has been made compulsory to the manufacturers from the year 1995 to provide the seat belts to the vehicles.
               It is binding on occupants to wear the seat belts whenever vehicle is in motion.</item>
-
+        <item>As per section 250 (A) MMVR , r/w 177 M.V.Act no driver while driving or riding a motor vehicle ( including two wheelers ) shall use a mobile phone.</item>
+        <item>The odd and even day parking relates to the date of the month &amp; not the day of the month/week.</item>
+        <item>The duties of the driver are as under: • Arrange for medical help • Inform the police • In case the vehicle is carrying dangerous goods, keep everyone away, avoid smoking in the vicinity and take emergency action as displayed on the vehicle.               	</item>
+        <item>Vehicle abandoned or left unattended • Parked in a parking restricted zone • Parked in a way causing inconvenience to other road users                	</item>
+        <item>If a driver is caught driving a vehicle with alcohol in his blood exceeding 30 mg per 100 ml or he is under the influence of a drug to such an extent that he is incapable of exercising proper control over the vehicle, the following will be the punishments: • First Offence: Imprisonment up to 6 months or fine up to RS 2000 or both • Subsequent Offence: Imprisonment up to 2 years or fine up to RS 3000 or both                	</item>
+        <item>Authorities can detain a vehicle in the following circumstances: • Vehicle being driven by an individual without valid driving license • Vehicle being driven without registration • Transport vehicle being driven without Permit • Vehicle being driven without payment of Tax • Improper/suspicious registration. No number plate             	</item>
+        <item>The defaulter is liable to be prosecuted in a criminal court with fine up to Rs 500, three months imprisonment or both.</item>
+        <item>As per rule 250 (A)(1) of Maharashtra Motor Vehicle Rules 1989, use of mobile phone is prohibited by driver while driving or riding a motor vehicle (including two wheelers).</item>
+        <item>If you are alone in the car, you shall switch off your mobile phone while driving any motor vehicle. (Section 250 (A)(2) of M.M.V.R.1989)</item>
+        <item>No. (Section 250 (A)(2) of M.M.V.R.1989)</item>
+        <item>Yes. Other than driver, occupants of the motor vehicle can use mobile phone.</item>
+        <item>No. As per rule mentioned above, mobile phone should be in switched off mode while driving.</item>
+        <item>As per section 177 of Motor Vehicle Act, 1988, using mobile phone while driving fine is Rs.100/-. But, if it causes further inconvenience or is hazardous to the road users, then the driver may be fined for negligence driving, for which fine is Rs.1000/- and compounding fee is Rs.500/-.</item>
+        <item>If a fine is recovered as a cash bail deposit and if you appear in the court, it may refunded or deposited as per court order. If cash is taken, as a compounding fee, then it is non-refundable as the case it self is disposed off on the spot. (Sec.200 of M.V.Act1988).</item>
+        <item>As per Sec.206 (2) of M.V.Act, 1988, if you will not pay fine, your driving license may be impounded in lieu of temporary license permit, which is issued by the official handling the matter.</item>
+        <item>No. Exemption is not given to anyone in the M.V.Act or Rules regarding this and all are same in front of law.</item>
+        <item>When man was created, he was equipped with a skull to protect his brain. This original protection measure "set-up" was effective in the then soft environment which was man\'s normal habitat\'. As man evolved, he started by taming the horse, as he outgrew the speed capability of the horse, he began searching for faster modes of travel. He first developed the steam engine, followed by the internal combustion engine and then the turbine. Man, while he has succeeded in propelling himself at speeds that would have scared his ancestors, has also changed his surroundings to hard unyielding surfaces both horizontal and vertical. Unfortunately, he has not been able to transform himself to the protective needs of his new lifestyle and environment. The helmet is, therefore, necessary and just a link in the long chain of safety equipment and counter measures man has to use in his present surroundings.</item>
+        <item>The wealth of any nation is in its people. With the continuing popularity of the two-wheeler amongst college going youth and executive cadre, it is necessary for the government to protect its intelligentsia and prevent "brain drain" of another sort. Helmets are made mandatory by law, since statistical studies conducted almost all over the world have proven beyond any doubt that “a helmet is the single most effective counter measure against brain injury in the life of a two wheeler user." Additionally safety measures in every form are never implemented unless the government has enforced them.  </item>
+        <item>The brain is the most delicate organ in the human body, which is suspended within the skull in a fluid called the Cerebral Spinal Fluid (CSF).When the skull is hit, it accelerates and moves towards the suspended brain, until the pressures within the skull move the brain forward in the CSF. When the skull is stopped, ( as in a motorcycle accident ),the brain being suspended continues its forward motion, and depending upon the speed during impact, the forward moving brain will touch the inside of the skull and can be damaged. The brain is said, in such a case, to have suffered from linear concussion, and penetration from protruding objects and to stay fastened position in the event of an accident. Energy management, as we call it in the helmet trade, is the management of the energy that must be dissipated, so that the brain is never subjected to damage from contraction the skull. To achieve this, we construct a skull, rather a very rigid shell from fiberglass, or thermoplastic. The inside of the helmet is lined with expanded polystyrene (EPS) of controlled density. The shape and thickness of this EPS liner as well as its density is of paramount importance. Under an accident impact condition, the shell of the helmet behaves like the skull; the EPS liner like the CSF and the skull is treated in the same way as nature intended it to treat the brain. In case of an accident a) The helmet strikes the road, curb of whatever and comes to a stop. Momentarily.( Measured in milliseconds.) b) The skull and brain are still in motion. c) The EPS begins crushing progressively. d) The skull is not permitted to stop "suddenly", by the crushing EPS. e) The brain is also slowing progressively within the CSF and the job is done. All of the above happens very quickly (within milliseconds) and that is how a helmet works.</item>
+        <item>Good helmet have fiberglass or thermoplastic outer shells. EPS (Thermocole) is considered to be the best energy absorbing liner available and must be present in the helmet. Nylon or Terylene woven tape of tubular instruction is found to be the best for chinstraps. Steel Anchor plates are a must for securing the chinstraps to the shell. Fastening by double "D" rings; bar-n-buckle or all metal clasps are most secure. Rivets of copper or brass are best for fixing anchor plates to the shell. The helmet must fit snugly and not wobble or move, ones fastened on the head. Beadings, paints etc. are frills that are applied to promote the helmet. Look for these features in a helmet before making your choice. Question: Why must I wear a helmet then I do not normally exceed 55 km while riding? At 55 kmph you are traveling at 49 feet per second i.e. the speed at which you will hit the ground if you jump out a window on the fourth floor of a building. Must I say more???? Question: What is the lifetime of a helmet and how should a helmet be handled? A helmet, since it is constructed from plastics, i.e. thermoplastics: ABS, Polycarbonate, Polypropelene or thermosets i.e. Fibreglass reinforced plastics, are subject to change from exposure to ultra-violet and infrared rays in sunlight. A helmet should be replaced every two or three years, However, if a helmet has been involved in an impact, it must be changed without question. DON\'T TAKE CHANCES. Don\'t drop it; Keep it out of reach of children. Don\'t press the EPS liner inside, don\'t carry groceries in it. Clean it regularly. Question: Do helmets cause balding? Not at all, this aspect of helmets was studied in the U.K. in 1981 by a leading authority on baldness and a consultant dermatologist Dr. Arthur Rook. It was found that the wearing of helmets does NOT promote balding.</item>
+        <item>You will be interested to learn of findings from a study conducted at the California Institute of Technology and the USDA forests service. At highway speeds (approximately 80 kmph) wind noise levels with a helmet on, can reach 100 db (A) which is the permitted mechanical sound level of a motorcycle sold in the USA). In case you feel then, that riding without a helmet is better, let me hasten to inform you, which at the same speed the wind noise level without a helmet are 120 db (A). So, to come back to the original question, you can now see that what may appear to be a loss of hearing while wearing a helmet in a stationary situation is actually quite the reverse while in motion on a motorcycle.</item>
+        <item>A helmet must fit snugly, rather, slightly tightly than comfortably. After fastening the chin strap, push back on the front of the helmet, if it sides back on your head, select one that grips well and does not wobble and move when worn. </item>
+        <item>Yes, we do. There is an Indian Standard Specification for motorcycle helmets, IS 4151. There are other IS standards for police, industrial and mining helmets too. These helmets are constructed very differently from motorcycle helmets and cannot be depended for protection in a motorcycle accident situation. The two energy management requirements of these two end uses are poles apart. I will explain. a. In the case of the police, industrial or mining helmet, the helmet in expected to protect the wearer from objects coming towards him, projectiles like stones or bricks for the police, and nuts or bolts etc. in industrial usage. b. In the cast of the motorcyclist, the helmet must protect him when he is the projectile going to hit a solid object.</item>
+        <item>Check for ISI marking helmet. Take time to check proper fitting. A tight helmet will give you a headache. A loose helmet will wobble every time your bike crosses a bump on the road. Ensure a comfortable fit. Try on the helmet before a mirror. You will see how the helmet suits your personality. Buy from a reputed dealer displaying "Authorized Dealer" Certificate. Also select a dealer who offers you an opportunity to choose between several brands of helmets. Never buy a helmet from a roadside hawker. It would most likely be a squrious product with a false ISI marking. Insist on a proper printed Bill of sale showing the correct brand and model. Never buy a helmet without a Bill. Do not accept a "Quotation" in place of a Bill. Preserve the Bill. Ask for the instruction card provided with each helmet by the manufacturer. Follow the instructions on the card for proper use and maintenance of the helmet. Buy a Helmet Lock. You will not have to carry about your helmet when not in use. Compulsion or not, always use a helmet when using a scooter or a motorcycle, either as a rider or as a pillion passenger. Remember that the life of the pillion passenger is as precious as that of the rider. Buy more than on helmet if necessary.   </item>
+        <item>Noise pollution means the disturbance produced in environment by undesirable sounds of various kinds.</item>
+        <item>a) Noise as nuisance and health hazard to human beings and other living things b) Hearing loss c) Interference with communication d) Disturbance of sleep e) Annoyance f) Adverse effect on performance g) Physiological effects h) Accentuated effects on urban children, sick &amp; elderly people under recuperation.</item>
+        <item>Noise level in a public place shall not exceed 10 dB(A) above the ambient noise standard for the area or 75bB(A) whichever is lower. No horn should be allowed to be used at night (between 10.00 p.m. and 06.00 a.m.) in residential area except in exceptional circumstances. Crackers should not be burst between the above mentioned time slot.</item>
+        <item>As per section 55 of Bombay Police Act, 1951, if the movement or encampment of any gang or body of persons is causing or is calculated to cause danger or alarm or reasonable suspicion that unlawful designs are entertained by such gang, or by members thereof, then such gangs/ bodies of persons can be dispersed and ordered that they remove themselves outside the area. This is process is called externment of gangs and Sub Divisional Magistrates in Districts and DCPs in Commissionerates are empowered to pass such orders. Similarly, section 56 of Bombay Police Act, 1951 empowers the above named authorities to extern persons engaged in or about to be engaged in offences punishable under Ch XII - XVI – XVII I.P.C. .(for details, please refer sections 55-56 of Bombay Police Act, 1951 )</item>
+        <item>When the executive officers charged with responsibility of maintaining law and order / Public order in their jurisdictions have reasons to believe that activities/ movements of a person are detrimental / prejudicial to maintaining public tranquility and smooth flow of life, such authorities (C.P./D.M.) may authorize and order such a person to be detained under the various preventive detention laws.</item>
+        <item>The commissioner of Police and the District Magistrate in areas under their respective charges may issue order in writing u/s 37 (3) of Bombay Police Act, 1951 for prohibiting any assembly or procession whenever and for so long as it consider such prohibition necessary for preservation of the public order. Such written order can also be issued for prohibiting the carrying of arms, swords, spears, guns, knives, sticks or lathis, or any other article, which is capable of being used for causing physical violence.</item>
+        <item>Eating House\' means any place to which the public are admitted, and where any kind of food or drink is supplied for consumption in the premises by any person owing or having an interest in or managing such place, and include a refreshment room, boarding-house, coffee-house or a shop where any kind of food or drink is supplied to the public for consumption in or near such shop, but does not include "placeof public entertainment".(Please refer section 2(5A) of B P Act 1951).</item>
+        <item>Place of public entertainment means a lodging house, boarding and lodging house or residential hotel and includes any eating house in which any kind of liquor or intoxicating drug is supplied (such as a tavern, a wine shop, a beer shop or a spirit/ arrack/ toddy/ ganja/ bhang/ opium shop) to the public for consumption in or near such place. (Please refer section 2 (10) of Bombay Police Act, 1951) A PPEL license is required to be obtained by all such establishments from the competent authority (CP/DM) under the rules made under section 33 of B P Act 1951. (Pl refer Rules for Licensing and Controlling Places of Public entertainment 1953 for Greater Mumbai). There are two classes for obtaining license for Place of public entertainment classified as class "A" (to sell a liquor, toddy, or any intoxicating drug) and class "B" (For residential Hotels and Lodging Houses). </item>
+        <item>Place of public Amusement means any place where music, singing, dancing, or any diversion or game, or the means of carrying on the same, is provided and to which the public are admitted either on payment of money or with the intention that money may be collected from those admitted and includes a race course, circus, theatre, music hall, billiard room, bagatelle room, gymnasium, fencing school, swimming pool or dancing hall.(Please refer Rules for licensing and controlling places of public amusements (other than cinemas) and performances for public amusement, including melas and tamasha\'s, 1960 for Greater Mumbai).</item>
+        <item>A Premises and Performance license means a license is required to be obtained for all performances which would include live music, band, orchestra, drama, circus or any other type of performance in a public place under Rules for Licensing and Controlling Places of Public Amusement (other than Cinemas) and Performances for Public Amusement including Melas and Tamashas, 1960 .The Commissioner of Police and the D.M. are empowered to grant such licenses.</item>
+        <item>Yes. You should obtain permission from concerned C.P/ S.P./ District Magistrate for sound amplification under rules made under sec 33 of B.P.Act, 1951. Such a permission is required to be taken for private/ public functions held in private / public places.</item>
+        <item>Yes. You have to obtain a temporary performance license from concerned licensing authority (C.P./D.M.).</item>
+        <item>Yes. You have to obtain a temporary performance/premises license from concerned licensing authority (C.P./D.M.).</item>
+        <item>Yes. You need to take permission for taking out a morcha/ dharna/ organising public meeting or rallies from concerned Commissioner of Police or District Magistrate.</item>
+        <item>Yes, you need to take license for consumption / possession of Liquor from concerned Commissioner of Police or District Magistrate.</item>
+        <item>As per Ballentines Law Dictionary 1948 Ed.P.105, arrest means the taking, seizing, or detaining of the person of another, either by touching, or putting hands on him, or by any act which indicates an intention to take him into custody, and subjects the person arrested to the actual control and will of the person making the arrest. Chapter V and section 41 to 59 of Criminal Procedure Code 1973, deals with Arrest of Persons. As per section 41 (1) Cr.P.C, any police officer may, without an order from a Magistrate and without a warrant, arrest any person, (a) Who has been concerned in any cognizable offence, or a reasonable complaint has been made, or credible information has been received or a reasonable suspicion exists; or (b) Who has in his possession of any implement of house breaking; or (c) Who has been proclaimed as an offender or (d) In whose possession anything is found which may reasonably be suspected to be stolen property; or (e) Who obstructs a police officer while in the execution of his duty, or who has escaped, or attempts to escape, from lawful custody; (f) Reasonably suspected of being a deserter from any of the Armed Forces. As per section 42 of Cr.P.C., any person who, in the presence of a police officer, has committed or has been accused of committing a non-cognizable offence, refuses on demand of such officer to give his name and residence, can be arrested. As per section 50 of Cr.P.C., person arrested without warrant has to be informed about the grounds of his arrest and about his entitlement regarding bail. As per section 53 of Cr.P.C., when a person is arrested and if there are reasonable grounds for believing that an examination of his person will afford evidence as to the commission of an offence, it shall be lawful for a registered medical practitioner, acting at the request of a police officer not below the rank of sub-inspector (and for any person acting in good faith in his aid and his direction), to make such an examination of a person arrested as is reasonably necessary, and to use such force as is reasonably necessary for that purpose. When a person of a female is to be examined under this section, the examination shall be made only by, or under the supervision of, a female registered medical practitioner. As per section 56 of Cr.P.C., A police officer making an arrest without warrant shall, without unnecessary delay and subject to the provisions herein contained as to bail, take or send the person arrested before a Magistrate having jurisdiction in the case or before the officer in-charge of a police station. As per section 57 of Cr.P.C., No police officer shall detain in custody a person arrested without warrant for a longer period than under all the circumstances of the case is reasonable, and such period shall not, in the absence of a special order of a Magistrate under section 167, exceed 24 hours exclusive of the time necessary for the journey from the place of arrest to the Magistrates Court. As per section 151 of Cr.P.C., a person can also be arrested to prevent commission of cognizable offences.</item>
+        <item>1. Under the Code of Criminal Procedure 1973 (first schedule), offences have been classified as ‘bailable’ and ‘non-bailable’ offences. 2. In the case of bailable offences, it is binding upon the investigating officer to grant bail. However, in case of a non-bailable offence, the police cannot grant bail and bail can be granted by a Judicial Magistrate/Judge only. 3. In case of bailable offences, if the accused produces proper surety, and fulfills other conditions, it is binding upon the Investigating officer to grant bail. 4. In the case of a non-bailable offence, the Investigating Officer must produce the accused before the Judicial Magistrate / Judge concerned within 24 hours of his arrest. At that time, the accused has a right to apply for bail.</item>
+        <item>Prohibitory Orders refer to orders issued by competent authorities prohibiting certain things under various ACTs viz,, Bombay Police Act, 1951, Cr.P.C. etc. Prohibitory Orders are issued by C.P. / D.M. under section 37 of B. P. Act 1951. Such orders are valid for a term of 15 days (at a time) and are renewed by the competent issuing authorities from time to time. Prohibitory orders under section 37 referred to above are issued to prohibit: a) Assembly of 5 or more persons, b) Processions of any kind, c) Use of loudspeakers, amplifying instruments, musical band and bursting of crackers, d) Carrying of arms, cudgels, sticks or lathis, swords, spears, knives, unlicensed guns or any other articles capable of being used for causing physical harm or violence, e) Carrying of any corrosive substance or explosive, or carrying or colleting projectlites like stones or other instrument which can be used to cause harm or violence, f) Exhibition of effigies, corpses, or figures/figurines, public utterances / loud cries, singing of songs, playing of music, delivery of harangues, use of gestures or mimetic representation, exhibition or dissemination of pictures, symbols, placards or any other objects / things that may, in the opinion of any police, offend against decency/morality or undermine the security of, or tend to overthrow the State</item>
+        <item>Section 135 of B.P. Act 1951 provides for penal action for such contravention.</item>
+        <item>F.I.R. means First Information Report, made to police, about commission of a cognizable offence, In effect, it amounts to putting law in to motion by giving information relating to the commission of a cognizable offence to an officer in charge of a police station, (which shall be reduced into writing and read over to the informant) and shall be signed by the person giving such information. It is mandatory to give a copy of the first information report (as recorded by police) to the complainant or informant free of cost.</item>
+        <item>The informant/ complainant should go to the police station having jurisdiction over the area (where the offence is committed) and report to officer in-charge/ station house officer about commission of a cognizable offence. In case information is given on telephone, the informant / complainant should subsequently go to the police station for registration of F.I.R.</item>
+        <item>A cognizable case means a case in which a police officer may, in accordance with the First Schedule of Cr.P.C. (1973), or under any other law for the time being in force, arrest without warrant.</item>
+        <item>The term ‘taking cognizance’ has not been defined in Code of Criminal Procedure. When any Magistrate takes cognizance under section 190 (1) (a) Cr.P.C., he must not only have applied his mind to the contents of the petition, but he must have done so for the purpose of proceeding in a particular way as per procedure prescribed in the Cr.P.C., and there after sending the complaint for further enquiry. A magistrate can also order investigations under section 156(3) of Cr.P.C. </item>
+        <item>Non cognizable offence means in which a police officer has no authority to arrest without warrant</item>
+        <item>Information about such offences is to be given in a similar manner as explained under F.I.R.. The officer in-charge would reduce the complaint in writing (about commission of Non cognizable offence) and give a copy thereof to the complainant free of cost. No police officer can investigate a non-cognizable case unless he obtains prior permission of a Magistrate having power to try such case.</item>
+        <item>Complaint means any allegation made orally or in writing to a Magistrate, with a view to his taking action under the code of criminal procedure (1973), that some person (whether known or unknown), has committed an offence.</item>
+        <item>Public place includes (and means) the foreshore, the precincts of every public building or monument, and all place accessible to the public for drawing water, washing or bathing or for the purpose of recreation. { B.P.Act 1951, sec 2(13) }</item>
+        <item>Passport is an official document, issued by competent authority on behalf of a sovereign nation state, certifying the holders identity and nationality, &amp; authorizing the holder to travel abroad.</item>
+        <item>Passport application forms are available at Regional Passport Offices. They are also available at http://passport.nic.in</item>
+        <item>1. Fresh Passport (36 pages) of 10 years validity- Rs. 1,000. 2. Fresh Passport (60 pages) of 10 years validity - Rs. 1,500. 3. Fresh Passport for Minors (Below 15 years of Age) of 5 years validity - Rs.600 (Cash either by Bank Draft in favor of the Passport Office or in Cash. In case of D.D. full name of the applicant and application number to be written on the reverse of the draft.)</item>
+        <item>A complaint should be lodged in the concerned local police station and thereafter, an application for a new passport should be submitted.</item>
+        <item>The verification procedure takes about 3 weeks from the receipt of the application.</item>
+        <item>Attach two copies of the following documents: 1. Applicants Ration Card or any of the following documents. a) Telephone Bill. b) Electricity Bill. c) Bank Account Passbook. d) Election Card. e) Letter from the Society on letterhead. f) NOC from the department if applicant is a Government servant. 2. Proof of date of birth: School leaving certificate / Birth certificate. 3. Citizenship documents (If applicant is citizen of India by registration or naturalization). 4. If the applicant does not reside on the present address for the last one year, an additional set of personal particulars form for each additional place of residence is required. 5. Colour Photographs (frontal view). 6. Two photographs are required for verification at the local police station.</item>
+        <item>Attach following additional documents:- a) Affidavit by legal guardian (if parents are not legal guardians). b) Affidavit by two responsible persons who know the legal guardian as well as the minor. c) Attested photocopy of passport if any, of both parents, incorporating their present marital status. </item>
+        <item>a) A woman applying for the first time for a passport in her married name or for change of name/surname in the existing passport on account of marriage should furnish: i) A photocopy of the husband’s passport (if issued to him). ii) An attested copy of the marriage certificate issued by Registrar of Marriages or an affidavit from the husband and wife along with a joint photograph. b) Divorcees applying for change of name or deletion of spouses name in existing passport must furnish: i) Divorce deed / Order of family court. ii) Affidavit furnishing details about divorce. c) Re-married applicants applying for a change of name/spouses name should furnish: i) Divorce/death certificate as the case may be in respect of first spouse, and ii) Documents as (a) above relating to second marriage.</item>
+        <item>a) People going abroad in managerial capacity and possessing specialized degrees in their respective fields. b) All Gazetted Government servants. c) All Income-Tax payers (including Agricultural Income-Tax Payees) in their individual capacity. I.T. assessment orders issued by Income-Tax Dept. for last three years be submitted along with application for passport. If assessment order is not issued, copies of Income Tax Return stamped by Income Tax authority can be accepted. d) All professional degree holders, such as doctors holding M.B.B.S. degree in Ayurveda or Homoeopathy, accredited Journalists, Engineers, Chartered Accountants, Cost Accountants, Lecturers, Teachers, Scientists, Advocates etc. e) Spouses and dependent children up to the age of 24 years are listed from (b) to (d). f) All persons who have been staying abroad for more than 3 years g) Seamen who are in possession of CDC or C cadets. h) All holders of Diplomatic/Official passports. i) Dependent children of parents whose passports are classified as E.C.N.R. until they attain 24 years of age. j) Persons holding permanent Immigrant Visas. k) Persons holding Graduate or higher degrees. l) Persons holding 3 years diploma equivalent to degrees. m) Nurses possessing qualifications recognized under the Indian Nursing Council Act-1947. n) All persons above the age of 60 years Note- No emigration clearance is required for visiting Bangladesh, Pakistan and all countries of Europe (Excluding C.I.S. States ), North America, Australia, Japan and New Zealand. o) No emigration clearance is required for persons possessing certificate of Vocational Training from the Government/ Government recognized institutions.</item>
+        <item>VISA refers to an endorsement (writing or branding) on the passport, made by competent authority of a nation State, allowing entry to the passport holder into another country. VISA is necessary for entry into another country.</item>
+        <item>By submitting an application in form A with Rs. 5/- Court fees stamp.</item>
+        <item>The application form is available in the District Police office or can be downloaded from this site. Submit it with relevant documents to the concerned Police station. The Police station makes an enquiry and submits the report to the Zonal DCP in Commissionerates and SPs in districts. The applicants are then interviewed by the DCP or DM (as the case may be). Once convinced, the licensing authority (CP or DM) issues the license.</item>
+        <item>1. Copy of Ration card 2. Election card 3. Last 3 years I.T. Returns /chalan copy/assessment orders 4. Two character certificates from the responsible citizens from your locality 5. Physical fitness certificate 6. Proof of Educational Qualifications (self attested copies of certificates. Original should not be submitted along with application). 7. Proof of age (Birth Certificate/school leaving certificate) 8. Supporting documents to justify the need for holding the arm for security or for sports etc.</item>
+        <item>Licensee should fill-in the renewal form and affix Rs. 5/- Court fees stamp thereupon. The licensee should produce his weapon and license for inspection at the time of renewal and pay the renewal fees. Renewal will be done immediately and the necessary noting about renewal will be made in the license.</item>
+        <item>Fill up the renewal from, produce the weapon for inspection along with the license. You have to pay late fee and thereafter, the license will be renewed on satisfaction of the issueing authority about the delay.</item>
+        <item>Produce the weapon for inspection before the licensing authorityalong with the renewal form. Submit your explanation for the delay preferably with the documentary support for the same. You will be issued with a Show Cause Notice. Submit your reply within 15 days. The issue will be decided by the licensing authority on merits of the case, and the decision will be communicated to you by letter, through the concerned Police station.</item>
+        <item>1. Deposit the weapon at the nearest Police station 2. Obtain receipt for the same 3. Fill up the renewal form as an agent of the license holder and submit the same. 4. When the license holder returns, direct him to the office of licensing authority for renewal of his arms license, as explained above.</item>
+        <item>1. Submit an application as per the format (TJP - Temporary Journey Permit) with Rs. 5/- Court Fees Stamp. 2. Attach a copy of the license. 3. Next day, pay a fee of Rs. 20/-. If approved, your TJP will be issued on the next day. 4. TJP is only valid for 30 days and is subject to local restrictions imposed by the local authority</item>
+        <item>License for property protection is granted on Per-Pro basis. The procedure is same as that of obtaining a new license.</item>
+        <item>1. You have to deposit the weapon and the original license (with ammunition) for safe custody at the nearest police station. A safe custody receipt will be issued to you. 2. If you want to retain the weapon, submit your application for a new arms license in form A 3. Attach copy of death certificate with application. 4. The weapon can be kept in safe custody for one year. Charges for safe custody are @ Rs.50/- for per year. 5. Procedure for issuing a new license is same as explained above. 6. Please remember that grant of new license depends on your eligibility.</item>
+        <item>1. Make an application for arms license in form A. 2. Attach a consent letter of the license holder with an affidavit on Rs. 20/- stamp paper. 3. Attach NOC from all legal heirs on a Rs.20/- stamp paper, duly notarized. 4. The remaining procedure is same as for procuring a new license. 5. Please remember, grant of license depends upon your eligibility, and not on the wishes of donor.</item>
+        <item>1. Submit an application in prescribed form for re-registration to the licensing authority (C.P./D.M.). 2. Attach a copy of the arms license. 3. Attach residential proof. 4. NOC from the original licensing authority should also be attached. This NOC produced by the applicant is liable for a recheck from the concerned authorities directly. 5. A Police station report with remarks from the Zonal DCP/SP should also be attached. On receiving the NOC and remarks, decision shall be taken by the licensing authority about re-registration.</item>
+        <item>1. Make an application, explaining the reasons for your request, on a plain paper with Rs.5/- court fees stamp; to the licensing authority. 2. Attach a copy of Arms license. 3. The application will be sent to the police station (having jurisdiction over the area of your place of residence) for enquiry. 4. On receipt of Police station report, you will be called for an interview. 5. The decision will be conveyed to you in writing through the Police station.</item>
+        <item>1. Submit an application (explaining the reasons) to the Government of Maharashtra, Pol-IX, Home Department, Mantralaya, Mumbai with a copy of the license. 2. The application will be sent to the Police station/Unit for an enquiry, 3. On receipt of the report, you will be interviewed by the appropriate authority. 4. The Government of Maharashtra will take the decision on merits and you will be informed accordingly.</item>
+        <item>1. Submit an application (on plain paper) with Rs.5/- court fees stamp and attach a copy of your license. 2. Inform Arms and Ammunition Branch/DM with relevant documents. 3. If all documents are in order, sale permission will be issued. </item>
     </string-array>
+
     <string name="title_activity_blank">BlankActivity</string>
     <string name="information">Information</string>
     <string name="title_activity_emergency_sms">EmergencySMS</string>
-    <string name="msg_emergency_message">Help! I am in emergency. My location is</string>
+
     <string name="emergecy_btn_send_message">Send Message</string>
     <string name="emergency_btn_reset">Reset Contact</string>
     <string name="btn_emergency_contact1">Emergency Contact 1</string>
@@ -93,6 +251,7 @@
     <string name="error_title_damn">Damn</string>
     <string name="error_subtitle_failed_one_more_time">Failed one more time</string>
     <string name="info_retrying">Retrying</string>
+
 
     <string-array name="arr_contact_header">
         <item>ABC</item>

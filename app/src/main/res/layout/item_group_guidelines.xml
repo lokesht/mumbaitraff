@@ -1,28 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minHeight="50dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:minHeight="60dp"
     android:paddingLeft="@dimen/default_padding"
     android:paddingRight="@dimen/default_padding">
+
+    <ImageView
+        android:id="@+id/iv_temp"
+        android:layout_width="@dimen/group_head_image_width"
+        android:layout_height="@dimen/group_head_image_height"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/i5"
+        android:tint="@color/bg_actionbar" />
 
     <TextView
         android:id="@+id/textTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/iv_temp"
+        android:layout_toLeftOf="@+id/iv_right"
         android:paddingBottom="@dimen/default_padding"
-        android:paddingLeft="25dp"
-        android:paddingTop="@dimen/default_padding"
-        android:textColor="@color/primary_material_dark"
-        android:textSize="@dimen/ts_subhead" />
+        android:paddingLeft="@dimen/default_padding"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:typeface="serif" />
 
     <ImageView
+        android:id="@+id/iv_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
-
+        android:layout_centerVertical="true"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:src="@mipmap/arrow20" />
 

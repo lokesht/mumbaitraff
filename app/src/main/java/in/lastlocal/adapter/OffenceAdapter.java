@@ -92,7 +92,7 @@ public class OffenceAdapter extends AnimatedExpandableListAdapter {
         GroupItem item = getGroup(groupPosition);
         if (convertView == null) {
             holder = new GroupHolder();
-            convertView = inflater.inflate(R.layout.item_group_faq, parent, false);
+            convertView = inflater.inflate(R.layout.item_group_offences, parent, false);
             holder.title = (TextView) convertView.findViewById(R.id.textTitle);
             convertView.setTag(holder);
         } else {

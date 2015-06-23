@@ -50,7 +50,7 @@ public class UserManualFragment  extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
+       // setHasOptionsMenu(true);
 
         if (getArguments() != null) {
 
@@ -63,19 +63,17 @@ public class UserManualFragment  extends Fragment {
 
         context = getActivity();
 
-        /** before generating view changing config*/
-        Locale mLocale = new Locale(AppConstant.LOCALE_HINDI);
-        Locale.setDefault(mLocale);
-
-        Configuration config = new Configuration();
-        config.locale = mLocale;
-        context.getResources().updateConfiguration(config, context.getResources().getDisplayMetrics());
+//        /** before generating view changing config*/
+//        Locale mLocale = new Locale(AppConstant.LOCALE_HINDI);
+//        Locale.setDefault(mLocale);
+//
+//        Configuration config = new Configuration();
+//        config.locale = mLocale;
+//        context.getResources().updateConfiguration(config, context.getResources().getDisplayMetrics());
 
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_sign, container, false);
-
+        View v = inflater.inflate(R.layout.fragment_user_manual, container, false);
         onSetUP(v);
-
         return v;
     }
 
@@ -88,7 +86,7 @@ public class UserManualFragment  extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         menu.clear();
-        inflater.inflate(R.menu.menu_faq_information, menu);
+       // inflater.inflate(R.menu.menu_faq_information, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 

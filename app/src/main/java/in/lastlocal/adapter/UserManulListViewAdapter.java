@@ -65,6 +65,17 @@ public class UserManulListViewAdapter extends BaseAdapter {
         vh.tvTitle.setText(lsAllElement.get(position).getTitle());
         vh.tvDesc.setText(lsAllElement.get(position).getDesc());
         //vh.iv.setImageResource(lsAllElement.get(position).getId());
+//        if(position>1 && position<4)
+//        {
+//            vh.iv.setBackgroundResource(R.drawable.circle_red);
+//        }else if(position>3 && position<7)
+//        {
+//            vh.iv.setBackgroundResource(R.drawable.circle_yellow);
+//        }else if(position>6 && position<9)
+//        {
+//            vh.iv.setBackgroundResource(R.drawable.circle_green);
+//        }
+
         try {
 
             AssetManager assetManager = context.getAssets();

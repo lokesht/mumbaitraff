@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,8 +22,8 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
     private Runnable mRunnable;
 
     /** */
-    TextView textViewMarathi;
-    TextView textViewEnglish;
+    //Button textViewMarathi;
+    //Button textViewEnglish;
 
     private static final long SPLASH_DURATION = 3500L;
 
@@ -74,11 +75,11 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
             }
         };
 
-        textViewEnglish = (TextView) findViewById(R.id.tv_english);
-        textViewMarathi = (TextView) findViewById(R.id.tv_marathi);
+       // textViewEnglish = (Button) findViewById(R.id.tv_english);
+       // textViewMarathi = (Button) findViewById(R.id.tv_marathi);
 
-        textViewEnglish.setOnClickListener(this);
-        textViewMarathi.setOnClickListener(this);
+        (findViewById(R.id.tv_english)).setOnClickListener(this);
+        (findViewById(R.id.tv_marathi)).setOnClickListener(this);
     }
 
     @Override

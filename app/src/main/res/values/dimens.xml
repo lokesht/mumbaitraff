@@ -40,7 +40,9 @@ Refer to App Widget Documentation for margin information
 http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
   -->
     <dimen name="widget_margin">8dp</dimen>
-
     <integer name="margin">120</integer>
+
+    <dimen name="group_head_image_width">32dp</dimen>
+    <dimen name="group_head_image_height">32dp</dimen>
 
 </resources>

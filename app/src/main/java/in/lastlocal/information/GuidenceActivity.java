@@ -4,7 +4,6 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -12,13 +11,10 @@ import com.afollestad.materialdialogs.ThemeSingleton;
 import com.desarrollodroide.libraryfragmenttransactionextended.FragmentTransactionExtended;
 
 import in.lastlocal.constant.AppConstant;
-import in.lastlocal.framework.OnFragmentInteractionListener;
 import in.lastlocal.framework.OnMyListItemClickListener;
-import in.lastlocal.information.fragment.FAQFragment;
-import in.lastlocal.information.fragment.FAQFragmentMarathi;
 import in.lastlocal.information.fragment.GuidelineFragment;
 import in.lastlocal.information.fragment.GuidelineFragmentMarathi;
-import in.lastlocal.information.fragment.GuidenceDialogFragment;
+import in.lastlocal.dailogfragment.DialogGuidenceFragment;
 import in.lastlocal.mumbaitraffic.R;
 
 
@@ -101,7 +97,7 @@ public class GuidenceActivity extends AppCompatActivity implements OnMyListItemC
         if (accentColor == 0)
             accentColor = getResources().getColor(R.color.material_teal_500);
 
-        GuidenceDialogFragment.create(false, accentColor, isEng, position)
+        DialogGuidenceFragment.create(false, accentColor, isEng, position)
                 .show(getSupportFragmentManager(), "Dialog");
     }
 

@@ -1,4 +1,4 @@
-package in.lastlocal.information.fragment;
+package in.lastlocal.dailogfragment;
 
 import android.app.Dialog;
 import android.graphics.Color;
@@ -23,10 +23,10 @@ import in.lastlocal.mumbaitraffic.R;
 /**
  * Created by USER on 22-Jun-15.
  */
-public class GuidenceDialogFragment extends DialogFragment {
+public class DialogGuidenceFragment extends DialogFragment {
 
-    public static GuidenceDialogFragment create(boolean darkTheme, int accentColor) {
-        GuidenceDialogFragment dialog = new GuidenceDialogFragment();
+    public static DialogGuidenceFragment create(boolean darkTheme, int accentColor) {
+        DialogGuidenceFragment dialog = new DialogGuidenceFragment();
         Bundle args = new Bundle();
         args.putBoolean("dark_theme", darkTheme);
         args.putInt("accent_color", accentColor);
@@ -34,8 +34,8 @@ public class GuidenceDialogFragment extends DialogFragment {
         return dialog;
     }
 
-    public static GuidenceDialogFragment create(boolean darkTheme, int accentColor, boolean isEng, int position) {
-        GuidenceDialogFragment dialog = new GuidenceDialogFragment();
+    public static DialogGuidenceFragment create(boolean darkTheme, int accentColor, boolean isEng, int position) {
+        DialogGuidenceFragment dialog = new DialogGuidenceFragment();
         Bundle args = new Bundle();
         args.putBoolean("dark_theme", darkTheme);
         args.putInt("accent_color", accentColor);
@@ -55,11 +55,12 @@ public class GuidenceDialogFragment extends DialogFragment {
         } catch (InflateException e) {
             throw new IllegalStateException("This device does not support Web Views.");
         }
+
         MaterialDialog dialog = new MaterialDialog.Builder(getActivity())
                 .theme(getArguments().getBoolean("dark_theme") ? Theme.DARK : Theme.LIGHT)
-                .title(R.string.login_english)
+                .title(R.string.title_dialog_guidline)
                 .customView(customView, false)
-                .positiveText(android.R.string.ok)
+                .positiveText(R.string.btn_close)
                 .build();
 
         final WebView webView = (WebView) customView.findViewById(R.id.webview);
@@ -71,7 +72,7 @@ public class GuidenceDialogFragment extends DialogFragment {
             boolean temp = getArguments().getBoolean("isEng");
             int pos = getArguments().getInt("position");
 
-            strFileName =  temp ? strFileName+(pos+1):strFileName+"ma"+1;
+            strFileName =  temp ? strFileName+(pos+1):strFileName+"ma"+(pos+1);
 
             Toast.makeText(getActivity(),strFileName,Toast.LENGTH_SHORT).show();
 
@@ -81,6 +82,8 @@ public class GuidenceDialogFragment extends DialogFragment {
             while ((str = in.readLine()) != null)
                 buf.append(str);
             in.close();
+
+           // buf.substring()
 
             // Inject color values for WebView body background and links
             final int accentColor = getArguments().getInt("accent_color");
@@ -94,6 +97,7 @@ public class GuidenceDialogFragment extends DialogFragment {
         } catch (Throwable e) {
             webView.loadData("<h1>Unable to load</h1><p>" + e.getLocalizedMessage() + "</p>", "text/html", "UTF-8");
         }
+
         return dialog;
     }
 
