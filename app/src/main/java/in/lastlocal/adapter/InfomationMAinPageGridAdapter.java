@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import at.markushi.ui.CircleButton;
 import in.lastlocal.information.EmergencyContactActivity;
 import in.lastlocal.information.FAQActivity;
+import in.lastlocal.information.GuidenceActivity;
 import in.lastlocal.information.MainInformation;
 import in.lastlocal.information.OffencesActivity;
 import in.lastlocal.information.SignActivity;
@@ -68,8 +69,8 @@ public class InfomationMAinPageGridAdapter extends ArrayAdapter<ItemGridInformat
             //int width = .getMeasuredWidth() - window.getPaddingLeft() - window.getPaddingRight();
             //int height = window.getMeasuredHeight() - window.getPaddingTop() - window.getPaddingBottom();
 
-            WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-            Display display = wm.getDefaultDisplay();
+           // WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+           // Display display = wm.getDefaultDisplay();
 
             DisplayMetrics metrics = new DisplayMetrics();
             ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -108,9 +109,14 @@ public class InfomationMAinPageGridAdapter extends ArrayAdapter<ItemGridInformat
         if (position >= 3 && position <= 5) {
             holder.imageItem.setColor(context.getResources().getColor(R.color.yellow));
             //setBackgroundColor();
-        } else if (position >= 6) {
+        } else if (position == 6) {
 
             holder.imageItem.setColor(context.getResources().getColor(R.color.green));
+        }
+        else if(position ==7 || position ==8)
+        {
+            holder.imageItem.setColor(context.getResources().getColor(R.color.white));
+            holder.txtTitle.setText("");
         }
 
         holder.imageItem.setOnClickListener(new View.OnClickListener() {
@@ -137,7 +143,8 @@ public class InfomationMAinPageGridAdapter extends ArrayAdapter<ItemGridInformat
                         context.startActivity(in);
                         break;
                     case 4:
-
+                        in = new Intent(context, GuidenceActivity.class);
+                        context.startActivity(in);
                         break;
                     case 5:
                         in = new Intent(context, SignActivity.class);

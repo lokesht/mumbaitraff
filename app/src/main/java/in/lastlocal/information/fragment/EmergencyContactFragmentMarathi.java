@@ -2,14 +2,12 @@ package in.lastlocal.information.fragment;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.Bundle;
 
-import android.util.Log;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,14 +15,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 import in.lastlocal.adapter.EmergancyContactAdapter;
-import in.lastlocal.adapter.ExampleAdapter;
 import in.lastlocal.constant.AppConstant;
 import in.lastlocal.customview.AnimatedExpandableListView;
 import in.lastlocal.framework.OnFragmentInteractionListener;
@@ -118,29 +114,6 @@ public class EmergencyContactFragmentMarathi extends Fragment {
     private void onSetUP(View v) {
         List<GroupItem> items = new ArrayList<GroupItem>();
 
-        // Populate our list with groups and it's children
-
-//         String[] arrGroupItem = getResources().getStringArray(R.array.arr_contact_header);
-//        String[] arrChildItem = getResources().getStringArray(R.array.arr_contact_number);
-
-
-//        for (int i = 1; i < arrGroupItem.length; i++) {
-//            GroupItem item = new GroupItem();
-//
-//            item.title = arrGroupItem[i];
-//
-//            // for(int j = 0; j < i; j++) {
-//            ChildItem child = new ChildItem();
-//            child.title = arrChildItem[0];
-//            child.hint = "Too awesome";
-//
-//            item.items.add(child);
-//            // }
-//
-//            items.add(item);
-//        }
-
-
         String selGroup = "SELECT Branch_Id, Branch FROM EmergencyNoMA GROUP BY Branch_Id";
         String selChild = "SELECT Name, Numbers FROM EmergencyNoMA where Branch_Id = ";
 
@@ -151,8 +124,7 @@ public class EmergencyContactFragmentMarathi extends Fragment {
             c.moveToFirst();
             do{
                 GroupItem item = new GroupItem();
-                item.title = c.getString(1);
-
+                item.title = c.getString(1).trim();
 
                 String selC = selChild+c.getString(0);
 
@@ -162,8 +134,8 @@ public class EmergencyContactFragmentMarathi extends Fragment {
                     curChild.moveToNext();
                     do{
                         ChildItem child = new ChildItem();
-                        child.title = curChild.getString(0)+" "+curChild.getString(1);
-                        child.hint = "Too awesome";
+                        child.title = curChild.getString(0).trim();//+" "+curChild.getString(1);
+                        child.phones = curChild.getString(1).trim();
 
                         item.items.add(child);
                     }while (curChild.moveToNext());
@@ -179,12 +151,20 @@ public class EmergencyContactFragmentMarathi extends Fragment {
         {
 
         }
-
         adapter = new EmergancyContactAdapter(getActivity());
         adapter.setData(items);
 
         listView = (AnimatedExpandableListView) v.findViewById(R.id.listView);
         listView.setAdapter(adapter);
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            listView.setIndicatorBounds(metrics.widthPixels- 50, listView.getWidth());
+        } else {
+            listView.setIndicatorBoundsRelative(metrics.widthPixels- 50, listView.getWidth());
+        }
 
         // In order to show animations, we need to use a custom click handler
         // for our ExpandableListView.

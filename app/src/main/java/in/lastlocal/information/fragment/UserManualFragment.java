@@ -31,7 +31,7 @@ public class UserManualFragment  extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private Context context;
-
+    private String[] user_manual_title,user_manual_desc;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -50,7 +50,7 @@ public class UserManualFragment  extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
+       // setHasOptionsMenu(true);
 
         if (getArguments() != null) {
 
@@ -63,19 +63,17 @@ public class UserManualFragment  extends Fragment {
 
         context = getActivity();
 
-        /** before generating view changing config*/
-        Locale mLocale = new Locale(AppConstant.LOCALE_HINDI);
-        Locale.setDefault(mLocale);
-
-        Configuration config = new Configuration();
-        config.locale = mLocale;
-        context.getResources().updateConfiguration(config, context.getResources().getDisplayMetrics());
+//        /** before generating view changing config*/
+//        Locale mLocale = new Locale(AppConstant.LOCALE_HINDI);
+//        Locale.setDefault(mLocale);
+//
+//        Configuration config = new Configuration();
+//        config.locale = mLocale;
+//        context.getResources().updateConfiguration(config, context.getResources().getDisplayMetrics());
 
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_sign, container, false);
-
+        View v = inflater.inflate(R.layout.fragment_user_manual, container, false);
         onSetUP(v);
-
         return v;
     }
 
@@ -88,7 +86,7 @@ public class UserManualFragment  extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         menu.clear();
-        inflater.inflate(R.menu.menu_faq_information, menu);
+       // inflater.inflate(R.menu.menu_faq_information, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -106,19 +104,12 @@ public class UserManualFragment  extends Fragment {
     private void onSetUP(View v) {
 
         List<ItemSign> itemSigns = new ArrayList<ItemSign>();
-        ItemSign item = new ItemSign(R.mipmap.i1, "Description 1");
-        ItemSign item2 = new ItemSign(R.mipmap.i2, "Description 2");
-
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
+        user_manual_title = getResources().getStringArray(R.array.user_manual_title);
+        user_manual_desc = getResources().getStringArray(R.array.user_manual_desc);
+        for(int i=1;i<user_manual_title.length+1;i++) {
+            ItemSign item = new ItemSign("image"+i+".png", user_manual_title[i-1],user_manual_desc[i-1]);
+            itemSigns.add(item);
+        }
 
         ListView lv =(ListView)v.findViewById(R.id.listView);
         UserManulListViewAdapter adapter = new UserManulListViewAdapter(getActivity(),itemSigns);

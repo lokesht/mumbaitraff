@@ -2,8 +2,12 @@ package in.lastlocal.map;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.GeolocationPermissions;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -28,10 +32,21 @@ public class WebViewActivity extends Activity {
         setContentView(R.layout.activity_web_view);
 
         webView = (WebView) findViewById(R.id.mapview);
-
         startWebView(mapPath);
+
+        /** reset */
+         in = 0;
     }
 
+    private boolean isConnectionAvailable() {
+        ConnectivityManager cm =
+                (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+        return isConnected;
+    }
     /** */
     private void startWebView(String url) {
 
@@ -60,6 +75,10 @@ public class WebViewActivity extends Activity {
             //Show loader on url load
             public void onLoadResource(WebView view, String url) {
                 if (progressDialog == null && in == 0) {
+
+                    View v = findViewById(R.id.ll_color_view);
+                    v.setVisibility(View.VISIBLE);
+
                     // in standard case YourActivity.this
                     in++;
                     progressDialog = new ProgressDialog(WebViewActivity.this);
@@ -100,15 +119,4 @@ public class WebViewActivity extends Activity {
         webView.loadUrl(url);
     }
 
-    // Open previous opened link from history on webview when back button pressed
-    @Override
-    // Detect when the back button is pressed
-    public void onBackPressed() {
-        if(webView.canGoBack()) {
-            webView.goBack();
-        } else {
-            // Let the system handle the back button
-            super.onBackPressed();
-        }
-    }
 }

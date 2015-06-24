@@ -16,12 +16,16 @@ public class Holder {
 
     public  static class ChildItem {
         public String title;
-        public String hint;
+        public String phones;
+        public String lebel1;
+        public String lebel2;
     }
 
     public static class ChildHolder {
         public TextView title;
-        public TextView hint;
+        public TextView tvNo1;
+        public TextView tvNo2;
+        public TextView tvNo3;
     }
 
     public  static class GroupHolder {

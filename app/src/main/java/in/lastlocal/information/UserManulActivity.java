@@ -32,7 +32,6 @@ public class UserManulActivity  extends AppCompatActivity implements OnFragmentI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faq);
 
-        // initialise();
         if (savedInstanceState == null) {
             mFirstFragment = UserManualFragment.newInstance();
             addFragment(mFirstFragment);
@@ -42,7 +41,7 @@ public class UserManulActivity  extends AppCompatActivity implements OnFragmentI
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_emergency_contact, menu);
+       // getMenuInflater().inflate(R.menu.menu_emergency_contact, menu);
         return true;
     }
 

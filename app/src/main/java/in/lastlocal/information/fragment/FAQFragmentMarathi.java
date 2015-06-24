@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import in.lastlocal.adapter.ExampleAdapter;
+import in.lastlocal.adapter.FAQAdapter;
 import in.lastlocal.adapter.Holder;
 import in.lastlocal.constant.AppConstant;
 import in.lastlocal.customview.AnimatedExpandableListView;
@@ -32,7 +33,7 @@ public class FAQFragmentMarathi extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     private AnimatedExpandableListView listView;
-    private ExampleAdapter adapter;
+    private FAQAdapter adapter;
 
     private Context context;
     private Locale mLocale;
@@ -116,20 +117,26 @@ public class FAQFragmentMarathi extends Fragment {
             // for(int j = 0; j < i; j++) {
             Holder.ChildItem child = new Holder.ChildItem();
             child.title = arrChildItem[0];
-            child.hint = "Too awesome";
-
             item.items.add(child);
             // }
 
             items.add(item);
         }
 
-        adapter = new ExampleAdapter(getActivity());
+        adapter = new FAQAdapter(getActivity());
         adapter.setData(items);
 
         listView = (AnimatedExpandableListView) v.findViewById(R.id.listView);
         listView.setAdapter(adapter);
 
+        DisplayMetrics metrics = new DisplayMetrics();
+        ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            listView.setIndicatorBounds(metrics.widthPixels- 50, listView.getWidth());
+        } else {
+            listView.setIndicatorBoundsRelative(metrics.widthPixels- 50, listView.getWidth());
+        }
         // In order to show animations, we need to use a custom click handler
         // for our ExpandableListView.
         listView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {

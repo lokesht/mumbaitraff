@@ -19,18 +19,18 @@ import in.lastlocal.customview.AnimatedExpandableListView.AnimatedExpandableList
 import in.lastlocal.mumbaitraffic.R;
 
 /**
- * Adapter for our list of {@link Holder.GroupItem}s.
+ * Adapter for our list of {@link GroupItem}s.
  */
-public class ExampleAdapter extends AnimatedExpandableListAdapter {
+public class OffenceAdapter extends AnimatedExpandableListAdapter {
+
     private LayoutInflater inflater;
+    private List<GroupItem> items;
 
-    private List<Holder.GroupItem> items;
-
-    public ExampleAdapter(Context context) {
+    public OffenceAdapter(Context context) {
         inflater = LayoutInflater.from(context);
     }
 
-    public void setData(List<Holder.GroupItem> items) {
+    public void setData(List<GroupItem> items) {
         this.items = items;
     }
 
@@ -46,20 +46,22 @@ public class ExampleAdapter extends AnimatedExpandableListAdapter {
 
     @Override
     public View getRealChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        Holder.ChildHolder holder;
+        ChildHolder holder;
         Holder.ChildItem item = getChild(groupPosition, childPosition);
         if (convertView == null) {
             holder = new ChildHolder();
-            convertView = inflater.inflate(R.layout.item_list_faq, parent, false);
+            convertView = inflater.inflate(R.layout.item_list_offence, parent, false);
             holder.title = (TextView) convertView.findViewById(R.id.textTitle);
-            holder.hint = (TextView) convertView.findViewById(R.id.textHint);
+            holder.tvNo1 = (TextView) convertView.findViewById(R.id.tv_no1);
+            holder.tvNo2 = (TextView) convertView.findViewById(R.id.tv_no2);
             convertView.setTag(holder);
         } else {
             holder = (ChildHolder) convertView.getTag();
         }
 
         holder.title.setText(item.title);
-        holder.hint.setText(item.hint);
+        holder.tvNo1.setText(item.lebel1);
+        holder.tvNo2.setText(item.lebel2);
 
         return convertView;
     }
@@ -90,28 +92,14 @@ public class ExampleAdapter extends AnimatedExpandableListAdapter {
         GroupItem item = getGroup(groupPosition);
         if (convertView == null) {
             holder = new GroupHolder();
-            convertView = inflater.inflate(R.layout.item_group_faq, parent, false);
+            convertView = inflater.inflate(R.layout.item_group_offences, parent, false);
             holder.title = (TextView) convertView.findViewById(R.id.textTitle);
             convertView.setTag(holder);
         } else {
             holder = (GroupHolder) convertView.getTag();
         }
 
-
-//        // initialize ImageView
-//        ImageView imgExpandCollapse = (ImageView) convertView.findViewById(R.id.imgExpandCollapse);
-//
-//        // check if GroupView is expanded and set imageview for expand/collapse-action
-//        if(isExpanded){
-//            imgExpandCollapse.setImageResource(R.drawable.ic_action_collapse);
-//        }
-//        else{
-//            imgExpandCollapse.setImageResource(R.drawable.ic_action_expand);
-//        }
-
-
         holder.title.setText(item.title);
-
         return convertView;
     }
 

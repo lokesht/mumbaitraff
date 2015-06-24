@@ -7,6 +7,7 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import in.lastlocal.adapter.ExampleAdapter;
+import in.lastlocal.adapter.FAQAdapter;
 import in.lastlocal.adapter.Holder.ChildItem;
 import in.lastlocal.adapter.Holder.GroupItem;
 import in.lastlocal.constant.AppConstant;
@@ -41,7 +42,7 @@ public class FAQFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     private AnimatedExpandableListView listView;
-    private ExampleAdapter adapter;
+    private FAQAdapter adapter;
 
     private Context context;
     private Locale mLocale;
@@ -199,19 +200,26 @@ public class FAQFragment extends Fragment {
             // for(int j = 0; j < i; j++) {
             ChildItem child = new ChildItem();
             child.title = arrChildItem[0];
-            child.hint = "Too awesome";
-
             item.items.add(child);
             // }
 
             items.add(item);
         }
 
-        adapter = new ExampleAdapter(getActivity());
+        adapter = new FAQAdapter(getActivity());
         adapter.setData(items);
 
         listView = (AnimatedExpandableListView) v.findViewById(R.id.listView);
         listView.setAdapter(adapter);
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            listView.setIndicatorBounds(metrics.widthPixels- 50, listView.getWidth());
+        } else {
+            listView.setIndicatorBoundsRelative(metrics.widthPixels- 50, listView.getWidth());
+        }
 
         // In order to show animations, we need to use a custom click handler
         // for our ExpandableListView.

@@ -10,10 +10,13 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Map;
@@ -32,6 +35,7 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
     private String contactName = "Name";
     private String contact = "Contact";
     Button btnClicked;
+    EditText etMessage;
 
     /** */
     SharedPreferences sharedpreferences;
@@ -39,6 +43,8 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_emergency_sms);
         sharedpreferences = getSharedPreferences(AppConstant.CONTACT_PREFERENCE, Context.MODE_PRIVATE);
 
@@ -46,10 +52,14 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
     }
 
     private void initialise() {
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Button btn = (Button) findViewById(R.id.btn_con1);
         Button btn2 = (Button) findViewById(R.id.btn_con2);
         Button btn3 = (Button) findViewById(R.id.btn_con3);
         Button btnName = (Button) findViewById(R.id.btn_request_name_entry);
+        etMessage = (EditText)findViewById(R.id.et_emergency_msg_lat_long);
 
         int i = 0;
         Map<String, ?> keys = sharedpreferences.getAll();
@@ -58,13 +68,13 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
             String strKey = entry.getKey();
 
             if (strKey.equalsIgnoreCase("0")) {
+                etMessage.setText(entry.getValue().toString());
 
             } else if (strKey.equalsIgnoreCase("1")) {
                 String name = entry.getValue().toString();
                 btnName.setText(name);
             } else {
                 int buttonId = Integer.parseInt(strKey);
-                //String arr[] =
                 String print = entry.getValue().toString().replace("#", "\n");
 
                 switch (buttonId) {
@@ -79,14 +89,36 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
                         break;
                 }
             }
+        }
+
+        etMessage.addTextChangedListener(messageWatcher);
+
+    }
+
+    private final TextWatcher messageWatcher = new TextWatcher() {
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
 
         }
-    }
+
+        public void afterTextChanged(Editable s) {
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.putString("0",etMessage.getText().toString());
+            editor.apply();
+        }
+    };
 
     public void onContactSelect1(View v) {
         btnClicked = (Button) v;
         Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
         startActivityForResult(intent, PICK_CONTACT);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 
     @Override
@@ -181,6 +213,7 @@ public class EmergencySMS extends AppCompatActivity implements DialogEmergencyNa
         Button btn3 = (Button) findViewById(R.id.btn_con3);
         btn3.setText(R.string.btn_emergency_contact3);
 
+        etMessage.setText(R.string.msg_emergency_help);
         Toast.makeText(this, "Reset Successful", Toast.LENGTH_SHORT).show();
     }
 

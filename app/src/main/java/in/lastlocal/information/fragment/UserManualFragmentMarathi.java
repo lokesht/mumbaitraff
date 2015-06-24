@@ -74,7 +74,7 @@ public class UserManualFragmentMarathi  extends Fragment {
         context.getResources().updateConfiguration(config, context.getResources().getDisplayMetrics());
 
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_sign, container, false);
+        View v = inflater.inflate(R.layout.fragment_user_manual, container, false);
         onSetUP(v);
 
         return v;
@@ -109,19 +109,8 @@ public class UserManualFragmentMarathi  extends Fragment {
         List<ItemSign> itemSigns = new ArrayList<ItemSign>();
 
         String[] arrSign = getResources().getStringArray(R.array.sign_meaning);
-        ItemSign item = new ItemSign(R.drawable.ic_cast_dark, arrSign[0]);
-        ItemSign item2 = new ItemSign(R.drawable.ic_cast_dark,arrSign[1]);
-
+        ItemSign item = new ItemSign(R.mipmap.i3, "Not Available");
         itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
 
         ListView lv =(ListView)v.findViewById(R.id.listView);
         UserManulListViewAdapter adapter = new UserManulListViewAdapter(getActivity(),itemSigns);

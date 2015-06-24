@@ -12,6 +12,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -40,6 +41,7 @@ public class SignFragmentMarathi extends Fragment {
     private Context context;
 
     private Locale mLocale;
+    private String[] signs_marathi;
 
     /**
      * Use this factory method to create a new instance of
@@ -115,22 +117,13 @@ public class SignFragmentMarathi extends Fragment {
 
         List<ItemSign> itemSigns = new ArrayList<ItemSign>();
 
-        String[] arrSign = getResources().getStringArray(R.array.sign_meaning);
-        ItemSign item = new ItemSign(R.drawable.ic_cast_dark, arrSign[0]);
-        ItemSign item2 = new ItemSign(R.drawable.ic_cast_dark,arrSign[1]);
+        signs_marathi = getResources().getStringArray(R.array.signs_marathi);
+        for(int i=1;i<signs_marathi.length+1;i++) {
+            ItemSign item = new ItemSign("image"+i+".png", signs_marathi[i-1]);
+            itemSigns.add(item);
+        }
 
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-        itemSigns.add(item);
-        itemSigns.add(item2);
-
-        ListView lv =(ListView)v.findViewById(R.id.listView);
+        GridView lv =(GridView)v.findViewById(R.id.listView);
         SignListViewAdapter adapter = new SignListViewAdapter(getActivity(),itemSigns);
         lv.setAdapter(adapter);
     }

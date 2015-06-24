@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -21,6 +22,7 @@ import java.util.Locale;
 import in.lastlocal.adapter.EmergancyContactAdapter;
 import in.lastlocal.adapter.Holder;
 
+import in.lastlocal.adapter.OffenceAdapter;
 import in.lastlocal.constant.AppConstant;
 import in.lastlocal.customview.AnimatedExpandableListView;
 import in.lastlocal.framework.OnFragmentInteractionListener;
@@ -35,7 +37,7 @@ public class OffencesFragmentMarathi extends Fragment {
     private OnFragmentInteractionListener mListener;
     private Context context;
     private AnimatedExpandableListView listView;
-    private EmergancyContactAdapter adapter;
+    private OffenceAdapter adapter;
 
     private Locale mLocale;
 
@@ -132,8 +134,9 @@ public class OffencesFragmentMarathi extends Fragment {
                     curChild.moveToNext();
                     do {
                         Holder.ChildItem child = new Holder.ChildItem();
-                        child.title = curChild.getString(0) + " " + curChild.getString(1);
-                        child.hint = "Too awesome";
+                        child.title = curChild.getString(0);
+                        child.lebel1 = curChild.getString(1);
+                        child.lebel2 = curChild.getString(2)+" Rs.";
 
                         item.items.add(child);
                     } while (curChild.moveToNext());
@@ -149,12 +152,20 @@ public class OffencesFragmentMarathi extends Fragment {
 
         }
 
-        adapter = new EmergancyContactAdapter(getActivity());
+        adapter = new OffenceAdapter(getActivity());
         adapter.setData(items);
 
         listView = (AnimatedExpandableListView) v.findViewById(R.id.listView);
         listView.setAdapter(adapter);
 
+        DisplayMetrics metrics = new DisplayMetrics();
+        ((Activity) context).getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            listView.setIndicatorBounds(metrics.widthPixels- 50, listView.getWidth());
+        } else {
+            listView.setIndicatorBoundsRelative(metrics.widthPixels- 50, listView.getWidth());
+        }
         // In order to show animations, we need to use a custom click handler
         // for our ExpandableListView.
         listView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {

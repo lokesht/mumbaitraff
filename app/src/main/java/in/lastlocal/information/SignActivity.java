@@ -21,16 +21,15 @@ import in.lastlocal.mumbaitraffic.R;
  */
 public class SignActivity extends AppCompatActivity implements OnFragmentInteractionListener {
 
-    Toolbar mToolbar;
     private int optionSelected =  AppConstant.ANIMATE_X;;
-
     private SignFragment mFirstFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_faq);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // initialise();
         if (savedInstanceState == null) {
